@@ -1,0 +1,80 @@
+.header{
+    background-color:white;
+    height: 50px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding: 100px;
+    /* border: 2px solid pink; */
+    font-family: Brush Script MT;
+  } 
+
+ .header h1{
+     font-size: 80px;
+ }
+
+ .links a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .links a:hover{
+    color: white;
+    background-color: black;
+  }
+ .loginNInput{
+     display: inline-flex;
+     position:relative;
+     justify-content: space-between;
+ }
+.cart a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-inline-start: 2px 3px;
+}
+
+ /* img{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: -66px;
+    left: 330px;
+  
+} */
+
+.nav_container div{
+        display: flex;
+        position: relative;
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 2px;
+        /* letter-spacing: 1px; */
+        color: white;
+        height:40px;
+        padding-top: 10px;
+}
+
+
+
+/* .container{
+    padding-left:0;
+    padding-right:0;
+    width: cover;
+    margin-right: auto;
+    margin-left: auto;
+} */
+
+
+
+
+.navbar-default {
+    background-color: #fff;
+    border-color: #e7e7e7;
+    border-top: solid 0px;
+    border-left: solid 0px;
+    border: solid 0px;
+}

@@ -1,0 +1,40 @@
+.Home {
+      height: 50px;
+      padding: 5px;
+      color: black;
+      /* border: 2px solid pink; */
+      position:relative;
+        /* width:100%;
+        left:10px;
+        top:20px; */
+    }
+    .Home-title{
+      font-size: 55px;
+      font-family: Brush Script MT;
+      text-align: left;
+      position: relative;
+      height: 60px;
+    }
+  
+  
+    .Home-body {
+      position: relative;
+      color: black;
+      font-size: 95px;
+      font-family: cursive;
+      padding-top: 50px;
+      height: 1890px;
+      text-align: center;
+      background-image: url("https://s-media-cache-ak0.pinimg.com/originals/ae/1d/51/ae1d51dfb634174f5f58f3e98b3104cf.jpg" );
+      background-repeat: no-repeat;
+      background-size: 1890px;
+      background-position: center; 
+    }
+    /* img{
+      width: 100px;
+      height: 100px;
+      position: relative; */
+      /* top: -66px;
+      left: 330px;
+     */
+  /* } */

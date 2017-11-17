@@ -1,0 +1,21 @@
+.About {
+    background-color:lightgrey;
+    height: 150px;
+    padding: 10px;
+    text-align: left;
+    position: relative;
+  }
+  .About-title {
+    font-size: 45px;
+    font-family: Brush Script MT;
+    position: relative;
+    padding-top: 300px;
+    color: palevioletred;
+  }
+  .About-body{
+    text-align: center;
+    font-family: cursive;
+    font-size: 18px;
+    padding-top: 50px;
+    position: relative;
+  }

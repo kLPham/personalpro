@@ -1,0 +1,27 @@
+/* .product-list div{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+  } */
+.ProductLandingPage{
+    height: 2300px;
+}
+
+  img {
+    display: inline;
+    /* justify-content: center; */
+    max-width: 100%;
+}
+.prom {
+    background-image: 
+        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1711P2703%20LAVENDERMULTI?$plpproductimgdesktop_3up$"),
+        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1712P2465%20BLUSH?$plpproductimgdesktop_3up$"),
+        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1579_MBLKGOLD_PROM_PROD11_072?$plpproductimgdesktop_3up$");
+    background-repeat: no-repeat,
+                       no-repeat,
+                       no-repeat;
+    
+}

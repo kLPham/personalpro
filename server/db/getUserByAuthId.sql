@@ -1,0 +1,1 @@
+SELECT * FROM consumers WHERE authId = $1;

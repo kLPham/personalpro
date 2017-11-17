@@ -1,0 +1,29 @@
+.my_cart {
+    height: 1100px;
+}
+
+img{
+    width: 350px;
+    height: 500px;
+}
+
+.btn_container{
+    width: 300px;
+    height: 100px;
+    display: inline-flex;
+    padding: 2px solid;
+}
+.continuebtn{
+    background-color: goldenrod;
+    border-color: green;
+    color: white;
+    height: 50px;
+    width: 200px;
+}
+.checkoutbtn{
+    background-color: green;
+    border-color: goldenrod;
+    color: white;
+    height: 50px;
+    width: 200px; 
+}

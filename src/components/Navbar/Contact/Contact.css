@@ -1,0 +1,19 @@
+.Contact-title {
+    background-color:lightgrey;
+    font-family: Brush Script MT;
+    font-size: 75px;
+    height: 150px;
+    width: cover;
+    padding: 10px;
+    color: black;
+    text-align: center;
+  }
+  /* .Contact-title {
+    
+   
+    text-align: center;
+  } */
+.body{
+    padding-top: 50px;
+    position: relative;
+}

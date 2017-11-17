@@ -1,0 +1,9 @@
+.product-list a{
+    text-decoration: none;
+    color: palevioletred;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  /* .Products{
+      background-color: black;
+  } */

@@ -17,16 +17,7 @@ export default class BridalCollection extends Component{
         //bind methods
         this.handleAddToCart = this.handleAddToCart.bind(this);
     }
-        // addItem(val){
-        //     this.setState({item: val})
-        // }
-    // componentDidMount() {
-    //     axios.get('/api/products/bridal_collection').then(response =>{
-    //         this.setState({})
-    //         console.log(response);
-    //     })
-    
-    // }
+   
     
     componentDidMount() {
         axios.get('/api/products/bridal_collection').then(response => {
@@ -42,19 +33,18 @@ export default class BridalCollection extends Component{
     }
 
     render() {
-        const allProducts = this.state.productsToDisplay.map(b =>{
-            console.log("Products redering",b)
+        const allProducts = this.state.productsToDisplay.map(bridalcollection =>{
+            console.log("Products redering",bridalcollection)
         return(
-
-                <div className="bridal_collection" key={b.id}>
-                    <p>Brand: { b.brand }</p>
-                    <img src={ b.image_url }></img>
-                    <p>Description: { b.description }</p>
-                    <p>Size: { b.size }</p>
-                    <p>Color: { b.color }</p>
-                    <p>Unit_Price: { b.unit_price }</p>
-                    <p>Quantity: { b.quantity }</p>
-                    <button onClick={ () => this.handleAddToCart(b)}>Add to Cart</button>
+                <div className="bridal_collection" key={bridalcollection.id}>
+                    <p>Brand: { bridalcollection.brand }</p>
+                    <img src={ bridalcollection.image_url }></img>
+                    <p>Description: { bridalcollection.description }</p>
+                    <p>Size: { bridalcollection.size }</p>
+                    <p>Color: { bridalcollection.color }</p>
+                    <p>Unit_Price: { bridalcollection.unit_price }</p>
+                    <p>Quantity: { bridalcollection.quantity }</p>
+                    <button onClick={ () => this.handleAddToCart(bridalcollection)}>Add to Cart</button>
                     <hr/>
                     <br />
                 </div>

@@ -6,11 +6,13 @@ const session = require("express-session");
 const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
-// const strategy = require('../src/strategy');
+
+
 
 const { dbUser, database } = require("./config");
 const { secret } = require("./config").session;
 
+//Auth0 here
 const { domain, clientID, clientSecret } = require("./config.js").passportAuth0;
 const {connectionString} = require('./config');
 
@@ -18,6 +20,7 @@ const port = 3001;
 
 const app = express();
 
+//uncomment this when i am ready to have project in production. Final step
 // app.use(express.static(`${__dirname}/build`));
 
 app.use(
@@ -78,6 +81,7 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
+//GET USER LOGIN BELOW:
 app.get(
   "/api/login",
   passport.authenticate("auth0", {
@@ -91,7 +95,7 @@ app.get("/api/me", function(req, res) {
 });
 
 app.get("/api/test", (req, res, next) => {
-  req.ericsCoolVariable
+  req.linhIsCoolVariable
   req.app
     .get("db")
     .getUsers()
@@ -119,6 +123,7 @@ app.get("/api/test", (req, res, next) => {
 //   .catch(console.log);
 // })
 
+//GET PRODUCT TYPE from products table BELOW:
 app.get('/api/products/:product_type', (req, res, next)=>{
   console.log('product_type request:', req.params.product_type);
   req.app.get('db').getProducts(req.params.product_type)
@@ -128,34 +133,45 @@ app.get('/api/products/:product_type', (req, res, next)=>{
   .catch(console.log);
 })
 
-//session cart
+//SHOPPING CART RELATED CALL BELOW:
+//session cart: post to db
 app.post('/api/cart', (req, res)=>{
  let item= req.body.item;
   if(!req.session.cart ){
     req.session.cart = [];
   }
 
-  //send info of products using session to display to cart component
+  //get info of products using session to display to cart component
   app.get('/api/cart',(req, res)=>{
       return res.json(req.session.cart);
   })
-  //add item
-  req.session.cart.push(item);
-
+  req.session.cart.push(item); //add item to cart
 
   //update cart when remove item from cart
-   //remove index item
   app.post('/api/cart',(req, res)=>{
     req.session.cart.splice(index);
     return res.json(req.session.cart);
 })
- 
-  
-
   console.log('Cart: ', req.session.cart);
-  //send back cart from session
-  res.json(req.session.cart);
+  res.json(req.session.cart);   //send back cart from session
 })
+
+
+//SUBMIT ORDERS CALL BELOW: get & update orders
+app.get('/api/orders',(req, res)=>{
+  const {order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address } = req.body;
+  req.app.get('db').submitOrders(req.submitOrders);
+  return res.json(req.body);
+})
+app.post('/api/orders', (req, res)=>{
+  // console.log('orders request:', order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address );
+  req.app.post('db').submitOrders(req.body)
+  .then(response => {
+    res.status(200).json(response);
+  })
+  .catch(console.log);
+})
+
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

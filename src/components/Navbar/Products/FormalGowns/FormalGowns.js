@@ -15,16 +15,7 @@ export default class FormalGown extends Component{
         //bind methods
         this.handleAddToCart = this.handleAddToCart.bind(this);
     }
-        // addItem(val){
-        //     this.setState({item: val})
-        // }
-    // componentDidMount() {
-    //     axios.get('/api/products/bridal_collection').then(response =>{
-    //         this.setState({})
-    //         console.log(response);
-    //     })
-    
-    // }
+  
     
     componentDidMount() {
         axios.get('/api/products/formal_gowns').then(response => {
@@ -41,19 +32,19 @@ export default class FormalGown extends Component{
     }
 
     render() {
-        const allProducts = this.state.productsToDisplay.map(b =>{
-            console.log("Products redering",b)
+        const allProducts = this.state.productsToDisplay.map(formalgown =>{
+            console.log("Products redering",formalgown)
         return(
 
-                <div className="formal_gowns" key={b.id}>
-                    <p>Brand: { b.brand }</p>
-                    <img src={ b.image_url }></img>
-                    <p>Description: { b.description }</p>
-                    <p>Size: { b.size }</p>
-                    <p>Color: { b.color }</p>
-                    <p>Unit_Price: { b.unit_price }</p>
-                    <p>Quantity: { b.quantity }</p>
-                    <button onClick={ () => this.handleAddToCart(b)}>Add to Cart</button>
+                <div className="formal_gowns" key={formalgown.id}>
+                    <p>Brand: { formalgown.brand }</p>
+                    <img src={ formalgown.image_url }></img>
+                    <p>Description: { formalgown.description }</p>
+                    <p>Size: { formalgown.size }</p>
+                    <p>Color: { formalgown.color }</p>
+                    <p>Unit_Price: { formalgown.unit_price }</p>
+                    <p>Quantity: { formalgown.quantity }</p>
+                    <button onClick={ () => this.handleAddToCart(formalgown)}>Add to Cart</button>
                     <hr/>
                     <br />
                 </div>

@@ -15,16 +15,7 @@ export default class Prom extends Component{
         //bind methods
         this.handleAddToCart = this.handleAddToCart.bind(this);
     }
-        // addItem(val){
-        //     this.setState({item: val})
-        // }
-    // componentDidMount() {
-    //     axios.get('/api/products/bridal_collection').then(response =>{
-    //         this.setState({})
-    //         console.log(response);
-    //     })
-    
-    // }
+ 
     
     componentDidMount() {
         axios.get('/api/products/prom').then(response => {

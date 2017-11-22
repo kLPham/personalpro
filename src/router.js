@@ -11,6 +11,9 @@ import Contact from './components/Navbar/Contact/Contact';
 
 import Products from './components/Navbar/Products/Products';
 import BridalCollection from './components/Navbar/Products/BridalCollection/BridalCollection';
+
+import BridalC_Details from './components/Navbar/Products/BridalCollection/BridalC_Details/BridalC_Details';
+
 import DesignerP from './components/Navbar/Products/DesignerP/DesignerP';
 import FormalGowns from './components/Navbar/Products/FormalGowns/FormalGowns';
 import Prom from './components/Navbar/Products/Prom/Prom';
@@ -20,26 +23,29 @@ import ProductLandingPage from './components/Navbar/Products/ProductLandingPage/
 
 
 
-export default (
-    
-<Switch>
-    <Route  exact path="/" component={Home} />
-    <Route path="/Login" component={Login} />
-    <Route path="/Cart" component={Cart} />
-    <Route path="/Checkout" component={Checkout} />
-    <Route path="/About" component={About} />
-    <Route path="/Contact" component={Contact} />
-    <Route path="/Products" render={()=> (
-        <Products>
-        <Switch>
-            <Route path="/Products/BridalCollection" component={BridalCollection} />
-            <Route path="/Products/DesignerP" component={DesignerP} />
-            <Route path="/Products/FormalGowns" component={FormalGowns} />
-            <Route path="/Products/Prom" component={Prom} />
-            <Route component={ProductLandingPage} />
-        </Switch>
-        </Products>
-    )} />
-</Switch>
-    
-    );
+
+
+    export default (
+        
+    <Switch>
+        <Route  exact path="/" component={Home} />
+        <Route path="/Login" component={Login} />
+        <Route path="/Cart" component={Cart} />
+        <Route path="/Checkout" component={Checkout} />
+        <Route path="/About" component={About} />
+        <Route path="/Contact" component={Contact} />
+        <Route path="/Products" render={()=> (
+            <Products>
+            <Switch>
+                <Route path="/Products/BridalCollection" component={BridalCollection} />
+                <Route path="/Products/BridalC_Details" component={BridalC_Details} />
+                <Route path="/Products/DesignerP" component={DesignerP} />
+                <Route path="/Products/FormalGowns" component={FormalGowns} />
+                <Route path="/Products/Prom" component={Prom} />
+                <Route component={ProductLandingPage} />
+            </Switch>
+            </Products>
+        )} />
+    </Switch>
+        
+        );

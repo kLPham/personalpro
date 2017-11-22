@@ -1,3 +1,19 @@
 .designer_preowned_collection{
     height: 450px;
 }
+.product_list{
+    padding: 90px;
+    height: 600px;
+    width: 400px;
+    /* text-decoration: none; */
+    /* text-transform: uppercase; */
+    /* font-weight: bold; */
+    justify-content: center;
+    display: inline-block;
+    text-align: center;
+  }
+
+  button:hover{
+    color: white;
+    background-color: pink;
+}

@@ -11,7 +11,7 @@ export default class Home extends Component{
             <div className="Home">
                   
                 <h3 className="Home-title">Home</h3>
-                <h3 className="Home-body">Congratulations on your Engagement!!!</h3>
+                <h3 className="Home-body"></h3>
                 
          
            

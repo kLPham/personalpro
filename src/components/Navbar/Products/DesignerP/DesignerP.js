@@ -15,16 +15,6 @@ export default class DesignerPreowned extends Component{
         //bind methods
         this.handleAddToCart = this.handleAddToCart.bind(this);
     }
-        // addItem(val){
-        //     this.setState({item: val})
-        // }
-    // componentDidMount() {
-    //     axios.get('/api/products/bridal_collection').then(response =>{
-    //         this.setState({})
-    //         console.log(response);
-    //     })
-    
-    // }
     
     componentDidMount() {
         axios.get('/api/products/designer_preowned_collection').then(response => {
@@ -40,22 +30,23 @@ export default class DesignerPreowned extends Component{
     }
 
     render() {
-        const allProducts = this.state.productsToDisplay.map(b =>{
-            console.log("Products redering",b)
+        const allProducts = this.state.productsToDisplay.map(designerpreowned =>{
+            console.log("Products redering",designerpreowned)
         return(
-
-                <div className="designer_preowned_collection" key={b.id}>
-                    <p>Brand: { b.brand }</p>
-                    <img src={ b.image_url }></img>
-                    <p>Description: { b.description }</p>
-                    <p>Size: { b.size }</p>
-                    <p>Color: { b.color }</p>
-                    <p>Unit_Price: { b.unit_price }</p>
-                    <p>Quantity: { b.quantity }</p>
-                    <button onClick={ () => this.handleAddToCart(b)}>Add to Cart</button>
+            <div className="product_list">
+                <div className="designer_preowned_collection" key={designerpreowned.id}>
+                    <p>Brand: { designerpreowned.brand }</p>
+                    <img src={ designerpreowned.image_url }></img>
+                    <p>Description: { designerpreowned.description }</p>
+                    <p>Size: { designerpreowned.size }</p>
+                    <p>Color: { designerpreowned.color }</p>
+                    <p>Price: ${ designerpreowned.price }</p>
+                    <p>Quantity: { designerpreowned.quantity }</p>
+                    <button className="btn" onClick={ () => this.handleAddToCart(designerpreowned)}>Add to Cart</button>
                     <hr/>
                     <br />
                 </div>
+            </div>
         )}
         );
 

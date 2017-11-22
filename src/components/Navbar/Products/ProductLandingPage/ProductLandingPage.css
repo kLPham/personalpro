@@ -1,27 +1,67 @@
-/* .product-list div{
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: darkgrey;
+    font-size: 40px;
+
+}
+span:hover{
+    color: white;
+    background-color: pink;
+}
+
+
+.product-list{
+    padding-top: 50px;
     text-decoration: none;
-    color: black;
     text-transform: uppercase;
     font-weight: bold;
     display: flex;
     justify-content: space-around;
-  } */
+  }
 .ProductLandingPage{
-    height: 2300px;
+    height: 600px;
 }
 
-  img {
-    display: inline;
-    /* justify-content: center; */
-    max-width: 100%;
+.Bridal_Collection {
+    background-image:
+        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/ZP341835_IVORY_ZP_PROD10_008?$plpproductimgdesktop_3up$");
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 400px;
+    background-position: center; 
+    text-align: center;
 }
-.prom {
+
+
+.DesignerP{
+    background-image:
+        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/VW351346_IVORY_VW_S17PROD_001?$plpproductimgdesktop_3up$");
+        background-repeat: no-repeat;
+        height: 600px;
+        width: 400px;
+        background-position: center; 
+        text-align: center;
+}
+.Formal_Gown{
+    background-image:
+    url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1711P2381%20AQUANUDE?$plpproductimgdesktop_3up$");
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 400px;
+    background-position: center; 
+    text-align: center;
+
+}
+
+
+.prom{
     background-image: 
-        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1711P2703%20LAVENDERMULTI?$plpproductimgdesktop_3up$"),
-        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1712P2465%20BLUSH?$plpproductimgdesktop_3up$"),
-        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1579_MBLKGOLD_PROM_PROD11_072?$plpproductimgdesktop_3up$");
-    background-repeat: no-repeat,
-                       no-repeat,
-                       no-repeat;
-    
+        url("http://img.davidsbridal.com/is/image/DavidsBridalInc/1711P2703%20LAVENDERMULTI?$plpproductimgdesktop_3up$");
+        background-repeat: no-repeat;
+        height: 600px;
+        width: 400px;
+        background-position: center;
+        text-align: center;
 }

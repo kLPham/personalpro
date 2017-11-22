@@ -31,19 +31,19 @@ export default class Prom extends Component{
     }
 
     render() {
-        const allProducts = this.state.productsToDisplay.map(b =>{
-            console.log("Products redering",b)
+        const allProducts = this.state.productsToDisplay.map(prom =>{
+            console.log("Products redering",prom)
         return(
 
-                <div className="prom" key={b.id}>
-                    <p>Brand: { b.brand }</p>
-                    <img src={ b.image_url }></img>
-                    <p>Description: { b.description }</p>
-                    <p>Size: { b.size }</p>
-                    <p>Color: { b.color }</p>
-                    <p>Unit_Price: { b.unit_price }</p>
-                    <p>Quantity: { b.quantity }</p>
-                    <button onClick={ () => this.handleAddToCart(b)}>Add to Cart</button>
+                <div className="prom" key={prom.id}>
+                    <p>Brand: { prom.brand }</p>
+                    <img src={ prom.image_url }></img>
+                    <p>Description: { prom.description }</p>
+                    <p>Size: { prom.size }</p>
+                    <p>Color: { prom.color }</p>
+                    <p>Unit_Price: { prom.unit_price }</p>
+                    <p>Quantity: { prom.quantity }</p>
+                    <button onClick={ () => this.handleAddToCart(prom)}>Add to Cart</button>
                     <hr/>
                     <br />
                 </div>

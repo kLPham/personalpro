@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Details from '../../P_Details/Details';
-import './BridalCollection.css';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import './BridalCollection.css';
 
 
 export default class BridalCollection extends Component{
@@ -10,15 +10,15 @@ export default class BridalCollection extends Component{
 
         this.state = {
             item: [],
-            cart: [],
+            // cart: [],
             productsToDisplay: []
         };
 
         //bind methods
-        this.handleAddToCart = this.handleAddToCart.bind(this);
+        // this.handleAddToCart = this.handleAddToCart.bind(this);
     }
-   
-    
+  
+    //request for a response of bridal collection from database:
     componentDidMount() {
         axios.get('/api/products/bridal_collection').then(response => {
             this.setState({ productsToDisplay: response.data })
@@ -26,28 +26,26 @@ export default class BridalCollection extends Component{
         });
       }
 
-    handleAddToCart(item){
-        axios.post('/api/cart',{item: item})
-             .then((response) => this.setState({cart: response.data}))
-             .catch(console.log)
-    }
+    // handleAddToCart(item){
+    //     axios.post('/api/cart',{item: item})
+    //          .then((response) => this.setState({cart: response.data}))
+    //          .catch(console.log);
+
+    // }
 
     render() {
         const allProducts = this.state.productsToDisplay.map(bridalcollection =>{
             console.log("Products redering",bridalcollection)
         return(
+
+            <div className="product_list">
                 <div className="bridal_collection" key={bridalcollection.id}>
-                    <p>Brand: { bridalcollection.brand }</p>
-                    <img src={ bridalcollection.image_url }></img>
-                    <p>Description: { bridalcollection.description }</p>
-                    <p>Size: { bridalcollection.size }</p>
-                    <p>Color: { bridalcollection.color }</p>
-                    <p>Unit_Price: { bridalcollection.unit_price }</p>
-                    <p>Quantity: { bridalcollection.quantity }</p>
-                    <button onClick={ () => this.handleAddToCart(bridalcollection)}>Add to Cart</button>
-                    <hr/>
+                     <Link to="/Products/BridalC_Details"><span><img src={ bridalcollection.image_url }></img></span></Link>
+                    <p>{ bridalcollection.brand }</p>
+                    <p>${ bridalcollection.price }</p> 
                     <br />
                 </div>
+            </div>
         )}
         );
 
@@ -56,14 +54,3 @@ export default class BridalCollection extends Component{
         )
     }
 }
-
-
-// {/* <h1>Our Bridal Collection</h1>
-//                 <select className="Bridal_Collection_Type">
-//                     <option>Refine by</option>
-//                     <option>Size</option>
-//                     <option>Color</option>
-//                     <option>Silhouette</option>
-//                     <option>Length</option>
-//                     <option>Price</option>
-//                 </select> */}

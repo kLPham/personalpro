@@ -19,25 +19,22 @@ export default class Navbar extends Component{
         super(props);
 
     }
-    
-    //     componentDidmount() {
-    //         // this.props.requestUser();
-    //         // this.props.getRecommended();
-    // }
+
     render(){
         const C = "Shopping Cart"
         return(
     <div>
         <div className="loginNInput">  
-            <Login />
-            <Link to="/Cart"><span className="cart">{C}</span></Link>
-            <Search /> </div>
+            <span><Login /></span>
+            <Link to="/Cart"><span>{C}</span></Link>
+            <span><Search /></span>
+        </div>
         <nav className="navbar navbar-default navbar-fixed-top">
             <div className="nav_container">
                 <div className="links">
-                    <Link to="/"><span>Home</span></Link>
-                    <Link to="/About"><span>About Us</span></Link>
-                    <Link to="/Contact"><span>Contact Us</span></Link>
+                    <Link to="/">Home</Link>
+                    <Link to="/About">About Us</Link>
+                    <Link to="/Contact">Contact Us</Link>
                     <Link to="/Products">Our Products</Link> 
                 </div>
             </div>

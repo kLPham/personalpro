@@ -17,6 +17,7 @@ import axios from 'axios';
 import './App.css';
 import router from './router';
 import Navbar from './components/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -34,7 +35,8 @@ class App extends Component {
       <div className="App">
           <Navbar />
           { router }
-          <footer className="Footer">Design & Coded by: Kelly Linh Pham</footer>
+          <Footer />
+          
       </div>
     );
   }

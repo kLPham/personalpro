@@ -9,12 +9,9 @@ export default class Home extends Component{
     render() {
         return(
             <div className="Home">
-                  
-                <h3 className="Home-title">Home</h3>
+                <h2 className="Home-title">Congratulations on your engagement!</h2>
                 <h3 className="Home-body"></h3>
-                
-         
-           
+                <h3 className="Home-Image"></h3>
             </div>
         );
     }

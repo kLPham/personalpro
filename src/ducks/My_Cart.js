@@ -1,4 +1,4 @@
-import gowns from '../assets/gowns';
+// import gowns from '../assets/gowns';
 import getProducts from './getProducts';
 
 

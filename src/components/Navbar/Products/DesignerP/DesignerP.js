@@ -24,9 +24,11 @@ export default class DesignerPreowned extends Component{
       }
 
     handleAddToCart(item){
+        // console.log("justin")
         axios.post('/api/cart',{item: item})
              .then((response) => this.setState({cart: response.data}))
              .catch(console.log)
+             alert("Item added to cart")
     }
 
     render() {
@@ -43,6 +45,7 @@ export default class DesignerPreowned extends Component{
                     <p>Price: ${ designerpreowned.price }</p>
                     <p>Quantity: { designerpreowned.quantity }</p>
                     <button className="btn" onClick={ () => this.handleAddToCart(designerpreowned)}>Add to Cart</button>
+                    
                     <hr/>
                     <br />
                 </div>

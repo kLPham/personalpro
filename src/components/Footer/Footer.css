@@ -1,0 +1,14 @@
+.connect{
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    display: inline-flex;
+    position: fixed;
+    width: 100%;
+    justify-content: center;
+    height:45px;
+    background-color:lightgrey;
+    
+}

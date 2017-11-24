@@ -28,6 +28,7 @@ export default class FormalGown extends Component{
         axios.post('/api/cart',{item: item})
              .then((response) => this.setState({cart: response.data}))
              .catch(console.log);
+             alert("Item added to cart")
 
     }
 

@@ -1,12 +1,9 @@
-/* .header{
-    background-color:white;
-    height: 50px;
-    color: black;
-    display: flex;
-    justify-content: center;
-    padding: 100px;
-    font-family: Brush Script MT;
-  }  */
+img{
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+}
  .links a{
     text-decoration: none;
     color: black;
@@ -15,16 +12,48 @@
   }
   .links a:hover{
     color: white;
-    background-color: black;
+    background-color: darkgrey;
   }
- .loginNInput div{
-    display: inline-flex;
-    position: relative;
+ /* .loginNInput div{
+    display: block;
+    /* position: relative;
     justify-content: center;
     padding-left: 150px;
     padding-right: 50px;
-    height: 30px;
-    border-radius: 300px;
+    height: 30px; */
+    /* border-radius: 300px; */
+    /* margin: 0 auto;
+ } */ 
+ .c{
+   position: absolute;
+   right: 150px;
+   padding-top: 30px;
+
+ }
+ /* .login{
+    position: absolute;
+    left: 50px;
+    /* background-color: gray; */
+    /* padding-top: 20px;
+ } */ 
+ .button button{
+  text-transform: uppercase;
+  background-color: pink;
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  /* cursor: pointer; */
+  margin: 3px 44px;
+}
+ .search{
+  position: absolute;
+  right: 550px;
+  width: -2px;
+  /* background-color: gray; */
+  padding-top: 30px;
  }
 .nav_container div{
         display: flex;

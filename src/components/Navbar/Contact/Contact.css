@@ -1,5 +1,5 @@
 .Contact-title {
-  color: white;
+  color: black;
   font-size: 55px;
   font-family: Brush Script MT;
   position: relative;
@@ -9,9 +9,7 @@
   text-align: center;
   }
 
-span .body{
+/* span .body{
     padding-top: 50px;
-    position: relative;
-    height: 1000px;
     align-items: center;
-}
+} */

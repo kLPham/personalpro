@@ -12,3 +12,10 @@
     display: inline-block;
     text-align: center;
   }
+
+  h3{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: center;
+  }

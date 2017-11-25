@@ -37,6 +37,7 @@ export default class BridalCollection extends Component{
         const allProducts = this.state.productsToDisplay.map(bridalcollection =>{
             console.log("Products redering",bridalcollection)
         return(
+    
         <div>
             <div className="product_list">
                 <div className="bridal_collection" key={bridalcollection.id}>

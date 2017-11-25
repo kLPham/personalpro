@@ -1,21 +1,25 @@
-.About {
-    background-color:lightgrey;
-    height: 150px;
-    padding: 10px;
-    text-align: left;
-    position: relative;
+.About-title {
+  color: black;
+  font-size: 55px;
+  font-family: Brush Script MT;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: solid white 10px;
+  text-align: center;
   }
-  .About-title {
-    font-size: 45px;
-    font-family: Brush Script MT;
-    position: relative;
-    padding-top: 300px;
-    color: palevioletred;
-  }
-  .About-body{
-    text-align: center;
-    font-family: cursive;
-    font-size: 18px;
+
+ .container{
     padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: block;
     position: relative;
-  }
+    height: 350px;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    
+    /* margin-left: 350px; */
+   
+}

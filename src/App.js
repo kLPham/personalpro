@@ -35,6 +35,7 @@ class App extends Component {
       <div className="App">
           <Navbar />
           { router }
+          
           <Footer />
           
       </div>

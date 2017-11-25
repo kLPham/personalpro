@@ -16,15 +16,18 @@ export default class Footer extends Component{
      
 
         return(
-                    <div className="navbar navbar-default navbar-fixed-bottom">
+                <div className="nav">
+                    <nav className="navbar navbar-default navbar-fixed-bottom">
                       <h2 className="connect">{G}</h2>
-                      <SocialIcon url="https://www.facebook.com/" />
-                      <SocialIcon url="https://www.instagram.com/" />
-                      <SocialIcon url="https://www.pinterest.com/" />
-                      <SocialIcon url="https://twitter.com/" />
-
-                            
-                    </div>
+                      {/* <hr /> */}
+                      <div className="social">
+                        <SocialIcon url="https://www.facebook.com/" />
+                        <SocialIcon url="https://www.instagram.com/" />
+                        <SocialIcon url="https://www.pinterest.com/" />
+                        <SocialIcon url="https://twitter.com/" />
+                      </div>
+                    </nav>
+                </div>
         )
     }
 }

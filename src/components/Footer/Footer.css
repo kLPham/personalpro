@@ -1,14 +1,32 @@
 .connect{
     display: flex;
+    position: relative;
     justify-content: center;
+    color: gray;
+    border-top-color:gray;
+    padding-top: 20px;
 }
 
-.footer{
+/* .footer{
     display: inline-flex;
     position: fixed;
     width: 100%;
     justify-content: center;
     height:45px;
     background-color:lightgrey;
+} */
+.social{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color:lightgray;
     
+}
+.nav{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
 }

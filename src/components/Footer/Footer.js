@@ -13,10 +13,17 @@ export default class Footer extends Component{
 
     render(){
         const G = "GET CONNECTED";
-     
+        const divStyle = {
+            border: '2px solid gray'
+        };
+        // const socialStyle = {
+        //     backgroundColor: "white",
+        //     position: 'relative',
+        //     display: 'flex'
+        // };
 
         return(
-                <div className="nav">
+                <div className="nav" style={divStyle}>
                     <nav className="navbar navbar-default navbar-fixed-bottom">
                       <h2 className="connect">{G}</h2>
                       {/* <hr /> */}

@@ -31,21 +31,6 @@ export default class Login extends Component {
               </div>
                 <a href='#'>Lost your password ?</a>
            </div> */}
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       </div>
     );

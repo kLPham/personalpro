@@ -56,3 +56,9 @@ export default class BridalCollection extends Component{
         )
     }
 }
+
+{/* <ol>
+{this.props.results.map((result, i) => (
+  <li key={i}>{result.text}</li>
+))}
+</ol> */}

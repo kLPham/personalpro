@@ -25,7 +25,7 @@ const app = express();
 
 app.use(
   session({
-    secret: '@nyth!ng y0u w@nT',
+    secret: 'Wylie Pham',
     resave: false,
     saveUninitialized: false
   })
@@ -157,12 +157,14 @@ app.post('/api/cart', (req, res)=>{
 })
 
 
-//SUBMIT ORDERS CALL BELOW: get & update orders
+//SUBMIT ORDERS CALL BELOW: get & update orders *
 app.get('/api/orders',(req, res)=>{
   const {order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address } = req.body;
   req.app.get('db').submitOrders(req.submitOrders);
   return res.json(req.body);
 })
+
+//*
 app.post('/api/orders', (req, res)=>{
   // console.log('orders request:', order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address );
   req.app.post('db').submitOrders(req.body)
@@ -171,6 +173,14 @@ app.post('/api/orders', (req, res)=>{
   })
   .catch(console.log);
 })
+
+
+
+
+
+
+
+
 
 
 app.listen(port, () => {

@@ -32,6 +32,9 @@ export default class DesignerPreowned extends Component{
     }
 
     render() {
+        // const productId = this.state.item.map((product_id)=>{
+        //     // <li key={product_id.id}></li>
+        // })
         const allProducts = this.state.productsToDisplay.map(designerpreowned =>{
             console.log("Products redering",designerpreowned)
         return(
@@ -45,10 +48,10 @@ export default class DesignerPreowned extends Component{
                     <p>Price: ${ designerpreowned.price }</p>
                     <p>Quantity: { designerpreowned.quantity }</p>
                     <button className="btn" onClick={ () => this.handleAddToCart(designerpreowned)}>Add to Cart</button>
-                    
                     <hr/>
                     <br />
                 </div>
+               
             </div>
         )}
         );

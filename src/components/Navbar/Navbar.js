@@ -7,13 +7,11 @@ import Products from './Products/Products';
 // import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from 'react-router-dom';
 import Login from './Login/Login';
-// import User from '../User_Link';
 import Search from './Search/Search';
 import Logo2 from './Logo2.jpeg';
 
 
 
-//import Cart
 
 export default class Navbar extends Component{
     constructor(props){
@@ -22,15 +20,17 @@ export default class Navbar extends Component{
     }
 
     render(){
-        const C = "Shopping Cart"
+        const C = "Cart(0)"
         return(
     <div>
-        <div>  
-            <span className="button"><Login /></span>
-            <Link to="/Cart"><span className="c">{C}</span></Link>
-            <span className="search"><Search /></span>
+        <div className="front">  
+           <Login />
+           <Search />
+            {/* <span className="button"><Login /></span>
+            <span className="search"><Search /></span> */}
         </div>
-        <div><img src={Logo2}></img></div>
+        <div className="logo" ><img alt="crown" src={Logo2}></img></div>
+        <Link to="/Cart">{C}<div className="c"></div></Link>
         <nav className="navbar navbar-default navbar-fixed-top">
             <div className="nav_container">
                 <div className="links">
@@ -39,7 +39,6 @@ export default class Navbar extends Component{
                     <Link to="/Contact">Contact Us</Link>
                     <Link to="/Products">Our Products</Link> 
                 </div>
-                
             </div>
         </nav>
     </div>

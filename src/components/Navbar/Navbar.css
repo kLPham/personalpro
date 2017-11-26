@@ -1,5 +1,5 @@
 img{
-  width: 120px;
+  width: 110px;
   height: 120px;
   display: block;
   margin: 0 auto;
@@ -24,36 +24,47 @@ img{
     /* border-radius: 300px; */
     /* margin: 0 auto;
  } */ 
- .c{
+ /* .c{
    position: absolute;
    right: 150px;
-   padding-top: 30px;
+   top: 130px;
+ } */
 
- }
- /* .login{
-    position: absolute;
-    left: 50px;
-    /* background-color: gray; */
-    /* padding-top: 20px;
- } */ 
  .button button{
   text-transform: uppercase;
-  background-color: pink;
+  background-color:palevioletred;
   border: none;
   color: white;
   padding: 10px 16px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  /* cursor: pointer; */
-  margin: 3px 44px;
-}
- .search{
+  cursor: pointer;
+  /* margin: 50px 55px ; */
   position: absolute;
-  right: 550px;
-  width: -2px;
-  /* background-color: gray; */
-  padding-top: 30px;
+  top: 40px;
+  left: 60px;
+
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+ .search {
+  margin-top: 1px;
+  margin-right: 2px;
+  position:absolute;
+  top:40px;
+  right:60px;
+ }
+ .search button{
+   text-transform: uppercase;
+   background-color: palevioletred;
+   color: white;
+   padding: 10px 16px;
+   /* margin: 30px 55px 30px 30px; */
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+   font-size: 16px;
+ }
+ .search input{
+  padding: 10px 16px;
  }
 .nav_container div{
         display: flex;

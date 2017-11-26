@@ -3,6 +3,7 @@ import './Home.css';
 // import wedding from './wedding.jpg';
 // import User from '../User_Link';
 // import b from './b.jpg';
+import ProductLandingPage from '../Products/ProductLandingPage/ProductLandingPage';
 
 
 export default class Home extends Component{
@@ -12,6 +13,7 @@ export default class Home extends Component{
                 <h2 className="Home-title">Congratulations on your engagement!</h2>
                 <h3 className="Home-body"></h3>
                 <h3 className="Home-Image"></h3>
+                <ProductLandingPage />
             </div>
         );
     }

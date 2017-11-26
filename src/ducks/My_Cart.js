@@ -25,6 +25,8 @@ export default function My_Cart( state = initialState, action) {
     }
   }
 
+ 
+
 
   //Action creators
   export function handleCartAdd( id ){
@@ -40,6 +42,15 @@ export default function My_Cart( state = initialState, action) {
         payload: id
       }
   }
+
+//NEW CHANGES HERE SATURDAY NIGHT
+  // removeFromCart
+// const handleCartRemove = (id) => (
+//     {
+//       type: 'REMOVE_FROM_MY_CART',
+//       id,
+//     }
+//   );
 
   export function handleCheckOut(  ){
       return {

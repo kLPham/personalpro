@@ -9,6 +9,8 @@ export default class About extends Component{
         return(
             <div className="About">
                 <h1 className="About-title">About Us</h1>
+                
+                <br/>
                 <div className="container">
                     <p2>Friendly, low pressure boutique with gorgeous gowns! Embro-Bridal Couture has been serving Dallas/Ft Worth for over 2 years. We are family owned and find such joy in helping brides find the gown of their dreams. We offer a vast array of gowns from many amazing designers, and over 300 samples in store. Our gowns range from $800- $3000. We also have a Sample Room of gowns to purchase off the rack at a variety of price points!</p2>
 

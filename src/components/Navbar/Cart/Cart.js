@@ -119,10 +119,7 @@ componentDidMount(){
             <p>TOTAL: ${product.total}</p>
             {/* <p>FINAL TOTAL: ${displayCart.reduce( ( total, { price } ) => total + price, 0 )}</p> */}
                 <button>Edit Cart</button>
-                <button onClick={ (e, i)=>(handleCartRemove(i))} >REMOVE FROM Cart</button>
-             
-
-
+                <button onClick={ (e, id)=>(handleCartRemove(id))} >REMOVE FROM Cart</button>
       </div>
       </div>
         );
@@ -136,7 +133,6 @@ componentDidMount(){
         <div className="btn_container">
             <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
             <button className="checkoutbtn" onClick={this.redirectToCheckOutPage}>CHECKOUT</button>
-            
         </div>
         <Checkout />
       </div>
@@ -162,5 +158,5 @@ export default connect(mapStateToProps, { handleCheckOut, handleCartRemove } )(C
 
 
 
-///still couldnt make items fremove from front end. we have already update on the backend
+///still couldnt make items remove from front end. we have already update on the backend
 

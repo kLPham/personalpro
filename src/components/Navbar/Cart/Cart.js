@@ -32,12 +32,12 @@ class Cart extends Component {
   this.setState({ cart:nextprops.cart });
 }
 
-//create a GET endpoint in api/cart ;)
-componentDidMount(){
-  axios.get('/api/cart').then(response =>{
-    // console.log(response);
-    this.setState({cart: response.data });
-  })
+  //create a GET endpoint in api/cart ;)
+    componentDidMount(){
+      axios.get('/api/cart').then(response =>{
+        // console.log(response);
+        this.setState({cart: response.data });
+      })
 }
 //POST PRODUCTS IN CART:
   // componentDidUpdate(){
@@ -46,21 +46,11 @@ componentDidMount(){
   //   })
   // }
 
-  //REMOVE FROM CART: BACK_END:
-  // componentWillMount(){
-  //   console.log("1,2,3,4")
-  //   this.props.handleCartRemove();
-  // }
-
-  // componentDidMount(){
-  //   console.log("testing if it works")
-  //   this.props.handleCartRemove();
-  // }
 
   //REMOVE FROM CART FRONT_END: :)
   handleCartRemove(product){
     axios
-         .delete(`/api/cart/${product}`)
+         .delete(`/api/cart/${product.id}`)
          .then((response) => this.setState({cart: response.data}))
          .catch(console.log);
          alert("Item has been remove from cart")

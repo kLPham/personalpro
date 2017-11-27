@@ -16,6 +16,32 @@ export default class Login extends Component {
     return (
       <div className="button">
         <button onClick={this.handleLogin}>Login/Register</button>
+      </div>
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         {/* <div className='Modal'>
@@ -31,8 +57,3 @@ export default class Login extends Component {
               </div>
                 <a href='#'>Lost your password ?</a>
            </div> */}
-
-      </div>
-    );
-  }
-}

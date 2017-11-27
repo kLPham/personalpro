@@ -135,19 +135,6 @@ app.get('/api/products/:product_type', (req, res, next)=> {
     .catch(console.log);
 })
 
-//GET ONLY ONE ITEM FOR DETAIL PAGE:
-app.get('/api/products/:product_id', (req, res, next)=>{
-  console.log('product_id request:', req.params.product_id);
-  req.app
-    .get('db')
-    .getAProduct(req.params.product_id)
-    .then(response => {
-      res.status(200).json(response);
-    })
-    .catch(console.log);
-})
-
-
 //SHOPPING CART RELATED CALL BELOW:
 //session cart: post to db
 app.post('/api/cart', (req, res)=>{
@@ -155,21 +142,32 @@ app.post('/api/cart', (req, res)=>{
    if(!req.session.cart ){
      req.session.cart = [];
    }
+   req.session.cart.push(item); //add item to cart
+   return res.json(req.session.cart);
+  })
  
    //get info of products using session to display to cart component
    app.get('/api/cart',(req, res)=>{
        return res.json(req.session.cart);
    })
-   req.session.cart.push(item); //add item to cart
+ 
  
    //update cart when remove item from cart
-   app.post('/api/cart',(req, res)=>{
-     req.session.cart.splice(index, 1);
-     return res.json(req.session.cart);
+   app.delete('/api/cart/:id',(req, res)=>{
+    // console.log('Cart: ', req.session.cart);
+    req.session.cart = req.session.cart.filter((product)=> {
+       if(product.id == req.params.id){
+        return false;
+       }
+       else{
+         return true;
+       }
+     })
+    //  req.session.cart.splice(index, 1);
+     res.json(req.session.cart);   //send back cart from session
  })
-   console.log('Cart: ', req.session.cart);
-   res.json(req.session.cart);   //send back cart from session
- })
+  
+
 
 
 // app.post('/api/cart', (req, res)=>{
@@ -194,7 +192,18 @@ app.post('/api/cart', (req, res)=>{
 //  })
 //    console.log('Cart: ', req.session.cart);
 
- 
+ //GET ONLY ONE ITEM FOR DETAIL PAGE:
+app.get('/api/product/:product_id', (req, res, next)=>{
+  console.log('product_id request:', req.params.product_id);
+  req.app
+    .get('db')
+    .getAProduct(req.params.product_id)
+    .then(response => {
+      console.log(response)
+      res.status(200).json(response);
+    })
+    .catch(console.log);
+})
 
 
 
@@ -213,10 +222,6 @@ app.get('/api/orders',(req, res)=>{
   req.app.get('db').submitOrders(req.submitOrders);
   return res.json(req.body);
 })
-
-
-
-
 
 
 

@@ -1,0 +1,27 @@
+.details{
+    height: 1000px;
+    /* width: 900px; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    max-width: 90%;
+    margin-left: 170px;
+    margin-top: 60px;
+ 
+    
+}
+
+.detail{
+    position: relative;
+    width: 600px;
+}
+
+.detailImage{
+    width: 600px;
+    height: 900px;
+    margin-right: 70px;
+    /* align-items: center;
+    display: flex; */
+   
+}

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
+import './Details.css';
+
 // import {  handleCartAdd } from "../../../ducks/reducer";
 // import { connect } from "react-redux";
 
@@ -43,17 +45,38 @@ export default class Details extends Component{
         return(
             <div key={product_id .id}>
                 
-                <div>
-                    <div >
+                <div className="details">
+                    <img className="detailImage" alt="image_url" src={ product_id .image_url }></img>
+                    <div className="detail">
                         <p>Brand: { product_id .brand }</p>
-                        <img alt="image_url" src={ product_id .image_url }></img>
                         <p>Description: { product_id .description }</p>
-                        <p>Size: { product_id.size }</p>
+                       
+                            <select>
+                                <option>Select Size</option>
+                                <option>Size: { product_id.size }</option>
+                            </select>
+                            <hr />
+                            <select>
+                                <option>Select Color</option>
+                                <option>Color: { product_id.color }</option>
+                            </select>
+                            <hr />
+                         
+                            <select>
+                                <option>Quantity: { product_id.quantity }</option>
+                            </select>
+                            
+                       
+                        <p>Price: ${ product_id.price }</p>
+
+
+
+                        {/* <p>Size: { product_id.size }</p>
                         <p>Color: { product_id.color }</p>
                         <p>Price: ${ product_id.price }</p>
-                        <p>Quantity: { product_id.quantity }</p>
+                        <p>Quantity: { product_id.quantity }</p> */}
                         <button className="btn" onClick={ () => this.handleAddToCart(product_id )}>Add to Cart</button>
-                        <hr/>
+                        
                         <br />
                     </div>
                 </div>

@@ -14,7 +14,7 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <div className="button">
+      <div >
         <button onClick={this.handleLogin}>Login/Register</button>
       </div>
     );

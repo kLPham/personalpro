@@ -21,8 +21,8 @@ export default class CheckOut extends Component {
             <h2>CHECK OUT NOW:</h2>
             <button>CHECKOUT NOW</button>
             <button>Check Out With PayPal</button>
+            <div className="Thanks"><img src={checkout}></img></div>
         </div>
-        <div className="Thanks"><img src={checkout}></img></div>
       </div>
     );
   }

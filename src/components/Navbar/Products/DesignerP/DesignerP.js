@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import { Link } from 'react-router-dom';
+
+
+
+// import Details from '../Details/Details';
+
 
 export default class DesignerPreowned extends Component{
     constructor(props){
@@ -28,7 +34,7 @@ export default class DesignerPreowned extends Component{
         axios.post('/api/cart',{item: item})
              .then((response) => this.setState({cart: response.data}))
              .catch(console.log)
-             alert("Item added to cart")
+             alert("Your bank account is now empty!")
     }
 
     render() {
@@ -38,20 +44,26 @@ export default class DesignerPreowned extends Component{
         const allProducts = this.state.productsToDisplay.map(designerpreowned =>{
             console.log("Products redering",designerpreowned)
         return(
-            <div className="product_list">
-                <div className="designer_preowned_collection" key={designerpreowned.id}>
-                    <p>Brand: { designerpreowned.brand }</p>
-                    <img alt="image_url" src={ designerpreowned.image_url }></img>
-                    <p>Description: { designerpreowned.description }</p>
-                    <p>Size: { designerpreowned.size }</p>
-                    <p>Color: { designerpreowned.color }</p>
-                    <p>Price: ${ designerpreowned.price }</p>
-                    <p>Quantity: { designerpreowned.quantity }</p>
-                    <button className="btn" onClick={ () => this.handleAddToCart(designerpreowned)}>Add to Cart</button>
-                    <hr/>
-                    <br />
+            <div>
+                <div>
+                        <Link to="/Products">
+                            <p> { '<'} Back To Bridal Shop </p>
+                        </Link>
                 </div>
-               
+                <div className="product_list">
+                    <div className="designer_preowned_collection" key={designerpreowned.id}>
+                        <p>Brand: { designerpreowned.brand }</p>
+                        <img alt="image_url" src={ designerpreowned.image_url }></img>
+                        <p>Description: { designerpreowned.description }</p>
+                        <p>Size: { designerpreowned.size }</p>
+                        <p>Color: { designerpreowned.color }</p>
+                        <p>Price: ${ designerpreowned.price }</p>
+                        <p>Quantity: { designerpreowned.quantity }</p>
+                        <button className="btn" onClick={ () => this.handleAddToCart(designerpreowned)}>Add to Cart</button>
+                        <hr/>
+                        <br />
+                    </div>
+                </div>
             </div>
         )}
         );

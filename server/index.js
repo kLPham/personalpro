@@ -86,15 +86,15 @@ passport.deserializeUser(function(obj, done) {
 });
 
 //GET USER LOGIN BELOW:
-app.get(
-  "/api/login",
-  passport.authenticate("auth0", {
+app.get("/api/login", passport
+    .authenticate("auth0", {
     successRedirect: "http://localhost:3000/"
   })
 );
 
 app.get("/api/me", function(req, res) {
-  if (!req.user) return res.status(404);
+  if (!req.user) 
+  return res.status(404);
   res.status(200).json(req.user);
 });
 
@@ -124,13 +124,27 @@ app.get("/api/test", (req, res, next) => {
 
 
 //GET PRODUCT TYPE from database-products table: :)
-app.get('/api/products/:product_type', (req, res, next)=>{
+app.get('/api/products/:product_type', (req, res, next)=> {
   console.log('product_type request:', req.params.product_type);
-  req.app.get('db').getProducts(req.params.product_type)
-  .then(response => {
-    res.status(200).json(response);
-  })
-  .catch(console.log);
+  req.app
+    .get('db')
+    .getProducts(req.params.product_type)
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(console.log);
+})
+
+//GET ONLY ONE ITEM FOR DETAIL PAGE:
+app.get('/api/products/:product_id', (req, res, next)=>{
+  console.log('product_id request:', req.params.product_id);
+  req.app
+    .get('db')
+    .getAProduct(req.params.product_id)
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(console.log);
 })
 
 
@@ -150,7 +164,7 @@ app.post('/api/cart', (req, res)=>{
  
    //update cart when remove item from cart
    app.post('/api/cart',(req, res)=>{
-     req.session.cart.splice(index);
+     req.session.cart.splice(index, 1);
      return res.json(req.session.cart);
  })
    console.log('Cart: ', req.session.cart);
@@ -158,21 +172,29 @@ app.post('/api/cart', (req, res)=>{
  })
 
 
+// app.post('/api/cart', (req, res)=>{
+//   let item= req.body.item;
+//    if(!req.session.cart ){
+//      req.session.cart = [];
+//    }
+//   })
+ 
+//    //get info of products using session to display to cart component
+//    app.get('/api/cart',(req, res)=>{
+//       req.session.cart.push(item); //add item to cart
+//        return res.json(req.session.cart);
+//    })
+   
+ 
+//    //update cart when remove item from cart
+//    app.post('/api/cart',(req, res)=>{
+//      req.session.cart.splice( index,1 );
+//      res.json(req.session.cart);   //send back cart from session
+//      return res.json(req.session.cart);
+//  })
+//    console.log('Cart: ', req.session.cart);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 

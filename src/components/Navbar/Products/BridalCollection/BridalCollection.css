@@ -1,21 +1,31 @@
-.bridal_collection{
-    height: 370px;
-}
-.product_list{
-    padding: 50px;
-    height: 600px;
-    width: 400px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    justify-content: center;
-    display: inline-block;
-    text-align: center;
-  }
 
-  h3{
+/* .product-list_BC{
+  padding-top: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+} */
+.bridal_collection {
+  padding-top: 50px;
+  padding-bottom: 90px;
+  text-align: center; 
+  display: inline-block;
+  justify-content: space-around;
+  /* width: 100%; */
+  /* line-height: 2rem; */
+}
+.product_list_BC{
+  display:flex;
+  justify-content: space-between;
+  height: 20%;
+  width: 100%;
+}
+
+  /* h3{
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
     justify-content: center;
-  }
+  } */

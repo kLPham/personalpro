@@ -7,7 +7,7 @@ const initialState = {
 }
 
 //actions: command given 
-// const ADD_TO_MY_CART = "ADD_TO_MY_CART";
+const ADD_TO_MY_CART = "ADD_TO_MY_CART";
 const REMOVE_FROM_MY_CART = "REMOVE_FROM_MY_CART";
 // const UPDATE_CART_ITEM = "UPDATE_CART_ITEM";
 const CHECKOUT_NOW = "CHECKOUT_NOW";
@@ -16,8 +16,8 @@ const CHECKOUT_NOW = "CHECKOUT_NOW";
 // Reducer: state & action
 export default function My_Cart( state = initialState, action) {
     switch( action.type ) {
-      // case ADD_TO_MY_CART: 
-      //     return Object.assign({}, state, {cart: [...state.cart, action.payload] });
+      case ADD_TO_MY_CART: 
+          return Object.assign({}, state, {cart: [...state.cart, action.payload] });
       case REMOVE_FROM_MY_CART:
           return Object.assign({}, state, {cart: state.cart.filter( val => val !== action.payload )  });
       // case UPDATE_CART_ITEM:
@@ -33,12 +33,12 @@ export default function My_Cart( state = initialState, action) {
 
 
   //Action creators
-  // export function handleCartAdd( id ){
-  //   return {
-  //     type: ADD_TO_MY_CART,
-  //     payload: id
-  //   }
-  // }
+  export function handleCartAdd( id ){
+    return {
+      type: ADD_TO_MY_CART,
+      payload: id
+    }
+  }
 
   export function handleCartRemove( id ){
       return {

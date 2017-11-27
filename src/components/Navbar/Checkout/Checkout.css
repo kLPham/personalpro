@@ -1,21 +1,18 @@
-.container{
+/* .container{
     width: 300px;
     height: 200px;
     background-color: lightgray;
     color: white;
     align-items: center;
-}
-.checkout{
-    width: 300px;
-    height: 200px;
-    /* background-color: lightgray; */
-    align-items: center;
-}
+} */
+
 
 .checkout{
     width: 100%;
     height: 1700px;
     align-items: center;
+    display: block;
+    justify-content: center;
 }
 
 .welcome{
@@ -25,13 +22,14 @@
 
 }
 
-.Thanks img{
+
+
+/* .Thanks img{
     text-align: center;
+    align-items: center;
     background-repeat: no-repeat;
-    background-size: 1890px;
     background-position: center;
-    width: 300px;
-    height:500px;
     position: relative;
-}
+    display:flex;
+} */
    

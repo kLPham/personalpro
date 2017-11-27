@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import reducer from './ducks/My_Cart';
+import reducer from './ducks/reducer';
 
 
 // let store = createStore()

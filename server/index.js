@@ -8,6 +8,10 @@ const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 
 
+//IMPORT CONTROLLER
+// const cartController = require("./controllers/cart_controller");
+
+
 
 const { dbUser, database } = require("./config");
 const { secret } = require("./config").session;
@@ -42,7 +46,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-//strategy here as opposed to having its own file
+//strategy here as opposed to having its own file: AUTH0
 passport.use(
   new Auth0Strategy(
     {
@@ -94,6 +98,7 @@ app.get("/api/me", function(req, res) {
   res.status(200).json(req.user);
 });
 
+//TESTING TO SEE IF WE GET INFO FROM OUR DATABASE
 app.get("/api/test", (req, res, next) => {
   req.linhIsCoolVariable
   req.app
@@ -115,15 +120,10 @@ app.get("/api/test", (req, res, next) => {
     .catch(console.log);
 });
 
-//get products from sql database
-// app.get('/api/products', (req, res, next)=>{
-//   req.app.get('db').getProducts().then(response => {
-//     res.status(200).json(response);
-//   })
-//   .catch(console.log);
-// })
 
-//GET PRODUCT TYPE from products table BELOW:
+
+
+//GET PRODUCT TYPE from database-products table: :)
 app.get('/api/products/:product_type', (req, res, next)=>{
   console.log('product_type request:', req.params.product_type);
   req.app.get('db').getProducts(req.params.product_type)
@@ -133,38 +133,72 @@ app.get('/api/products/:product_type', (req, res, next)=>{
   .catch(console.log);
 })
 
+
 //SHOPPING CART RELATED CALL BELOW:
 //session cart: post to db
 app.post('/api/cart', (req, res)=>{
- let item= req.body.item;
-  if(!req.session.cart ){
-    req.session.cart = [];
-  }
+  let item= req.body.item;
+   if(!req.session.cart ){
+     req.session.cart = [];
+   }
+ 
+   //get info of products using session to display to cart component
+   app.get('/api/cart',(req, res)=>{
+       return res.json(req.session.cart);
+   })
+   req.session.cart.push(item); //add item to cart
+ 
+   //update cart when remove item from cart
+   app.post('/api/cart',(req, res)=>{
+     req.session.cart.splice(index);
+     return res.json(req.session.cart);
+ })
+   console.log('Cart: ', req.session.cart);
+   res.json(req.session.cart);   //send back cart from session
+ })
 
-  //get info of products using session to display to cart component
-  app.get('/api/cart',(req, res)=>{
-      return res.json(req.session.cart);
-  })
-  req.session.cart.push(item); //add item to cart
-
-  //update cart when remove item from cart
-  app.post('/api/cart',(req, res)=>{
-    req.session.cart.splice(index);
-    return res.json(req.session.cart);
-})
-  console.log('Cart: ', req.session.cart);
-  res.json(req.session.cart);   //send back cart from session
-})
 
 
-//SUBMIT ORDERS CALL BELOW: get & update orders *
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // CART
+// app.get("/api/cart", cart_Controller.get);
+// app.post("/api/cart", cart_Controller.add);
+// app.delete("/api/cart/:product", cartController.delete);
+
+
+
+
+//SUBMIT ORDERS CALL BELOW: get & update orders :NEED TO WORK ON THIS
 app.get('/api/orders',(req, res)=>{
   const {order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address } = req.body;
   req.app.get('db').submitOrders(req.submitOrders);
   return res.json(req.body);
 })
 
-//*
+
+
+
+
+
+
+//*NEED TO WORK ON THIS
 app.post('/api/orders', (req, res)=>{
   // console.log('orders request:', order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address );
   req.app.post('db').submitOrders(req.body)

@@ -41,7 +41,7 @@ export default class BridalCollection extends Component{
         <div>
             <div className="product_list">
                 <div className="bridal_collection" key={bridalcollection.id}>
-                     <Link to="/Products/BridalC_Details"><span><img src={ bridalcollection.image_url }></img></span></Link>
+                     <Link to="/Products/BridalC_Details"><span><img alt="image_url" src={ bridalcollection.image_url }></img></span></Link>
                     <p>{ bridalcollection.brand }</p>
                     <p>${ bridalcollection.price }</p> 
                     <br />

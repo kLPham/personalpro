@@ -39,7 +39,7 @@ export default class FormalGown extends Component{
 
                 <div className="formal_gowns" key={formalgown.id}>
                     <p>Brand: { formalgown.brand }</p>
-                    <img src={ formalgown.image_url }></img>
+                    <img alt="image_url" src={ formalgown.image_url }></img>
                     <p>Description: { formalgown.description }</p>
                     <p>Size: { formalgown.size }</p>
                     <p>Color: { formalgown.color }</p>

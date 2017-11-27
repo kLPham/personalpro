@@ -3,10 +3,10 @@
 //     return state;
 // }
 
-export function getProducts(state, props){
-    return state.products;
-}
+// export function getProducts(state, props){
+//     return state.products;
+// }
 
-export default function getProducts(state, props){
-    return state.products.find(item => item.id === props.id);
-}
+// export default function getProducts(state, props){
+//     return state.products.find(item => item.id === props.id);
+// }

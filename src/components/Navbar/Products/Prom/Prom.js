@@ -39,7 +39,7 @@ export default class Prom extends Component{
 
                 <div className="formal_gowns" key={prom.id}>
                     <p>Brand: { prom.brand }</p>
-                    <img src={ prom.image_url }></img>
+                    <img alt="image_url" src={ prom.image_url }></img>
                     <p>Description: { prom.description }</p>
                     <p>Size: { prom.size }</p>
                     <p>Color: { prom.color }</p>

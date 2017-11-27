@@ -38,12 +38,23 @@ export default class BridalC_Details extends Component{
 
                 <div className="product_list" key={bridalcollection.id}>
                     <p>Brand: { bridalcollection.brand }</p>
-                    <img src={ bridalcollection.image_url }></img>
+                    <img alt="image_url" src={ bridalcollection.image_url }></img>
                     <p>Description: { bridalcollection.description }</p>
-                    <p>Size: { bridalcollection.size }</p>
-                    <p>Color: { bridalcollection.color }</p>
-                    <p>Unit_Price: { bridalcollection.unit_price }</p>
-                    <p>Quantity: { bridalcollection.quantity }</p>
+                    <select>
+                        <option value="Select">Select Size</option>
+                        <option value="size">{bridalcollection.size}</option>
+                    </select>
+                        <hr/>
+                    <select>
+                        <option value="Select">Select Color</option>
+                        <option value="color">Color: {bridalcollection.color}</option>
+                    </select>
+                        <hr/>
+                    <select>
+                        <option value="Select">Select Quantity</option>
+                        <option value="quantity">Qty: {bridalcollection.quantity}</option>
+                    </select>
+                    <hr />
                     <button onClick={ () => this.handleAddToCart(bridalcollection)}>Add to Cart</button>
                     <hr/>
                     <br />

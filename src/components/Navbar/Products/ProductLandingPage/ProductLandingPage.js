@@ -10,7 +10,7 @@ export default class ProductLandingPage extends Component{
     render() {
         return(
             <div className="ProductLandingPage">
-                <div className="title"><h2>Welcome to our Bridal Shop</h2></div>
+                <div className="title"><h2>Our Bridal Shop</h2></div>
                     <hr />
                 <div className="product-list">
                         <div className="Bridal_Collection">

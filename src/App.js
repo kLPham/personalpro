@@ -34,6 +34,7 @@ class App extends Component {
     return (
       <div className="App">
           <Navbar />
+          {/* <Navbar.Toggle /> */}
           { router }
           
           <Footer />

@@ -15,9 +15,11 @@
     padding-right: 50px;
     display: block;
     position: relative;
-    height: 350px;
+    height: 650px;
     width: 500px;
     margin: 0 auto;
     text-align: center;
-    border: 3px solid palevioletred;
+    border: 8px solid palevioletred;
+    background-color: white;
+    color: gray;
  }

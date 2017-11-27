@@ -4,7 +4,7 @@ import './Cart.css';
 import Checkout from '../Checkout/Checkout';
 
 import { connect } from 'react-redux';
-import { handleCheckOut, handleCartRemove } from '../../../ducks/My_Cart';
+import { handleCheckOut, handleCartRemove } from '../../../ducks/reducer';
 
 
 class Cart extends Component {
@@ -12,71 +12,66 @@ class Cart extends Component {
     super(props);
 
     this.state = {
-      item: [],
+      // item: [],
       cart: []
     };
-
+ 
+  //BIND FUNCTIONS HERE:
   this.backToProductPage = this.backToProductPage.bind(this);
-  // this. handleCartRemove  = this.handleCartRemove.bind(this);
+  this.handleCartRemove  = this.handleCartRemove.bind(this);
   }
 
 
-  //redirect to the product page
+  //redirect to the product page :)
   backToProductPage(event){
     window.location.href = "http://localhost:3000/Products";
   }
-  //remove items from cart
-  // removeItems(){
-  // //   // console.log(this.props);
-  // //   // alert(this.state.cart);
-  // //   //Dispatch: taking an action & sent it to the reducer so reducer can figure out how state should change & it will return new state.
-  //   // this.props.dispatch(
-  //   //   {
-  //   //    type: "REMOVE_FROM_MY_CART",
-  //   //     payload: this.state.cart
-  //   // }
-  //   // )
-  // }
- 
+
   //Lifecyle methods
   componentWillReceiveProps(nextprops){
   this.setState({ cart:nextprops.cart });
 }
 
-//create a get endpoint in api/cart
+//create a GET endpoint in api/cart ;)
 componentDidMount(){
   axios.get('/api/cart').then(response =>{
     // console.log(response);
     this.setState({cart: response.data });
   })
 }
+//POST PRODUCTS IN CART:
+  // componentDidUpdate(){
+  //   axios.post('/products').then(response=>{
+  //     this.setState({cart:response.data});
+  //   })
+  // }
 
-  componentDidUpdate(){
-    axios.post('/products').then(response=>{
-      this.setState({cart:response.data});
-    })
-  }
+  //REMOVE FROM CART: BACK_END:
+  // componentWillMount(){
+  //   console.log("1,2,3,4")
+  //   this.props.handleCartRemove();
+  // }
 
-  //remove from cart lifecycle backend
-  componentWillMount(){
-    console.log("1,2,3,4")
-    this.props.handleCartRemove();
-  }
-  //remove from cart front-end * need to fix this
-//   handleCartRemove(item){
-//     axios.delete('/api/cart',{item: item})
-//          .then((response) => this.setState({cart: response.data}))
-//          .catch(console.log);
-//          alert("Item has been remove from cart")
+  // componentDidMount(){
+  //   console.log("testing if it works")
+  //   this.props.handleCartRemove();
+  // }
 
-// }
+  //REMOVE FROM CART FRONT_END: :)
+  handleCartRemove(product){
+    axios
+         .delete(`/api/cart/${product}`)
+         .then((response) => this.setState({cart: response.data}))
+         .catch(console.log);
+         alert("Item has been remove from cart")
+}
 
   // handle checkout lifecycle
-  componentWillMount(){
-    this.props.handleCheckOut();
-  }
+  // componentWillMount(){
+  //   this.props.handleCheckOut();
+  // }
 
-  //redirect to checkout 
+  //REIRECT TO CHECKOUT PAGE :)
   redirectToCheckOutPage(){
     window.location.href = "http://localhost:3000/Checkout";
   }
@@ -84,42 +79,28 @@ componentDidMount(){
   
   
   render(){
-    //testing Nov/23
-    
     let displayCart =
       this.state.cart.length > 0 ? (
       this.state.cart.map(product => {
         return (
-      <div>
+      <div key={product}>
       <div className="my_cart">
         <h2>This item has been successfully added:</h2>
         <p key={Math.random()}></p>
-            <img src={product.image_url}></img>
+            <img alt="image_url"src={product.image_url}></img>
             <hr/> 
             <p>BRAND: {product.brand}</p>
             <hr/>
             <p>DESCRIPTION: {product.description}</p>
-            <hr/>
-                <select>
-                  <option value="Select">Select Size</option>
-                  <option value="size">{product.size}</option>
-                </select>
-                  <hr/>
-                <select>
-                  <option value="Select">Select Color</option>
-                  <option value="color">Color: {product.color}</option>
-                </select>
-                  <hr/>
-                <select>
-                  <option value="Select">Select Quantity</option>
-                  <option value="quantity">Qty: {product.quantity}</option>
-                </select>
+            <p>SIZE: { product.size }</p>
+            <p>COLOR: { product.color }</p>
+            <p>QTY: { product.quantity }</p>
             <p>PRICE: ${product.price}</p>
             <br/>
             <p>TOTAL: ${product.total}</p>
             {/* <p>FINAL TOTAL: ${displayCart.reduce( ( total, { price } ) => total + price, 0 )}</p> */}
                 <button>Edit Cart</button>
-                <button onClick={ (e, id)=>(handleCartRemove(id))} >REMOVE FROM Cart</button>
+                <button onClick={ () => this.handleCartRemove(product)}>REMOVE FROM Cart</button>
       </div>
       </div>
         );

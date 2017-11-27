@@ -41,7 +41,7 @@ export default class DesignerPreowned extends Component{
             <div className="product_list">
                 <div className="designer_preowned_collection" key={designerpreowned.id}>
                     <p>Brand: { designerpreowned.brand }</p>
-                    <img src={ designerpreowned.image_url }></img>
+                    <img alt="image_url" src={ designerpreowned.image_url }></img>
                     <p>Description: { designerpreowned.description }</p>
                     <p>Size: { designerpreowned.size }</p>
                     <p>Color: { designerpreowned.color }</p>

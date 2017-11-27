@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
+import '../Navbar.css';
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props);
+  // constructor(props) {
+  //   super(props);
 
-    this.state = {};
+  //   this.state = {};
 
-    this.handleLogin = this.handleLogin.bind(this);
-  }
+  //   this.handleLogin = this.handleLogin.bind(this);
+  // }
   handleLogin() {
     window.location.href = "http://localhost:3001/api/login";
   }
   render() {
     return (
       <div >
-        <button onClick={this.handleLogin}>Login/Register</button>
+        {/* <Link to="/api/login">   </Link> */}
+        <button className="button1" onClick={this.handleLogin}> Login/Register </button>
+     
       </div>
     );
   }

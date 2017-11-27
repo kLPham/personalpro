@@ -7,7 +7,8 @@ const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 
-
+//import fontawesome here:
+const FontAwesome = require('react-fontawesome');
 //IMPORT CONTROLLER
 // const cartController = require("./controllers/cart_controller");
 
@@ -237,7 +238,11 @@ app.post('/api/orders', (req, res)=>{
 
 
 
+// app.get('/api/products', function(req, res) {
+//   const { term } = req.query;
 
+//   // SELECT * FROM Products WHERE type LIKE '%$1%'
+// })
 
 
 

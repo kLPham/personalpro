@@ -19,7 +19,7 @@ export default class CheckOut extends Component {
         <h4 className="welcome">Welcome to Our Checkout Page</h4>
         <div className="container">
             <h2>CHECK OUT NOW:</h2>
-            <button>CHECKOUT NOW</button>
+            <button>PROCEED TO CHECKOUT</button>
             <button>Check Out With PayPal</button>
             <div className="Thanks"><img src={checkout}></img></div>
         </div>

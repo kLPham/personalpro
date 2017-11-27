@@ -28,7 +28,7 @@ export default class Details extends Component{
     componentDidMount() {
         axios.get(`/api/product/${this.props.match.params.product_id}`).then(response => {
             this.setState({ productsToDisplay: response.data })
-          console.log("YAY",response);
+          console.log("YAY Kelly is awesome",response);
         });
       }
 
@@ -41,42 +41,34 @@ export default class Details extends Component{
 
     render() {
         const aProduct = this.state.productsToDisplay.map(product_id =>{
+
             console.log("Products redering",product_id)
         return(
-            <div key={product_id .id}>
+            <div key={product_id.id}>
+             <Link to="/Products">
+               <p> { '<'} Back To Bridal Shop </p>
+             </Link>
                 
                 <div className="details">
                     <img className="detailImage" alt="image_url" src={ product_id .image_url }></img>
                     <div className="detail">
-                        <p>Brand: { product_id .brand }</p>
-                        <p>Description: { product_id .description }</p>
-                       
+                        <p>BRAND: { product_id .brand }</p>
+                        <p>DESCRIPTION: { product_id .description }</p>
                             <select>
                                 <option>Select Size</option>
-                                <option>Size: { product_id.size }</option>
+                                <option>SIZE: { product_id.size }</option>
                             </select>
                             <hr />
                             <select>
                                 <option>Select Color</option>
-                                <option>Color: { product_id.color }</option>
+                                <option>COLOR: { product_id.color }</option>
                             </select>
                             <hr />
-                         
                             <select>
-                                <option>Quantity: { product_id.quantity }</option>
+                                <option>QTY: { product_id.quantity }</option>
                             </select>
-                            
-                       
                         <p>Price: ${ product_id.price }</p>
-
-
-
-                        {/* <p>Size: { product_id.size }</p>
-                        <p>Color: { product_id.color }</p>
-                        <p>Price: ${ product_id.price }</p>
-                        <p>Quantity: { product_id.quantity }</p> */}
                         <button className="btn" onClick={ () => this.handleAddToCart(product_id )}>Add to Cart</button>
-                        
                         <br />
                     </div>
                 </div>
@@ -87,21 +79,11 @@ export default class Details extends Component{
         return(
         <div>
            <div> { aProduct } </div>
-           <div>
-           <Link to="/Products">
-               <p> { '<'} Back To Bridal Shop </p>
-           </Link>
-            </div>
+
         </div>
         )
     }
 }
 
 
-// function mapStateToProps(state) { //redux is gonna call this function whenever the state in the store changes.
-//     return state
-//   }
 
-// //do the same for every component but put: export default connect(mapStateToProps, {}) (Cart);
-
-// export default connect(mapStateToProps, { handleCartAdd }) (Details);

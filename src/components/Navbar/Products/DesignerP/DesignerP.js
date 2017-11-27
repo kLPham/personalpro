@@ -45,21 +45,17 @@ export default class DesignerPreowned extends Component{
             console.log("Products redering",designerpreowned)
         return(
             <div>
-                <div>
+                {/* <div>
                         <Link to="/Products">
                             <p> { '<'} Back To Bridal Shop </p>
                         </Link>
-                </div>
+                </div> */}
                 <div className="product_list">
                     <div className="designer_preowned_collection" key={designerpreowned.id}>
-                        <p>Brand: { designerpreowned.brand }</p>
-                        <img alt="image_url" src={ designerpreowned.image_url }></img>
-                        <p>Description: { designerpreowned.description }</p>
-                        <p>Size: { designerpreowned.size }</p>
-                        <p>Color: { designerpreowned.color }</p>
-                        <p>Price: ${ designerpreowned.price }</p>
-                        <p>Quantity: { designerpreowned.quantity }</p>
-                        <button className="btn" onClick={ () => this.handleAddToCart(designerpreowned)}>Add to Cart</button>
+                        <Link to={`/Products/Details/${designerpreowned.product_id}`}>
+                        <img alt="image_url" src={designerpreowned.image_url }></img></Link>
+                        <p>BRAND: { designerpreowned.brand }</p>
+                        <p>PRICE: ${ designerpreowned.price }</p>
                         <hr/>
                         <br />
                     </div>

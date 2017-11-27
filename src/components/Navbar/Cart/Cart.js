@@ -86,11 +86,12 @@ class Cart extends Component {
             <p>COLOR: { product.color }</p>
             <p>QTY: { product.quantity }</p>
             <p>PRICE: ${product.price}</p>
-            <br/>
             <p>TOTAL: ${product.total}</p>
             {/* <p>FINAL TOTAL: ${displayCart.reduce( ( total, { price } ) => total + price, 0 )}</p> */}
-                <button>Edit Cart</button>
                 <button onClick={ () => this.handleCartRemove(product)}>REMOVE FROM Cart</button>
+                <hr />
+                {/* <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
+                <button className="checkoutbtn" onClick={this.redirectToCheckOutPage}>CHECKOUT</button> */}
       </div>
       </div>
         );
@@ -101,11 +102,11 @@ class Cart extends Component {
     return (
       <div>
         <div>{displayCart}</div>
-        <div className="btn_container">
+         {/* <div className="btn_container"> */}
             <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
             <button className="checkoutbtn" onClick={this.redirectToCheckOutPage}>CHECKOUT</button>
-        </div>
-        <Checkout />
+        
+        {/* <Checkout /> */}
       </div>
     );
   }

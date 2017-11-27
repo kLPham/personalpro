@@ -1,2 +1,2 @@
-INSERT INTO consumers (authId, name) VALUES ($1, $2) RETURNING authId, name;
+INSERT INTO consumers (consumer_id, name) VALUES ($1, $2) RETURNING consumer_id, name;
 SELECT * FROM consumers;

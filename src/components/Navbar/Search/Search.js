@@ -13,12 +13,13 @@ export default class Search extends Component {
     // this.handleInputChange = this.handleInputChange.bind(this);
     this.handleButtonchange = this.handleButtonchange.bind(this);
   }
-  componentDidMount() {
-    axios.get('/api/products').then(response => {
-        this.setState({ productsToDisplay: response.data })
-      console.log("YAY",response);
-    });
-  }
+  // componentDidMount() {
+    // axios.get('/api/products?term=${this.state.term}')
+  //   axios.get('/api/products').then(response => {
+  //       this.setState({ productsToDisplay: response.data })
+  //     console.log("YAY",response);
+  //   });
+  // }
   handleAddToCart(item){
         axios.post('/api/cart',{item: item})
              .then((response) => this.setState({cart: response.data}))

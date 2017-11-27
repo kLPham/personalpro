@@ -18,7 +18,8 @@ span:hover{
     text-transform: uppercase;
     font-weight: bold;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; 
+    margin-bottom: 150px;
   }
 .ProductLandingPage{
     height: 800px;

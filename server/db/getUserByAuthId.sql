@@ -1,1 +1,1 @@
-SELECT * FROM consumers WHERE authId = $1;
+SELECT * FROM consumers WHERE consumer_id = $1;

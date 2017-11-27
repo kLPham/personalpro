@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+
 
 
 export default class FormalGown extends Component{
@@ -38,14 +41,10 @@ export default class FormalGown extends Component{
         return(
 
                 <div className="formal_gowns" key={formalgown.id}>
-                    <p>Brand: { formalgown.brand }</p>
-                    <img alt="image_url" src={ formalgown.image_url }></img>
-                    <p>Description: { formalgown.description }</p>
-                    <p>Size: { formalgown.size }</p>
-                    <p>Color: { formalgown.color }</p>
-                    <p>Unit_Price: { formalgown.unit_price }</p>
-                    <p>Quantity: { formalgown.quantity }</p>
-                    <button onClick={ () => this.handleAddToCart(formalgown)}>Add to Cart</button>
+                    <Link to={`/Products/Details/${formalgown.product_id}`}>
+                        <img alt="image_url" src={ formalgown.image_url }></img></Link>
+                    <p>BRAND: { formalgown.brand }</p>
+                    <p>PRICE: { formalgown.price }</p>
                     <hr/>
                     <br />
                 </div>

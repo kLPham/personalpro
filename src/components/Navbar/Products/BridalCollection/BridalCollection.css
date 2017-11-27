@@ -23,7 +23,8 @@
   font-weight: bold;
   justify-content: space-around;
  text-align: center; 
- display: flex;
+ flex-grow: 3;
+ display: block;
 }
 
   /* h3{

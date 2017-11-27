@@ -13,20 +13,15 @@ export default class Footer extends Component{
 
     render(){
         const G = "GET CONNECTED";
-        const divStyle = {
-            border: '2px solid gray'
-        };
-        // const socialStyle = {
-        //     backgroundColor: "white",
-        //     position: 'relative',
-        //     display: 'flex'
+        // const divStyle = {
+        //     border: '1px solid gray'
         // };
 
+
         return(
-                <div className="nav" style={divStyle}>
+                <div className="nav" >
                     <nav className="navbar navbar-default navbar-fixed-bottom">
                       <h2 className="connect">{G}</h2>
-                      {/* <hr /> */}
                       <div className="social">
                         <SocialIcon url="https://www.facebook.com/" />
                         <SocialIcon url="https://www.instagram.com/" />

@@ -7,29 +7,19 @@
   display: flex;
   justify-content: space-around;
 } */
-/* .bridal_collection {
-  padding-top: 50px;
-  padding-bottom: 90px;
-  /* text-align: center; 
-  display: inline-block;
-  justify-content: space-around; */
-  /* width: 100%; */
-  /* line-height: 2rem; */
+
 
 .product_list_BC{
   padding-top: 50px;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  justify-content: space-around;
+  position: relative;
+  display: flex;
+  /* justify-content: space-around;
  text-align: center; 
  flex-grow: 3;
- display: block;
+ display: block; */
 }
 
-  /* h3{
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    justify-content: center;
-  } */
+ 

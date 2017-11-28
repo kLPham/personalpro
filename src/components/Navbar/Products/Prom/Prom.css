@@ -1,0 +1,11 @@
+.prom_list{
+        height: 1250px;
+        padding-top: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        justify-content: space-around;
+       text-align: center; 
+       flex-grow: 3;
+       display: block;
+}

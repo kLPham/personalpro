@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
 import './Cart.css';
-import Checkout from '../Checkout/Checkout';
+
 
 import { connect } from 'react-redux';
 import { handleCheckOut, handleCartRemove } from '../../../ducks/reducer';
+
+
+import Trash from 'react-icons/lib/fa/trash';
+
 
 
 class Cart extends Component {
@@ -12,13 +16,13 @@ class Cart extends Component {
     super(props);
 
     this.state = {
-      // item: [],
       cart: []
     };
  
   //BIND FUNCTIONS HERE:
   this.backToProductPage = this.backToProductPage.bind(this);
   this.handleCartRemove  = this.handleCartRemove.bind(this);
+  this.handleAddToCheckout = this.handleAddToCheckout.bind(this);
   }
 
 
@@ -35,16 +39,10 @@ class Cart extends Component {
   //create a GET endpoint in api/cart ;)
     componentDidMount(){
       axios.get('/api/cart').then(response =>{
-        // console.log(response);
         this.setState({cart: response.data });
       })
 }
-//POST PRODUCTS IN CART:
-  // componentDidUpdate(){
-  //   axios.post('/products').then(response=>{
-  //     this.setState({cart:response.data});
-  //   })
-  // }
+
 
 
   //REMOVE FROM CART FRONT_END: :)
@@ -55,58 +53,61 @@ class Cart extends Component {
          .catch(console.log);
          alert("Item has been remove from cart")
 }
+  
 
-  // handle checkout lifecycle
-  // componentWillMount(){
-  //   this.props.handleCheckOut();
-  // }
-
-  //REIRECT TO CHECKOUT PAGE :)
-  redirectToCheckOutPage(){
-    window.location.href = "http://localhost:3000/Checkout";
-  }
+  //add to checkout @@@
+  handleAddToCheckout(item){ //:)
+    axios
+         .post('/api/checkout',{item: item})
+         .then((response) => this.setState({checkout: response.data}))
+         .catch(console.log)
+         window.location.href = "http://localhost:3000/Checkout";
+         alert("let's go pay!")
+}
 
   
   
   render(){
-    let displayCart =
+    let displayInCart =
       this.state.cart.length > 0 ? (
       this.state.cart.map(product => {
         return (
       <div key={product}>
       <div className="my_cart">
-        <h2>This item has been successfully added:</h2>
         <p key={Math.random()}></p>
-            <img alt="image_url"src={product.image_url}></img>
-            <hr/> 
-            <p>BRAND: {product.brand}</p>
-            <hr/>
-            <p>DESCRIPTION: {product.description}</p>
-            <p>SIZE: { product.size }</p>
-            <p>COLOR: { product.color }</p>
-            <p>QTY: { product.quantity }</p>
-            <p>PRICE: ${product.price}</p>
-            <p>TOTAL: ${product.total}</p>
-            {/* <p>FINAL TOTAL: ${displayCart.reduce( ( total, { price } ) => total + price, 0 )}</p> */}
-                <button onClick={ () => this.handleCartRemove(product)}>REMOVE FROM Cart</button>
-                <hr />
-                {/* <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
-                <button className="checkoutbtn" onClick={this.redirectToCheckOutPage}>CHECKOUT</button> */}
+            <div className="cart_container">
+                  {/* <h2>This item has been successfully added:</h2> */}
+                  <img className="cart_img"alt="image_url"src={product.image_url}></img>
+                <div >
+                  <p>BRAND: {product.brand}</p>
+                  <p>SIZE: { product.size }</p>
+                  <p>COLOR: { product.color }</p>
+                  <p>QTY: { product.quantity }</p>
+                  <p>PRICE: ${ product.price }</p>
+                </div>
+                  {/* <p>FINAL TOTAL: ${displayCart.reduce( ( total, { price } ) => total + price, 0 )}</p> */}
+                  <Trash className="trash" id="Cart_trash" onClick={ () => this.handleCartRemove(product)}/>
+            </div>
+                <br />
+               
       </div>
       </div>
         );
       })
     ) : (
-          <p>Your Cart is empty</p>
+          <p className="message">Your Cart is empty</p>
     );
     return (
       <div>
-        <div>{displayCart}</div>
-         {/* <div className="btn_container"> */}
+        <div className="btn_container">
             <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
-            <button className="checkoutbtn" onClick={this.redirectToCheckOutPage}>CHECKOUT</button>
-        
-        {/* <Checkout /> */}
+            <br/>
+            {/* <button className="checkoutbtn" onClick={this.redirectToCheckOutPage}>PROCEED TO CHECKOUT</button> */}
+            <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout()}>PROCEED TO CHECKOUT</button>
+        </div>
+        <div>{displayInCart}</div>
+         
+      
       </div>
     );
   }

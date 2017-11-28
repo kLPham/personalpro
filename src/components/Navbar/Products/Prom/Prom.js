@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 export default class Prom extends Component{
@@ -36,19 +37,16 @@ export default class Prom extends Component{
         const allProducts = this.state.productsToDisplay.map(prom =>{
             console.log("Products redering",prom)
         return(
-
-                <div className="formal_gowns" key={prom.id}>
-                    <p>Brand: { prom.brand }</p>
-                    <img alt="image_url" src={ prom.image_url }></img>
-                    <p>Description: { prom.description }</p>
-                    <p>Size: { prom.size }</p>
-                    <p>Color: { prom.color }</p>
-                    <p>Unit_Price: { prom.price }</p>
-                    <p>Quantity: { prom.quantity }</p>
-                    <button onClick={ () => this.handleAddToCart(prom)}>Add to Cart</button>
-                    <hr/>
+            <div>
+            <div className="prom_list">
+                <div className="prom" key={prom.id}>
+                     <Link to={`/Products/Details/${prom.product_id}`}><span><img alt="image_url" src={ prom.image_url }></img></span></Link>
+                    <p>{ prom.brand }</p>
+                    <p>${ prom.price }</p> 
                     <br />
                 </div>
+            </div>
+        </div> 
         )}
         );
 
@@ -58,8 +56,3 @@ export default class Prom extends Component{
     }
 }
 
-// const allProducts = this.state.productsToDisplay.map(prom =>{
-//     console.log("Products redering",prom)
-
-//     <button onClick={ () => this.handleAddToCart(prom)}>Add to Cart</button>
-//     this.handleAddToCart = this.handleAddToCart.bind(this);

@@ -1,29 +1,94 @@
-.my_cart {
-    height: 1700px;
+
+button{
+    cursor: pointer;
 }
 
-img{
-    width: 350px;
-    height: 500px;
+.my_cart {
+    height: 400px;
+    padding-top: 40px;
+    padding-left: 40px;
+    
+}
+
+.cart_img{
+    width: 150px;
+    height: 200px;
+    margin-right: 35px;
 }
 
 .btn_container{
     width: 300px;
     height: 100px;
-    display: inline-flex;
-    padding: 2px solid;
+    display: flex;
+    /* padding-right: 2px solid; */
+    /* margin-right: 30px; */
+
+    margin-left: 70px;
+    margin-top: 30px;
 }
 .continuebtn{
-    background-color: goldenrod;
+    background-color: white;
     border-color: green;
-    color: white;
+    color: green;
     height: 50px;
     width: 200px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 1;
+    
 }
 .checkoutbtn{
     background-color: green;
     border-color: goldenrod;
     color: white;
     height: 50px;
-    width: 200px; 
+    width: 400px; 
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    z-index: 1;
+
+}
+
+.trash{
+    color: palevioletred;
+    width: 20px;
+    height: 20px;
+    border: none;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+   position: absolute;
+   top:0px;
+   right:0px;
+}
+
+.cart_container{
+     font-size: 10px;
+     width: 300px;
+     margin-left: 0px  auto; 
+      margin-right: 0px auto;    
+      background: rgba(255,255,255,0.9);
+      padding: 30px; 
+      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+      -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+
+      height: 200px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      /* max-width: 60%;
+      max-height: 40%; */
+      /* margin-left: 170px;*/
+      /* margin-top: 50px;
+      margin-bottom: 50px; */
+}
+
+.message{
+    display: flex;
+    margin-left: 100px;
 }

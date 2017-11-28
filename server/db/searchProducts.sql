@@ -1,0 +1,1 @@
+ SELECT * FROM Products WHERE type LIKE '%$1%'

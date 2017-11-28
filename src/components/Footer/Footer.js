@@ -22,6 +22,7 @@ export default class Footer extends Component{
                 <div className="nav" >
                     <nav className="navbar navbar-default navbar-fixed-bottom">
                       <h2 className="connect">{G}</h2>
+                      {/* <p>code & design by Kelly Linh Pham </p> */}
                       <div className="social">
                         <SocialIcon url="https://www.facebook.com/" />
                         <SocialIcon url="https://www.instagram.com/" />

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import axios from "axios";
+import axios from "axios";
 import './Checkout.css';
 import checkout from './checkout.jpeg';
 
@@ -8,11 +8,21 @@ export default class CheckOut extends Component {
     super(props);
 
     this.state = {
-      
+      checkout: []
     };
-
   }
   
+  //checkout endpoint
+  componentDidMount(){
+    axios.get('/api/checkout').then(response =>{
+      this.setState({checkout: response.data });
+    })
+}
+
+
+
+
+
   render(){
     return (
       <div className="checkout">
@@ -22,6 +32,7 @@ export default class CheckOut extends Component {
             <button>PROCEED TO CHECKOUT</button>
             <button>Check Out With PayPal</button>
             <div className="Thanks"><img src={checkout}></img></div>
+            
         </div>
       </div>
     );

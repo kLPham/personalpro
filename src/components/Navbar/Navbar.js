@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Home from './Home/Home';
+import House from './House/House';
 import About from './About/About';
 import Contact from './Contact/Contact';
 import Products from './Products/Products';
@@ -8,7 +8,9 @@ import { Link } from 'react-router-dom';
 import Login from './Login/Login';
 import Search from './Search/Search';
 import Logo2 from './Logo2.jpeg';
-import ShoppingCart from 'react-icons/lib/fa/shopping-cart';
+
+import Home from 'react-icons/lib/fa/home';
+import ShoppingBag from 'react-icons/lib/fa/shopping-bag';
 import './Navbar.css';
 
 
@@ -26,11 +28,11 @@ export default class Navbar extends Component{
             <span className="search"><Search /></span> */}
         </div>
         <div className="logo" ><img alt="crown" src={Logo2}></img></div>
-        <Link to="/Cart"><ShoppingCart className="cart" id="Nav__shoppingCart" /></Link>
+        <Link to="/Cart"><ShoppingBag className="cart" id="Nav__shoppingBag" /></Link>
         <nav className="navbar navbar-default navbar-fixed-top">
             <div className="nav_container">
                 <div className="links">
-                    <Link to="/">Home</Link>
+                    <Link to="/"><Home className="home" id="Nav__Home"/></Link>
                     <Link to="/About">About Us</Link>
                     <Link to="/Contact">Contact Us</Link>
                     <Link to="/Products">Our Products</Link> 

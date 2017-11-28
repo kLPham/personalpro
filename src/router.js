@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 
-import Home from './components/Navbar/Home/Home';
+import House from './components/Navbar/House/House';
 import Login from './components/Navbar/Login/Login';
 import Cart from './components/Navbar/Cart/Cart';
 import Checkout from './components/Navbar/Checkout/Checkout';
@@ -28,7 +28,7 @@ import ProductLandingPage from './components/Navbar/Products/ProductLandingPage/
     export default (
         
     <Switch>
-        <Route  exact path="/" component={Home} />
+        <Route  exact path="/" component={House} />
         <Route path="/Login" component={Login} />
         <Route path="/Cart" component={Cart} />
         <Route path="/Checkout" component={Checkout} />
@@ -39,7 +39,6 @@ import ProductLandingPage from './components/Navbar/Products/ProductLandingPage/
             <Switch>
                 <Route path="/Products/BridalCollection" component={BridalCollection} />
                 <Route path="/Products/Details/:product_id" component={Details} />
-                {/* <Route path="/Products/BridalC_Details" component={BridalC_Details} /> */}
                 <Route path="/Products/DesignerP" component={DesignerP} />
                 <Route path="/Products/FormalGowns" component={FormalGowns} />
                 <Route path="/Products/Prom" component={Prom} />

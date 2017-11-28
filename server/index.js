@@ -35,7 +35,6 @@ app.use(
     saveUninitialized: false
   })
 );
-
 massive(connectionString)
   .then(db => app.set("db", db))
   .catch(console.log);
@@ -153,7 +152,7 @@ app.post('/api/cart', (req, res)=>{
    })
  
  
-   //update cart when remove item from cart
+   //update cart when REMOVE ITEMS FROM CART BACK-END :)
    app.delete('/api/cart/:id',(req, res)=>{
     // console.log('Cart: ', req.session.cart);
     req.session.cart = req.session.cart.filter((product)=> {
@@ -171,27 +170,43 @@ app.post('/api/cart', (req, res)=>{
 
 
 
-// app.post('/api/cart', (req, res)=>{
-//   let item= req.body.item;
-//    if(!req.session.cart ){
-//      req.session.cart = [];
-//    }
-//   })
+
+//GET ITEMS FROM CART TO SEND IT TO CHECKOUT-PAGE:@@@
+ app.get('/api/checkout',(req, res) =>{
+   return res.json(req.session.checkout);
+ })
+
+ //post items to checkout page @@@
+ app.post('/api/checkout', (req, res)=>{
+  let item= req.body.item;
+   if(!req.session.checkout ){
+     req.session.checkout = [];
+   }
+   req.session.checkout.push(item); //add item to cart
+   return res.json(req.session.checkout);
+  })
  
-//    //get info of products using session to display to cart component
-//    app.get('/api/cart',(req, res)=>{
-//       req.session.cart.push(item); //add item to cart
-//        return res.json(req.session.cart);
-//    })
-   
- 
-//    //update cart when remove item from cart
-//    app.post('/api/cart',(req, res)=>{
-//      req.session.cart.splice( index,1 );
-//      res.json(req.session.cart);   //send back cart from session
-//      return res.json(req.session.cart);
-//  })
-//    console.log('Cart: ', req.session.cart);
+
+
+//SEARCH PRODUCTS:@@@
+// app.get('/api/products', function(req, res) {
+//   const { term } = req.query;
+
+//   // SELECT * FROM Products WHERE type LIKE '%$1%'
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  //GET ONLY ONE ITEM FOR DETAIL PAGE:
 app.get('/api/product/:product_id', (req, res, next)=>{
@@ -217,7 +232,7 @@ app.get('/api/product/:product_id', (req, res, next)=>{
 
 
 
-//SUBMIT ORDERS CALL BELOW: get & update orders :NEED TO WORK ON THIS
+//SUBMIT ORDERS CALL BELOW: get & update orders :NEED TO WORK ON THIS@@@
 app.get('/api/orders',(req, res)=>{
   const {order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address } = req.body;
   req.app.get('db').submitOrders(req.submitOrders);
@@ -226,7 +241,7 @@ app.get('/api/orders',(req, res)=>{
 
 
 
-//*NEED TO WORK ON THIS
+//*NEED TO WORK ON THIS@@@
 app.post('/api/orders', (req, res)=>{
   // console.log('orders request:', order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address );
   req.app.post('db').submitOrders(req.body)
@@ -237,12 +252,6 @@ app.post('/api/orders', (req, res)=>{
 })
 
 
-
-// app.get('/api/products', function(req, res) {
-//   const { term } = req.query;
-
-//   // SELECT * FROM Products WHERE type LIKE '%$1%'
-// })
 
 
 

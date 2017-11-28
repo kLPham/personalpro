@@ -28,14 +28,12 @@ export default class BridalCollection extends Component{
         const allProducts = this.state.productsToDisplay.map(bridalcollection =>{
             console.log("Products redering",bridalcollection)
         return(
-    
         <div>
             <div className="product_list_BC">
                 <div className="bridal_collection" key={bridalcollection.id}>
                      <Link to={`/Products/Details/${bridalcollection.product_id}`}><span><img alt="image_url" src={ bridalcollection.image_url }></img></span></Link>
                     <p>{ bridalcollection.brand }</p>
                     <p>${ bridalcollection.price }</p> 
-                    {/* <Details /> */}
                     <br />
                 </div>
             </div>

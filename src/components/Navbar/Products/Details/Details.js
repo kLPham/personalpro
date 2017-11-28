@@ -24,7 +24,7 @@ export default class Details extends Component{
         this.handleAddToCart = this.handleAddToCart.bind(this);
     }
     
-    //GET EACH PRODUCT WITH THE UNIQUE ID:
+    //GET EACH PRODUCT WITH THE UNIQUE ID: :)
     componentDidMount() {
         axios.get(`/api/product/${this.props.match.params.product_id}`).then(response => {
             this.setState({ productsToDisplay: response.data })
@@ -32,7 +32,8 @@ export default class Details extends Component{
         });
       }
 
-    handleAddToCart(item){
+      //POST ITEMS TO CART WHEN ADDED :)
+    handleAddToCart(item){ //:)
         axios.post('/api/cart',{item: item})
              .then((response) => this.setState({cart: response.data}))
              .catch(console.log)

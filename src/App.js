@@ -1,20 +1,9 @@
-// import React, { Component } from "react";
-
-// import router from "./router";
-// import "./App.css";
-// class App extends Component {
-//   render() {
-//     return <div>{router}</div>;
-//   }
-// }
-
-// export default App;
-
-
-
 import React, { Component } from 'react';
 import axios from 'axios';
+// import Checkout from './Checkout';
 import './App.css';
+
+
 import router from './router';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -36,7 +25,11 @@ class App extends Component {
           <Navbar />
           {/* <Navbar.Toggle /> */}
           { router }
-          
+          {/* <Checkout
+            name={'The Road to an Empty Wallet'}
+            description={'Pay for Your Gowns Here'}
+            amount={1}
+          /> */}
           <Footer />
           
       </div>

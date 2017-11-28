@@ -21,8 +21,10 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.17",
+    "react-stripe-checkout": "^2.6.3",
     "redux": "^3.7.2",
-    "redux-promise-middleware": "^4.4.2"
+    "redux-promise-middleware": "^4.4.2",
+    "stripe": "^5.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +35,18 @@
   "proxy": "http://localhost:3001",
   "devDependencies": {
     "react-social-icons": "^2.7.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kLPham/personalpro.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kLPham/personalpro/issues"
+  },
+  "homepage": "https://github.com/kLPham/personalpro#readme"
 }

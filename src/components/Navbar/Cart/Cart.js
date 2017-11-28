@@ -55,13 +55,13 @@ class Cart extends Component {
 }
   
 
-  //add to checkout @@@
+  //POST ON checkout PAGE
   handleAddToCheckout(item){ //:)
     axios
-         .post('/api/checkout',{item: item})
+         .post('/api/CheckOutNow',{item: item})
          .then((response) => this.setState({checkout: response.data}))
          .catch(console.log)
-         window.location.href = "http://localhost:3000/Checkout";
+         window.location.href = "http://localhost:3000/CheckOutNow";
          alert("let's go pay!")
 }
 
@@ -102,8 +102,9 @@ class Cart extends Component {
         <div className="btn_container">
             <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
             <br/>
-            {/* <button className="checkoutbtn" onClick={this.redirectToCheckOutPage}>PROCEED TO CHECKOUT</button> */}
-            <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout()}>PROCEED TO CHECKOUT</button>
+         
+            <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button>
+           
         </div>
         <div>{displayInCart}</div>
          
@@ -124,12 +125,3 @@ class Cart extends Component {
 //do the same for every component but put: export default connect(mapStateToProps, {}) (Cart);
 
 export default connect(mapStateToProps, { handleCheckOut, handleCartRemove } )(Cart);
-
-
-
-
-
-
-
-///still couldnt make items remove from front end. we have already update on the backend
-

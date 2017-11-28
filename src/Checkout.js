@@ -2,8 +2,8 @@ import React from 'react'
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 
-import STRIPE_PUBLISHABLE from './Stripe/constants/stripe';
-import PAYMENT_SERVER_URL from './Stripe/constants/server';
+import STRIPE_PUBLISHABLE from './react-express-stripe/frontend/constants/stripe';
+import PAYMENT_SERVER_URL from './react-express-stripe/frontend/constants/server';
 
 const CURRENCY = 'US';
 

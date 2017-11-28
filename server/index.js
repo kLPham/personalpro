@@ -14,6 +14,61 @@ const FontAwesome = require('react-fontawesome');
 
 
 
+
+
+//STRIPE:entry point and bootstraps your Express application
+// const SERVER_CONFIGS = require('./constants/server');
+
+// const configureServer = require('./server');
+// const configureRoutes = require('./routes');
+
+
+// configureServer(app);
+// configureRoutes(app);
+
+
+
+//STRIPE END HERE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const { dbUser, database } = require("./config");
 const { secret } = require("./config").session;
 
@@ -250,6 +305,89 @@ app.post('/api/orders', (req, res)=>{
   })
   .catch(console.log);
 })
+
+
+//STRIPE HERE:
+
+//CONSTANTS/FRONTEND.JS
+// const FRONTEND_DEV_URLS = [ 'http://localhost:3000' ];
+
+// const FRONTEND_PROD_URLS = [
+//   'https://www.yourdomain.com',
+//   'https://yourdomain.com'
+// ];
+
+// module.exports = process.env.NODE_ENV === 'production'
+//   ? FRONTEND_PROD_URLS
+//   : FRONTEND_DEV_URLS;  //only this matters //when your app goes in production use your own domain of your frontend application.
+//STRIPE END HERE.
+
+//CONSTANTS/SERVER.JS
+// const path = require('path');
+
+// const SERVER_PORT = 8080;
+
+// const SERVER_CONFIGS = {
+//   PRODUCTION: process.env.NODE_ENV === 'production',
+//   // PORT: process.env.PORT || SERVER_PORT,
+// };
+
+// module.exports = SERVER_CONFIGS;
+//STRIPE END HERE.
+
+
+//CONSTANTS/STRIPE.JS
+// const configureStripe = require('stripe');
+
+// const STRIPE_SECRET_KEY = process.env.NODE_ENV === 'production'
+//     ? 'sk_test_JlmWEXFhyXX7zivmfy6eraJu'
+//     :'pk_test_SgQ6st52BRImIvvg2VhkhE5H';
+
+// const stripe = configureStripe(STRIPE_SECRET_KEY);
+
+// module.exports = stripe;
+//STRIPE END HERE.
+
+//ROUTES/INDEX.JS
+// const paymentApi = require('./payment');
+
+// const configureRoutes = app => {
+//   paymentApi(app);
+// };
+
+// module.exports = configureRoutes;
+//STRIPE END HERE.
+
+
+//ROUTES/PAYMENT.JS
+// const stripe = require('../constants/stripe');
+
+// const postStripeCharge = res => (stripeErr, stripeRes) => {
+//   if (stripeErr) {
+//     res.status(500).send({ error: stripeErr });
+//   } else {
+//     res.status(200).send({ success: stripeRes });
+//   }
+// }
+
+// const paymentApi = app => {
+//   app.get('/', (req, res) => {
+//     res.send({ message: 'Hello Stripe checkout server!', timestamp: new Date().toISOString() })
+//   });
+
+//   app.post('/', (req, res) => {
+//     stripe.charges.create(req.body, postStripeCharge(res));
+//   });
+
+//   return app;
+// };
+
+// module.exports = paymentApi;
+//STRIPE END HERE.
+
+
+
+
 
 
 

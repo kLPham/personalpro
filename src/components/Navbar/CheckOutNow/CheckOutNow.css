@@ -1,0 +1,44 @@
+.TheWholeCheckoutPage{
+    height: 1000px;
+}
+
+.welcome{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+
+}
+
+.containerOfCheckout{
+    padding-top: 80px;
+    padding-left: 10px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    position: relative;
+    height: 500px;
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    border-top: 38px solid gray;
+    background-color: white;
+    color: gray;
+}
+
+/* .Thanks img{
+    text-align: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    display:flex;
+} */
+
+.checkoutWithCard{
+    padding-left: 250px;
+    border-color: lightgray;
+    width: 500px;
+    height: 500px;
+}
+   

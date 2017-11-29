@@ -4,7 +4,7 @@ button{
 }
 
 .my_cart {
-    height: 400px;
+    height: 1400px;
     padding-top: 40px;
     padding-left: 40px;
     display: flex;
@@ -95,3 +95,34 @@ button{
     display: flex;
     margin-left: 100px;
 }
+
+.stripeRight{
+    position: absolute;
+    right: 270px;
+    top: 350px;
+}
+
+
+.checkoutContainer{
+    width: 500px;
+     background: rgba(255,255,255,0.9);
+     padding: 30px; 
+     -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+     -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+     -ms-border-radius: 5px;
+     -o-border-radius: 5px;
+     border-radius: 5px;
+
+     height: 400px;
+     position: relative;
+     display: flex;
+     margin-top: -80px;
+  
+      margin-bottom: 250px;
+      margin-left: 600px;
+      
+}
+

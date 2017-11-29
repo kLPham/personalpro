@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import './BridalCollection.css';
 // import Details from '../../Details/Details';
 
+import RaisedButton from 'material-ui/RaisedButton';
+
 
 export default class BridalCollection extends Component{
     constructor(props){
@@ -12,7 +14,10 @@ export default class BridalCollection extends Component{
 
         this.state = {
             item: [],
-            productsToDisplay: []
+            productsToDisplay: [],
+            filteredProducts: [],
+            sortVal: '',
+            searchVal: ''
         };
     }
   

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import './Cart.css';
 
+import CheckoutWStripe from '../CheckoutWStripe';
+
 
 import { connect } from 'react-redux';
 import { handleCheckOut, handleCartRemove } from '../../../ducks/reducer';
@@ -41,7 +43,18 @@ class Cart extends Component {
       axios.get('/api/cart').then(response =>{
         this.setState({cart: response.data });
       })
-}
+    }
+
+
+    //testing%% get total
+    // componentWillMount(){
+    //   // axios.get(`/cart/${this.props.user.id}`).then(response=> {
+    //   //   this.setState({ cart: response.data });
+    //   // });
+    //   axios.get(`/cart/total/${this.props.user.id}`).then(response=> {
+    //     this.setState({ total: response.data[0].sum });
+    //   });
+    // }
 
 
 
@@ -58,10 +71,10 @@ class Cart extends Component {
   //POST ON checkout PAGE
   handleAddToCheckout(item){ //:)
     axios
-         .post('/api/CheckOutNow',{item: item})
+         .post('/api/CheckoutWStripe',{item: item})
          .then((response) => this.setState({checkout: response.data}))
          .catch(console.log)
-         window.location.href = "http://localhost:3000/CheckOutNow";
+         window.location.href = "http://localhost:3000/CheckoutWStripe";
          alert("let's go pay!")
 }
 
@@ -102,13 +115,15 @@ class Cart extends Component {
         <div className="btn_container">
             <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
             <br/>
-         
-            <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button>
+           
+            {/* <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button> */}
            
         </div>
         <div>{displayInCart}</div>
-         
-      
+        <div className="checkoutContainer">
+            <h3 className="pay">RoyalCouture Checkout</h3>
+            <div className="stripeRight"><CheckoutWStripe amount="50000"/></div>
+        </div>
       </div>
     );
   }

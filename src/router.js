@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import House from './components/Navbar/House/House';
 import Login from './components/Navbar/Login/Login';
 import Cart from './components/Navbar/Cart/Cart';
-import CheckOutNow from './components/Navbar/CheckOutNow/CheckOutNow';
+import CheckoutWStripe from './components/Navbar/CheckoutWStripe';
 import About from './components/Navbar/About/About';
 import Contact from './components/Navbar/Contact/Contact';
 
@@ -31,7 +31,7 @@ import ProductLandingPage from './components/Navbar/Products/ProductLandingPage/
         <Route  exact path="/" component={House} />
         <Route path="/Login" component={Login} />
         <Route path="/Cart" component={Cart} />
-        <Route path="/CheckOutNow" component={CheckOutNow} />
+        <Route path="/CheckoutWStripe" component={CheckoutWStripe} />
         <Route path="/About" component={About} />
         <Route path="/Contact" component={Contact} />
         <Route path="/Products" render={()=> (

@@ -7,62 +7,18 @@ const massive = require("massive");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 
+
+require("dotenv").config(); //%
+
+
+
 //import fontawesome here:
 const FontAwesome = require('react-fontawesome');
-//IMPORT CONTROLLER
-// const cartController = require("./controllers/cart_controller");
+
+// const controller= require('./controllers/controller');
 
 
-
-
-
-//STRIPE:entry point and bootstraps your Express application
-// const SERVER_CONFIGS = require('./constants/server');
-
-// const configureServer = require('./server');
-// const configureRoutes = require('./routes');
-
-
-// configureServer(app);
-// configureRoutes(app);
-
-
-
-//STRIPE END HERE.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// const stripe = require('stripe')(secretKey)
 
 
 
@@ -80,8 +36,37 @@ const port = 3001;
 
 const app = express();
 
+
+
+
+
+
+
+
+
+
+
 //uncomment this when i am ready to have project in production. Final step
 // app.use(express.static(`${__dirname}/build`));
+
+
+const stripe = require("stripe")(process.env.STRIPE_SECRET);  //%%
+
+
+
+
+//STRIPE:entry point and bootstraps your Express application
+const SERVER_CONFIGS = require('../src/react-express-stripe/backend/constants/server');
+
+const configureServer = require('../src/react-express-stripe/backend/server');
+const configureRoutes = require('../src/react-express-stripe/backend/routes/index');
+
+configureServer(app);
+configureRoutes(app);
+//STRIPE END HERE.
+
+
+
 
 app.use(
   session({
@@ -90,6 +75,7 @@ app.use(
     saveUninitialized: false
   })
 );
+
 massive(connectionString)
   .then(db => app.set("db", db))
   .catch(console.log);
@@ -114,12 +100,12 @@ passport.use(
       console.log(profile);
       app
         .get("db")
-        .getUserByAuthId(profile.id)
+        .getUserByAuthId(profile.consumer_id)  // .getUserByAuthId(profile.id)%%
         .then(response => {
           if (!response[0]) {
             app
               .get("db")
-              .createUserByAuth([profile.id, profile.displayName])
+              .createUserByAuth([profile.consumer_id, profile.displayName]) //  .createUserByAuth([profile.id, profile.displayName])
               .then(created => {
                 console.log(created);
                 return done(null, created[0]);
@@ -140,7 +126,8 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-//GET USER LOGIN BELOW:
+//
+// AUTHORIZATION BELOW:
 app.get("/api/login", passport
     .authenticate("auth0", {
     successRedirect: "http://localhost:3000/"
@@ -165,15 +152,38 @@ app.get("/api/test", (req, res, next) => {
     .catch(console.log);
 });
 
-app.get("/api/test", (req, res, next) => {
-  req.app
-    .get("db")
-    .getUserByAuthId([])
-    .then(response => {
-      res.json(response);
-    })
-    .catch(console.log);
-});
+// app.get("/api/test", (req, res, next) => {
+//   req.app
+//     .get("db")
+//     .getUserByAuthId([])
+//     .then(response => {
+//       res.json(response);
+//     })
+//     .catch(console.log);
+// });
+
+
+
+//GET USER LOG IN & OUT STATUS HERE:%
+// app.get("/api/logstatus", (req, res, next) => {
+//   res.status(200).json(req.session);
+// });
+
+// app.get("/api/logout", (req, res, next) => {
+//   req.session.destroy();
+//   res.redirect(200, "/");
+// });
+
+
+// LOGINSTATUS %
+// app.get("/api/logstatus", (req, res, next) => {
+//   res.status(200).json(req.session);
+// });
+
+ //END%
+
+
+
 
 
 
@@ -190,7 +200,7 @@ app.get('/api/products/:product_type', (req, res, next)=> {
     .catch(console.log);
 })
 
-//SHOPPING CART RELATED CALL BELOW:
+//SHOPPING CART:
 //session cart: post to db
 app.post('/api/cart', (req, res)=>{
   let item= req.body.item;
@@ -221,25 +231,26 @@ app.post('/api/cart', (req, res)=>{
     //  req.session.cart.splice(index, 1);
      res.json(req.session.cart);   //send back cart from session
  })
+ //SHOPPING CART END.
   
 
 
 
 
 //GET ITEMS FROM CART TO SEND IT TO CHECKOUT-PAGE:@@@
- app.get('/api/checkout',(req, res) =>{
-   return res.json(req.session.checkout);
- })
+//  app.get('/api/checkout',(req, res) =>{
+//    return res.json(req.session.checkout);
+//  })
 
  //post items to checkout page @@@
- app.post('/api/checkout', (req, res)=>{
-  let item= req.body.item;
-   if(!req.session.checkout ){
-     req.session.checkout = [];
-   }
-   req.session.checkout.push(item); //add item to cart
-   return res.json(req.session.checkout);
-  })
+//  app.post('/api/checkout', (req, res)=>{
+//   let item= req.body.item;
+//    if(!req.session.checkout ){
+//      req.session.checkout = [];
+//    }
+//    req.session.checkout.push(item); //add item to cart
+//    return res.json(req.session.checkout);
+//   })
  
 
 
@@ -253,7 +264,23 @@ app.post('/api/cart', (req, res)=>{
 
 
 
+app.post('/checkout', (req,res) => {
+    // if (stripeErr) {
+    //   console.log(stripeErr)
+    //   res.status(500).send({ error: stripeErr });
+    // } else {rs
+    //   res.status(200).send({ success: stripeRes });
+    // }
 
+    stripe.charges.create(req.body, (stripeErr, stripeRes) => {
+      if (stripeErr) {
+        console.log(stripeErr)
+        res.status(500).send({ error: stripeErr });
+      } else {
+        res.json("success!");
+      }
+  })
+})
 
 
 
@@ -279,21 +306,12 @@ app.get('/api/product/:product_id', (req, res, next)=>{
 
 
 
-// // CART
-// app.get("/api/cart", cart_Controller.get);
-// app.post("/api/cart", cart_Controller.add);
-// app.delete("/api/cart/:product", cartController.delete);
-
-
-
-
 //SUBMIT ORDERS CALL BELOW: get & update orders :NEED TO WORK ON THIS@@@
 app.get('/api/orders',(req, res)=>{
   const {order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address } = req.body;
   req.app.get('db').submitOrders(req.submitOrders);
   return res.json(req.body);
 })
-
 
 
 //*NEED TO WORK ON THIS@@@
@@ -370,6 +388,7 @@ app.post('/api/orders', (req, res)=>{
 //   }
 // }
 
+
 // const paymentApi = app => {
 //   app.get('/', (req, res) => {
 //     res.send({ message: 'Hello Stripe checkout server!', timestamp: new Date().toISOString() })
@@ -384,6 +403,58 @@ app.post('/api/orders', (req, res)=>{
 
 // module.exports = paymentApi;
 //STRIPE END HERE.
+
+
+
+
+
+
+
+
+
+
+
+// CHECKOUT %:)
+// app.post("/api/charge", (req, res) => {
+//   stripe.charges.create(req.body, (stripeErr, stripeRes) => {
+//     if (stripeErr) {
+//       res.status(500).send({ error: stripeErr });
+//     } else {
+//       req.session.paid = true;
+//       req.session.purchases = req.session.cart.products;
+//       delete req.session.cart;
+//       res.redirect(200, "/");
+//     }
+//   });
+// });
+
+
+
+//Endpoints
+// app.get('/products/price', controller.getProductsByPrice);
+// app.get('/products/price-desc', controller.getProductsByPriceDesc);
+// app.get('/products/:search', controller.getProductsBySearch);
+// app.get('/users', controller.getUsers);
+// app.get('/cart/total/:id', controller.getCartTotal);
+
+
+
+
+
+
+
+
+// app.post("/api/charge", (req, res) => {
+//   stripe.charges.create(req.body, (stripeErr, stripeRes) => {
+//     if (stripeErr) {
+//       res.status(500).send({ error: stripeErr });
+//     } else {
+//       req.session.paid = true;
+//       req.session.purchases = req.session.cart.tracks;
+//       delete req.session.cart;
+//       res.redirect(200, "/success");
+//     }
+//   });
 
 
 

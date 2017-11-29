@@ -1,17 +1,17 @@
-//entry point and bootstraps your Express application
-const express = require('express');
+// //entry point and bootstraps your Express application
+// const express = require('express');
 
-const SERVER_CONFIGS = require('./constants/server');
+// const SERVER_CONFIGS = require('./constants/server');
 
-const configureServer = require('./server');
-const configureRoutes = require('./routes');
+// const configureServer = require('./server');
+// const configureRoutes = require('./routes');
 
-const app = express();
+// const app = express();
 
-configureServer(app);
-configureRoutes(app);
+// configureServer(app);
+// configureRoutes(app);
 
-app.listen(SERVER_CONFIGS.PORT, error => {
-  if (error) throw error;
-  console.log('Server running on port: ' + SERVER_CONFIGS.PORT);
-});
+// app.listen(SERVER_CONFIGS.PORT, error => {
+//   if (error) throw error;
+//   console.log('Server running on port: ' + SERVER_CONFIGS.PORT);
+// });

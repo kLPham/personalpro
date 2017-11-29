@@ -1,5 +1,5 @@
 
-import getProducts from './getProducts';
+// import getProducts from './getProducts';
 
 
 const initialState = {

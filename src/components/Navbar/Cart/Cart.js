@@ -4,6 +4,7 @@ import './Cart.css';
 
 import CheckoutWStripe from '../CheckoutWStripe';
 
+import Logo2 from '../Logo2.jpeg';
 
 import { connect } from 'react-redux';
 import { handleCheckOut, handleCartRemove } from '../../../ducks/reducer';
@@ -46,7 +47,7 @@ class Cart extends Component {
     }
 
 
-    //testing%% get total
+    // // testing%% get total
     // componentWillMount(){
     //   // axios.get(`/cart/${this.props.user.id}`).then(response=> {
     //   //   this.setState({ cart: response.data });
@@ -85,26 +86,18 @@ class Cart extends Component {
       this.state.cart.length > 0 ? (
       this.state.cart.map(product => {
         return (
-      <div key={product}>
-      <div className="my_cart">
-        <p key={Math.random()}></p>
-            <div className="cart_container">
-                  {/* <h2>This item has been successfully added:</h2> */}
-                  <img className="cart_img"alt="image_url"src={product.image_url}></img>
-                <div >
-                  <p>BRAND: {product.brand}</p>
-                  <p>SIZE: { product.size }</p>
-                  <p>COLOR: { product.color }</p>
-                  <p>QTY: { product.quantity }</p>
-                  <p>PRICE: ${ product.price }</p>
-                </div>
-                  {/* <p>FINAL TOTAL: ${displayCart.reduce( ( total, { price } ) => total + price, 0 )}</p> */}
-                  <Trash className="trash" id="Cart_trash" onClick={ () => this.handleCartRemove(product)}/>
-            </div>
-                <br />
-               
-      </div>
-      </div>
+                    <div className="cart_container">
+                          {/* <h2>This item has been successfully added:</h2> */}
+                          <img className="cart_img"alt="image_url"src={product.image_url}></img>
+                        <div key={product}>
+                          <p>BRAND: {product.brand}</p>
+                          <p>SIZE: { product.size }</p>
+                          <p>COLOR: { product.color }</p>
+                          <p>QTY: { product.quantity }</p>
+                          <p>PRICE: ${ product.price }</p>
+                        </div>
+                        <Trash className="trash" id="Cart_trash" onClick={ () => this.handleCartRemove(product)}/>
+                    </div>
         );
       })
     ) : (
@@ -112,19 +105,31 @@ class Cart extends Component {
     );
     return (
       <div>
-        <div className="btn_container">
-            <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
-            <br/>
-           
-            {/* <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button> */}
-           
-        </div>
-        <div>{displayInCart}</div>
-        <div className="checkoutContainer">
-            <h3 className="pay">RoyalCouture Checkout</h3>
-            <div className="stripeRight"><CheckoutWStripe amount="50000"/></div>
-        </div>
-      </div>
+              <div className="btn_container">
+                  <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
+                  <br/>
+                
+                  {/* <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button> */}
+                
+              </div>
+
+              <div >
+                <div className="my_cart">
+                  <p key={Math.random()}></p>
+                      <div className="whole_cart">
+                              <h3 className="cartletter">Shopping Cart</h3>
+                            <hr/>
+                        {displayInCart} <br />
+                      </div>
+                      <div className="checkoutContainer">
+                          <div className="logo2" ><img alt="crown" src={Logo2}></img></div>
+                          <div className="royal" ><h3>Checkout</h3></div>
+                          <div className="stripeRight"><CheckoutWStripe amount="50000"/></div>
+                        </div>
+                </div>
+                   
+               </div>
+          </div>
     );
   }
 }

@@ -4,7 +4,7 @@ button{
 }
 
 .my_cart {
-    height: 1400px;
+    height: 1000px;
     padding-top: 40px;
     padding-left: 40px;
     display: flex;
@@ -22,9 +22,6 @@ button{
     width: 300px;
     height: 100px;
     display: flex;
-    /* padding-right: 2px solid; */
-    /* margin-right: 30px; */
-
     margin-left: 70px;
     margin-top: 30px;
 }
@@ -36,7 +33,6 @@ button{
     width: 200px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     z-index: 1;
-    
 }
 .checkoutbtn{
     background-color: green;
@@ -63,11 +59,45 @@ button{
    right:0px;
 }
 
+.whole_cart{
+    
+        font-size: 10px;
+        width: 300px;
+        margin-left: 0px  auto; 
+         margin-right: 0px auto;    
+         background: rgba(255,255,255,0.9);
+         padding: 30px; 
+         -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+         -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+         box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+         -webkit-border-radius: 5px;
+         -moz-border-radius: 5px;
+         -ms-border-radius: 5px;
+         -o-border-radius: 5px;
+         border-radius: 5px;
+   
+         height: 100%;
+         width: 40%;
+         position: relative;
+         display: block;
+         justify-content: center;
+        /* margin-bottom: 25%; */
+}
+.cartletter{
+    font-size: 30px;
+    margin: 0 auto 0 auto;
+    text-transform: uppercase;
+    text-align: center;
+   
+}
+
+
 .cart_container{
-     font-size: 10px;
-     width: 300px;
-     margin-left: 0px  auto; 
-      margin-right: 0px auto;    
+      font-size: 10px;
+      width: 300px;
+      /* margin-right: 15%;  */
+      margin-top: 30px;
+      margin-left: 130px;
       background: rgba(255,255,255,0.9);
       padding: 30px; 
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -78,7 +108,6 @@ button{
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
       border-radius: 5px;
-
       height: 200px;
       position: relative;
       display: flex;
@@ -95,16 +124,30 @@ button{
     display: flex;
     margin-left: 100px;
 }
-
+.royal{
+    text-align: center;
+    height: 5%;
+    width: 100%;
+    text-transform: uppercase;
+}
+.logo2 img{
+    width: 60px;
+    height: 60px;
+    display: block;
+    margin: 0 auto;
+  }
 .stripeRight{
-    position: absolute;
-    right: 270px;
-    top: 350px;
+    position: relative;
+    margin-top: 50%;
+    margin-right: 50%; 
+    height: 20%;
+    width: 100%;
+    text-align: center;
 }
 
 
 .checkoutContainer{
-    width: 500px;
+    width: 40%;
      background: rgba(255,255,255,0.9);
      padding: 30px; 
      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -116,13 +159,13 @@ button{
      -o-border-radius: 5px;
      border-radius: 5px;
 
-     height: 400px;
+     height: 40%;
      position: relative;
-     display: flex;
-     margin-top: -80px;
+     display: inline-block;
+     /* margin-top: -80px; */
   
-      margin-bottom: 250px;
-      margin-left: 600px;
+      /* margin-bottom: 70%;*/
+      margin-left: 5%;
       
 }
 

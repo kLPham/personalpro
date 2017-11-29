@@ -11,18 +11,10 @@ const Auth0Strategy = require("passport-auth0");
 require("dotenv").config(); //%
 
 
-
 //import fontawesome here:
 const FontAwesome = require('react-fontawesome');
 
 // const controller= require('./controllers/controller');
-
-
-// const stripe = require('stripe')(secretKey)
-
-
-
-
 
 
 const { dbUser, database } = require("./config");
@@ -40,22 +32,12 @@ const app = express();
 
 
 
-
-
-
-
-
-
 //uncomment this when i am ready to have project in production. Final step
 // app.use(express.static(`${__dirname}/build`));
 
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET);  //%%
-
-
-
-
 //STRIPE:entry point and bootstraps your Express application
+const stripe = require("stripe")(process.env.STRIPE_SECRET);  
 const SERVER_CONFIGS = require('../src/react-express-stripe/backend/constants/server');
 
 const configureServer = require('../src/react-express-stripe/backend/server');
@@ -126,7 +108,7 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-//
+
 // AUTHORIZATION BELOW:
 app.get("/api/login", passport
     .authenticate("auth0", {
@@ -184,10 +166,6 @@ app.get("/api/test", (req, res, next) => {
 
 
 
-
-
-
-
 //GET PRODUCT TYPE from database-products table: :)
 app.get('/api/products/:product_type', (req, res, next)=> {
   console.log('product_type request:', req.params.product_type);
@@ -216,7 +194,6 @@ app.post('/api/cart', (req, res)=>{
        return res.json(req.session.cart);
    })
  
- 
    //update cart when REMOVE ITEMS FROM CART BACK-END :)
    app.delete('/api/cart/:id',(req, res)=>{
     // console.log('Cart: ', req.session.cart);
@@ -237,10 +214,6 @@ app.post('/api/cart', (req, res)=>{
 
 
 
-//GET ITEMS FROM CART TO SEND IT TO CHECKOUT-PAGE:@@@
-//  app.get('/api/checkout',(req, res) =>{
-//    return res.json(req.session.checkout);
-//  })
 
  //post items to checkout page @@@
 //  app.post('/api/checkout', (req, res)=>{
@@ -265,13 +238,6 @@ app.post('/api/cart', (req, res)=>{
 
 
 app.post('/checkout', (req,res) => {
-    // if (stripeErr) {
-    //   console.log(stripeErr)
-    //   res.status(500).send({ error: stripeErr });
-    // } else {rs
-    //   res.status(200).send({ success: stripeRes });
-    // }
-
     stripe.charges.create(req.body, (stripeErr, stripeRes) => {
       if (stripeErr) {
         console.log(stripeErr)
@@ -281,13 +247,6 @@ app.post('/checkout', (req,res) => {
       }
   })
 })
-
-
-
-
-
-
-
 
 
  //GET ONLY ONE ITEM FOR DETAIL PAGE:
@@ -325,95 +284,6 @@ app.post('/api/orders', (req, res)=>{
 })
 
 
-//STRIPE HERE:
-
-//CONSTANTS/FRONTEND.JS
-// const FRONTEND_DEV_URLS = [ 'http://localhost:3000' ];
-
-// const FRONTEND_PROD_URLS = [
-//   'https://www.yourdomain.com',
-//   'https://yourdomain.com'
-// ];
-
-// module.exports = process.env.NODE_ENV === 'production'
-//   ? FRONTEND_PROD_URLS
-//   : FRONTEND_DEV_URLS;  //only this matters //when your app goes in production use your own domain of your frontend application.
-//STRIPE END HERE.
-
-//CONSTANTS/SERVER.JS
-// const path = require('path');
-
-// const SERVER_PORT = 8080;
-
-// const SERVER_CONFIGS = {
-//   PRODUCTION: process.env.NODE_ENV === 'production',
-//   // PORT: process.env.PORT || SERVER_PORT,
-// };
-
-// module.exports = SERVER_CONFIGS;
-//STRIPE END HERE.
-
-
-//CONSTANTS/STRIPE.JS
-// const configureStripe = require('stripe');
-
-// const STRIPE_SECRET_KEY = process.env.NODE_ENV === 'production'
-//     ? 'sk_test_JlmWEXFhyXX7zivmfy6eraJu'
-//     :'pk_test_SgQ6st52BRImIvvg2VhkhE5H';
-
-// const stripe = configureStripe(STRIPE_SECRET_KEY);
-
-// module.exports = stripe;
-//STRIPE END HERE.
-
-//ROUTES/INDEX.JS
-// const paymentApi = require('./payment');
-
-// const configureRoutes = app => {
-//   paymentApi(app);
-// };
-
-// module.exports = configureRoutes;
-//STRIPE END HERE.
-
-
-//ROUTES/PAYMENT.JS
-// const stripe = require('../constants/stripe');
-
-// const postStripeCharge = res => (stripeErr, stripeRes) => {
-//   if (stripeErr) {
-//     res.status(500).send({ error: stripeErr });
-//   } else {
-//     res.status(200).send({ success: stripeRes });
-//   }
-// }
-
-
-// const paymentApi = app => {
-//   app.get('/', (req, res) => {
-//     res.send({ message: 'Hello Stripe checkout server!', timestamp: new Date().toISOString() })
-//   });
-
-//   app.post('/', (req, res) => {
-//     stripe.charges.create(req.body, postStripeCharge(res));
-//   });
-
-//   return app;
-// };
-
-// module.exports = paymentApi;
-//STRIPE END HERE.
-
-
-
-
-
-
-
-
-
-
-
 // CHECKOUT %:)
 // app.post("/api/charge", (req, res) => {
 //   stripe.charges.create(req.body, (stripeErr, stripeRes) => {
@@ -436,35 +306,6 @@ app.post('/api/orders', (req, res)=>{
 // app.get('/products/:search', controller.getProductsBySearch);
 // app.get('/users', controller.getUsers);
 // app.get('/cart/total/:id', controller.getCartTotal);
-
-
-
-
-
-
-
-
-// app.post("/api/charge", (req, res) => {
-//   stripe.charges.create(req.body, (stripeErr, stripeRes) => {
-//     if (stripeErr) {
-//       res.status(500).send({ error: stripeErr });
-//     } else {
-//       req.session.paid = true;
-//       req.session.purchases = req.session.cart.tracks;
-//       delete req.session.cart;
-//       res.redirect(200, "/success");
-//     }
-//   });
-
-
-
-
-
-
-
-
-
-
 
 
 app.listen(port, () => {

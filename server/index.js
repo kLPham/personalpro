@@ -272,16 +272,21 @@ app.get('/api/orders',(req, res)=>{
   return res.json(req.body);
 })
 
+//CartEndpoint Here:
+// app.get('/cart/total/:id', controller.getCartTotal);
 
-//*NEED TO WORK ON THIS@@@
-app.post('/api/orders', (req, res)=>{
-  // console.log('orders request:', order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address );
-  req.app.post('db').submitOrders(req.body)
-  .then(response => {
-    res.status(200).json(response);
-  })
-  .catch(console.log);
-})
+
+
+
+// //*NEED TO WORK ON THIS@@@
+// app.post('/api/orders', (req, res)=>{
+//   // console.log('orders request:', order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address );
+//   req.app.post('db').submitOrders(req.body)
+//   .then(response => {
+//     res.status(200).json(response);
+//   })
+//   .catch(console.log);
+// })
 
 
 // CHECKOUT %:)
@@ -300,12 +305,7 @@ app.post('/api/orders', (req, res)=>{
 
 
 
-//Endpoints
-// app.get('/products/price', controller.getProductsByPrice);
-// app.get('/products/price-desc', controller.getProductsByPriceDesc);
-// app.get('/products/:search', controller.getProductsBySearch);
-// app.get('/users', controller.getUsers);
-// app.get('/cart/total/:id', controller.getCartTotal);
+
 
 
 app.listen(port, () => {

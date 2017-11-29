@@ -9,7 +9,7 @@ const initialState = {
 //actions: command given 
 const ADD_TO_MY_CART = "ADD_TO_MY_CART";
 const REMOVE_FROM_MY_CART = "REMOVE_FROM_MY_CART";
-// const UPDATE_CART_ITEM = "UPDATE_CART_ITEM";
+const UPDATE_CART_PRICE = "UPDATE_CART_PRICE";
 const CHECKOUT_NOW = "CHECKOUT_NOW";
 
 
@@ -18,17 +18,18 @@ export default function My_Cart( state = initialState, action) {
     switch( action.type ) {
       case ADD_TO_MY_CART: 
           return Object.assign({}, state, {cart: [...state.cart, action.payload] });
-      case REMOVE_FROM_MY_CART:
-          return Object.assign({}, state, {cart: state.cart.filter( val => val !== action.payload )  });
-      // case UPDATE_CART_ITEM:
-      //     return object.assign({}, state, {cart: state.cart.map( val => val == action.payload )  }); 
+      case UPDATE_CART_PRICE:
+          // let totalPrice = getCartTotal(action.data)
+          return Object.assign({}, state, { data:action.data, cartTotal: action.data }); 
       case CHECKOUT_NOW:
           return Object.assign({}, initialState);
       default: 
       return state;
     }
   }
-
+  // case 'GET_DATA_SUCCESS':
+  // let totalPrice = getTotalPrice(action.data);
+  // return Object.assign({}, state, { datas: action.data, cartTotal: totalPrice });
  
 
 
@@ -47,21 +48,14 @@ export default function My_Cart( state = initialState, action) {
       }
   }
 
-  // export function handleUpdateCartItem(id , count){
-  //     return {
-  //       type: UPDATE_CART_ITEM,
-  //       payload: id, count
-  //     }
-  // }
+  export function handleUpdateCartPrice(id , count){
+      return {
+        type: UPDATE_CART_PRICE,
+        payload: id, count
+      }
+  }
 
-//NEW CHANGES HERE SATURDAY NIGHT
-  // removeFromCart
-// const handleCartRemove = (id) => (
-//     {
-//       type: 'REMOVE_FROM_MY_CART',
-//       id,
-//     }
-//   );
+
 
   export function handleCheckOut(  ){
       return {

@@ -11,6 +11,3 @@ WHERE order_id=$1 ;
 
 
 
--- SELECT SUM(product.price)
--- FROM cart
--- WHERE user_id= $1;

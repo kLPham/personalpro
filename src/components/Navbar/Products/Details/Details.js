@@ -40,10 +40,17 @@ export default class Details extends Component{
              alert("Your bank account is now empty!")
     }
 
+// access size on product object
+// convert from string to array
+// map over array, return option tag with size 
+
+
+
     render() {
         const aProduct = this.state.productsToDisplay.map(product_id =>{
 
             console.log("Products redering",product_id)
+            console.log(product_id.size.split(","))
         return(
             <div key={product_id.id}>
              <Link to="/Products">
@@ -57,12 +64,16 @@ export default class Details extends Component{
                         <p>DESCRIPTION: { product_id .description }</p>
                             <select>
                                 <option>Select Size</option>
-                                <option>SIZE: { product_id.size }</option>
+                                {product_id.size.split(',').map(size => (
+                                    
+                                <option>SIZE: { size }</option>
+                                ))}
                             </select>
                             <hr />
                             <select>
                                 <option>Select Color</option>
                                 <option>COLOR: { product_id.color }</option>
+
                             </select>
                             <hr />
                             <select>

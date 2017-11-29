@@ -7,19 +7,20 @@ import CheckoutWStripe from '../CheckoutWStripe';
 import Logo2 from '../Logo2.jpeg';
 
 import { connect } from 'react-redux';
-import { handleCheckOut, handleCartRemove } from '../../../ducks/reducer';
+import { handleCheckOut, handleCartRemove, handleUpdateCartPrice } from '../../../ducks/reducer';
 
 
 import Trash from 'react-icons/lib/fa/trash';
 
 
 
-class Cart extends Component {
+export default class Cart extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      cart: []
+      cart: [],
+      cartTotal: 0
     };
  
   //BIND FUNCTIONS HERE:
@@ -47,16 +48,12 @@ class Cart extends Component {
     }
 
 
-    // // testing%% get total
-    // componentWillMount(){
-    //   // axios.get(`/cart/${this.props.user.id}`).then(response=> {
-    //   //   this.setState({ cart: response.data });
-    //   // });
-    //   axios.get(`/cart/total/${this.props.user.id}`).then(response=> {
-    //     this.setState({ total: response.data[0].sum });
-    //   });
-    // }
-
+    //GET TOTAL PRICE FROM SERVER:
+    componentWillMount(){
+      axios.get(`/cart/total/${this.props.userid}`).then(response=> {
+        this.setState({ total: response.data[0].sum });
+      });
+    }
 
 
   //REMOVE FROM CART FRONT_END: :)
@@ -95,6 +92,7 @@ class Cart extends Component {
                           <p>COLOR: { product.color }</p>
                           <p>QTY: { product.quantity }</p>
                           <p>PRICE: ${ product.price }</p>
+                          
                         </div>
                         <Trash className="trash" id="Cart_trash" onClick={ () => this.handleCartRemove(product)}/>
                     </div>
@@ -120,11 +118,22 @@ class Cart extends Component {
                               <h3 className="cartletter">Shopping Cart</h3>
                             <hr/>
                         {displayInCart} <br />
+                        
                       </div>
                       <div className="checkoutContainer">
-                          <div className="logo2" ><img alt="crown" src={Logo2}></img></div>
+                          <div className="logo2"><img alt="crown" src={Logo2}></img></div>
                           <div className="royal" ><h3>Checkout</h3></div>
+                          <p>
+                            {this.state.cart.length && this.state.cart.reduce((total,product)=>{
+                                var priceTotal= product.price * product.quantity;
+                                total += priceTotal
+                                return total;
+                            },0)}
+                          </p>
+                          {/* <p>Total Price: {this.props.handleUpdateCartPrice}</p> */}
+                          {/* <p>Total Price: {}</p> */}
                           <div className="stripeRight"><CheckoutWStripe amount="50000"/></div>
+                       
                         </div>
                 </div>
                    
@@ -136,12 +145,4 @@ class Cart extends Component {
         
 
 
-  //CONNECT allow us to connect all the redux & their action to this component
-  //do the same for every component you want to add the action of redux in.
-  function mapStateToProps(state) { //redux is gonna call this function whenever the state in the store changes.
-    return state
-  }
-
-//do the same for every component but put: export default connect(mapStateToProps, {}) (Cart);
-
-export default connect(mapStateToProps, { handleCheckOut, handleCartRemove } )(Cart);
+ 

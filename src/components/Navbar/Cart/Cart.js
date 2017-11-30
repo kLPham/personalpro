@@ -74,6 +74,7 @@ handleAddToCheckout(item){ //:)
   
   
 render(){
+    // const theTotal = total += priceTotal;
     let displayInCart =
       this.state.cart.length > 0 ? (
       this.state.cart.map(product => {
@@ -121,13 +122,19 @@ render(){
                                       var priceTotal= product.price * product.quantity;
                                       total += priceTotal
                                       return total;
+
                                   },0)}
                                 </p>
                                
                               </div>
                               <hr />
                               <br />
-                          <div className="stripeRight"><CheckoutWStripe amount="600"/></div>
+                          <div className="stripeRight"><CheckoutWStripe amount={this.state.cart.length && this.state.cart.reduce((total,product)=>{
+                                      var priceTotal= product.price * product.quantity;
+                                      total += priceTotal
+                                      return total;
+
+                                  },0)}/></div>
                       </div>
                 </div>
                    

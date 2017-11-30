@@ -54,3 +54,7 @@
   position: relative;
   display: block;
   justify-content: center; */
+
+  @media(min-width: 500px){
+    
+   }

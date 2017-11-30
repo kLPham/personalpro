@@ -14,21 +14,6 @@
     color: white;
     background-color: darkgrey;
   }
- /* .loginNInput div{
-    display: block;
-    /* position: relative;
-    justify-content: center;
-    padding-left: 150px;
-    padding-right: 50px;
-    height: 30px; */
-    /* border-radius: 300px; */
-    /* margin: 0 auto;
- } */ 
- /* .c{
-   position: absolute;
-   right: 150px;
-   top: 130px;
- } */
 
  .button1,.button2{
   height: 46px;
@@ -105,3 +90,7 @@
   width: 30px;
   height: 30px;
 }
+
+/* @media(min-width: 500px){
+ 
+} */

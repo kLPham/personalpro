@@ -57,7 +57,7 @@ handleCartRemove(product){
          .delete(`/api/cart/${product.id}`)
          .then((response) => this.setState({cart: response.data}))
          .catch(console.log);
-         alert("Item has been remove from cart")
+         alert("Congratulation! You now have more than a dollar in your bank account")
 }
   
 

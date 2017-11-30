@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
+import { Link } from 'react-router-dom';
 
 
 // import STRIPE_PUBLISHABLE from '../../constants/stripe';
@@ -13,7 +14,6 @@ const fromDollarToCent = amount => amount * 100;
 const successPayment = data => {
   console.log(data)
   alert('Thank You for shopping with us');
- 
 };
 
 const errorPayment = data => {
@@ -37,7 +37,7 @@ const CheckoutWStripe = ({ name, description, amount }) =>
   name={'RoyalCouture'} 
   description={'Pay for Your Gowns Here'} 
 
-  panelLabel="gowns purchased:" 
+  panelLabel="Submit Payment:" 
   amount={fromDollarToCent(amount)} 
   token={onToken(amount, description)}
   currency={CURRENCY} 

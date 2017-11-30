@@ -4,7 +4,7 @@ button{
 }
 
 .my_cart {
-    height: 1000px;
+    height: 800px;
     padding-top: 40px;
     padding-left: 40px;
     display: flex;
@@ -62,9 +62,10 @@ button{
 .whole_cart{
     
         font-size: 10px;
-        width: 300px;
+        /* width: 300px; */
         margin-left: 0px  auto; 
-         margin-right: 0px auto;    
+         margin-right: 0px auto; 
+         margin-bottom: 300px;   
          background: rgba(255,255,255,0.9);
          padding: 30px; 
          -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -97,7 +98,7 @@ button{
       width: 300px;
       /* margin-right: 15%;  */
       margin-top: 30px;
-      margin-left: 130px;
+      margin-left: 190px;
       background: rgba(255,255,255,0.9);
       padding: 30px; 
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -138,7 +139,6 @@ button{
   }
 .stripeRight{
     position: relative;
-    margin-top: 50%;
     margin-right: 50%; 
     height: 20%;
     width: 100%;
@@ -159,7 +159,7 @@ button{
      -o-border-radius: 5px;
      border-radius: 5px;
 
-     height: 40%;
+     height: 50%;
      position: relative;
      display: inline-block;
      /* margin-top: -80px; */
@@ -169,3 +169,26 @@ button{
       
 }
 
+.totalcontainer{
+    width: 200px;
+    background: rgba(255,255,255,0.9);
+    padding: 30px; 
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+
+    height: 100px;
+    position: relative;
+    display: flex;
+   
+    margin-top: 20px;
+ 
+     /* margin-bottom: 70%;*/
+     margin-left: 250px;
+     
+}

@@ -65,15 +65,15 @@ export default class Details extends Component{
                             <select>
                                 <option>Select Size</option>
                                 {product_id.size.split(',').map(size => (
-                                    
                                 <option>SIZE: { size }</option>
                                 ))}
                             </select>
                             <hr />
                             <select>
                                 <option>Select Color</option>
-                                <option>COLOR: { product_id.color }</option>
-
+                                {product_id.color.split(',').map(color => (
+                                    <option>COLOR: { color }</option>
+                                ))}
                             </select>
                             <hr />
                             <select>

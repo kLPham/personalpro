@@ -4,26 +4,56 @@ import { Link } from 'react-router-dom';
 import '../Navbar.css';
 
 export default class Login extends Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+      super(props);
 
-  //   this.state = {};
 
-  //   this.handleLogin = this.handleLogin.bind(this);
-  // }
-  handleLogin() {
+      //SET INITIAL STATE:
+      this.state= { 
+        userid: null 
+      }
+
+      this.handleLogin = this.handleLogin.bind(this);
+      this.handleLogout = this.handleLogout.bind(this);
+
+  }
+
+ 
+
+
+  handleLogin(val) {
     window.location.href = "http://localhost:3001/api/login";
   }
+
+  handleLogout(){
+    window.location.href = "http://localhost:3001/api/logout";
+  }
+
+  componentDidMount() {
+    axios.get('/api/me').then(response => { 
+      console.log(response)
+      if (response.data) this.setState({ userid: response.data })
+      else this.setState({userid: null});
+    });
+  }    
+
+
   render() {
     return (
-      <div >
-        {/* <Link to="/api/login">   </Link> */}
-        <button className="button1" onClick={this.handleLogin}> Login/Register </button>
-     
-      </div>
+        <div>
+              <div>
+                <button onClick={this.state.userid ? this.handleLogout : this.handleLogin} className="button1">
+                {this.state.userid ? 'Logout': 'Login/Register'}
+                </button>
+                {/* <button onClick={this.handleLogout} className="button1">Logout</button> */}
+              </div>
+        </div>
     );
   }
 }
+
+
+
 
 
 

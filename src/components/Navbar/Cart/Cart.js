@@ -5,11 +5,6 @@ import './Cart.css';
 import CheckoutWStripe from '../CheckoutWStripe';
 
 import Logo2 from '../Logo2.jpeg';
-
-import { connect } from 'react-redux';
-import { handleCheckOut, handleCartRemove, handleUpdateCartPrice } from '../../../ducks/reducer';
-
-
 import Trash from 'react-icons/lib/fa/trash';
 
 
@@ -19,8 +14,8 @@ export default class Cart extends Component {
     super(props);
 
     this.state = {
-      cart: [],
-      cartTotal: 0
+      cart: []
+      // cartTotal: 0
     };
  
   //BIND FUNCTIONS HERE:
@@ -41,15 +36,15 @@ export default class Cart extends Component {
 }
 
   //create a GET endpoint in api/cart ;)
-    componentDidMount(){
+ componentDidMount(){
       axios.get('/api/cart').then(response =>{
         this.setState({cart: response.data });
       })
     }
 
 
-    //GET TOTAL PRICE FROM SERVER:
-    componentWillMount(){
+   //GET TOTAL PRICE FROM SERVER:
+ componentWillMount(){
       axios.get(`/cart/total/${this.props.userid}`).then(response=> {
         this.setState({ total: response.data[0].sum });
       });
@@ -57,7 +52,7 @@ export default class Cart extends Component {
 
 
   //REMOVE FROM CART FRONT_END: :)
-  handleCartRemove(product){
+handleCartRemove(product){
     axios
          .delete(`/api/cart/${product.id}`)
          .then((response) => this.setState({cart: response.data}))
@@ -67,7 +62,7 @@ export default class Cart extends Component {
   
 
   //POST ON checkout PAGE
-  handleAddToCheckout(item){ //:)
+handleAddToCheckout(item){ //:)
     axios
          .post('/api/CheckoutWStripe',{item: item})
          .then((response) => this.setState({checkout: response.data}))
@@ -78,67 +73,66 @@ export default class Cart extends Component {
 
   
   
-  render(){
+render(){
     let displayInCart =
       this.state.cart.length > 0 ? (
       this.state.cart.map(product => {
-        return (
+      return (
                     <div className="cart_container">
                           {/* <h2>This item has been successfully added:</h2> */}
                           <img className="cart_img"alt="image_url"src={product.image_url}></img>
                         <div key={product}>
                           <p>BRAND: {product.brand}</p>
-                          <p>SIZE: { product.size }</p>
-                          <p>COLOR: { product.color }</p>
+                          {/* <p>SIZE: { product.size }</p> */}
+                          {/* <p>COLOR: { product.color }</p> */}
                           <p>QTY: { product.quantity }</p>
                           <p>PRICE: ${ product.price }</p>
                           
                         </div>
                         <Trash className="trash" id="Cart_trash" onClick={ () => this.handleCartRemove(product)}/>
                     </div>
-        );
-      })
-    ) : (
-          <p className="message">Your Cart is empty</p>
-    );
+                      );
+                    })
+                  ) : (
+                        <p className="message">Your Cart is empty</p>
+                  );
     return (
-      <div>
-              <div className="btn_container">
-                  <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
-                  <br/>
-                
-                  {/* <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button> */}
-                
-              </div>
-
+        <div>
+                  <div className="btn_container">
+                      <button className="continuebtn" onClick={this.backToProductPage}>CONTINUE SHOPPING</button>
+                      <br/>
+                    
+                      {/* <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button> */}
+                  </div>
               <div >
                 <div className="my_cart">
-                  <p key={Math.random()}></p>
+                      <p key={Math.random()}></p>
                       <div className="whole_cart">
                               <h3 className="cartletter">Shopping Cart</h3>
-                            <hr/>
-                        {displayInCart} <br />
-                        
+                              <hr/>
+                     {displayInCart} <br />
                       </div>
                       <div className="checkoutContainer">
                           <div className="logo2"><img alt="crown" src={Logo2}></img></div>
                           <div className="royal" ><h3>Checkout</h3></div>
-                          <p>
-                            {this.state.cart.length && this.state.cart.reduce((total,product)=>{
-                                var priceTotal= product.price * product.quantity;
-                                total += priceTotal
-                                return total;
-                            },0)}
-                          </p>
-                          {/* <p>Total Price: {this.props.handleUpdateCartPrice}</p> */}
-                          {/* <p>Total Price: {}</p> */}
-                          <div className="stripeRight"><CheckoutWStripe amount="50000"/></div>
-                       
-                        </div>
+                              <div className="totalcontainer">
+                                <p className="total">
+                                   <br />ORDER TOTAL: ${this.state.cart.length && this.state.cart.reduce((total,product)=>{
+                                      var priceTotal= product.price * product.quantity;
+                                      total += priceTotal
+                                      return total;
+                                  },0)}
+                                </p>
+                               
+                              </div>
+                              <hr />
+                              <br />
+                          <div className="stripeRight"><CheckoutWStripe amount="600"/></div>
+                      </div>
                 </div>
                    
-               </div>
-          </div>
+            </div>
+      </div>
     );
   }
 }

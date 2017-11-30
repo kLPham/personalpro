@@ -10,16 +10,47 @@
   }
 
  .container{
-    padding-top: 100px;
+    /* padding-top: 400px; */
     padding-left: 50px;
     padding-right: 50px;
     display: block;
     position: relative;
-    height: 750px;
+    height: 450px;
     width: 800px;
     margin: 0 auto;
     text-align: center;
-    border: 8px solid palevioletred;
-    background-color: white;
     color: gray;
+    margin-bottom: 300px; 
+    background: rgba(255,255,255,0.9);
+    padding: 50px; 
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
  }
+
+ /* font-size: 10px;
+ width: 300px;
+ margin-left: 0px  auto; 
+  margin-right: 0px auto; 
+  margin-bottom: 300px;   
+  background: rgba(255,255,255,0.9);
+  padding: 30px; 
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+
+  height: 100%;
+  width: 40%;
+  position: relative;
+  display: block;
+  justify-content: center; */

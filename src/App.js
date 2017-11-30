@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import Checkout from './Checkout';
 import './App.css';
 
 
@@ -22,16 +21,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <Navbar />
-          {/* <Navbar.Toggle /> */}
-          { router }
-          {/* <Checkout
-            name={'The Road to an Empty Wallet'}
-            description={'Pay for Your Gowns Here'}
-            amount={1}
-          /> */}
-          <Footer />
-          
+          <Navbar />         
+          { router }        
+          <Footer />          
       </div>
     );
   }

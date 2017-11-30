@@ -18,14 +18,11 @@ import './Navbar.css';
 export default class Navbar extends Component{
 
     render(){
-        // const C = "Cart(0)"
         return(
     <div>
         <div className="front">  
            <Login />
            <Search />
-            {/* <span className="button"><Login /></span>
-            <span className="search"><Search /></span> */}
         </div>
         <div className="logo" ><img alt="crown" src={Logo2}></img></div>
         <Link to="/Cart"><ShoppingBag className="cart" id="Nav__shoppingBag" /></Link>
@@ -36,7 +33,6 @@ export default class Navbar extends Component{
                     <Link to="/About">About Us</Link>
                     <Link to="/Contact">Contact Us</Link>
                     <Link to="/Products">Our Products</Link> 
-                    
                 </div>
             </div>
         </nav>

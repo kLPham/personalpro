@@ -30,7 +30,7 @@
    top: 130px;
  } */
 
- .button1{
+ .button1,.button2{
   height: 46px;
   width: 166px;
   text-transform: uppercase;

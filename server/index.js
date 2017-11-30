@@ -30,8 +30,6 @@ const app = express();
 
 
 
-
-
 //uncomment this when i am ready to have project in production. Final step
 // app.use(express.static(`${__dirname}/build`));
 
@@ -85,15 +83,15 @@ passport.use(
         .getUserByAuthId(profile.consumer_id)  // .getUserByAuthId(profile.id)%%
         .then(response => {
           if (!response[0]) {
-            app
-              .get("db")
-              .createUserByAuth([profile.consumer_id, profile.displayName]) //  .createUserByAuth([profile.id, profile.displayName])
-              .then(created => {
-                console.log(created);
-                return done(null, created[0]);
+      app
+        .get("db")
+        .createUserByAuth([profile.consumer_id, profile.displayName]) //  .createUserByAuth([profile.id, profile.displayName])
+        .then(created => {
+             console.log(created);
+             return done(null, created[0]);
               });
-          } else {
-            return done(null, response[0]);
+              } else {
+              return done(null, response[0]);
           }
         });
     }
@@ -134,37 +132,42 @@ app.get("/api/test", (req, res, next) => {
     .catch(console.log);
 });
 
-// app.get("/api/test", (req, res, next) => {
-//   req.app
-//     .get("db")
-//     .getUserByAuthId([])
-//     .then(response => {
-//       res.json(response);
-//     })
-//     .catch(console.log);
-// });
+app.get("/api/test", (req, res, next) => {
+  req.app
+    .get("db")
+    .getUserByAuthId([])
+    .then(response => {
+      res.json(response);
+    })
+    .catch(console.log);
+});
 
 
 
-//GET USER LOG IN & OUT STATUS HERE:%
-// app.get("/api/logstatus", (req, res, next) => {
-//   res.status(200).json(req.session);
-// });
+//GET USER LOG IN & OUT STATUS HERE:
+app.get("/api/login", (req, res, next) => {
+  res.status(200).json(req.session);
+});
 
-// app.get("/api/logout", (req, res, next) => {
-//   req.session.destroy();
-//   res.redirect(200, "/");
-// });
-
-
-// LOGINSTATUS %
-// app.get("/api/logstatus", (req, res, next) => {
-//   res.status(200).json(req.session);
-// });
-
+app.get("/api/logout", (req, res, next) => {
+  req.session.destroy();
+  res.redirect(200, "/");
+});
  //END%
 
 
+  //GET ONLY ONE ITEM FOR DETAIL PAGE:
+app.get('/api/product/:product_id', (req, res, next)=>{
+  console.log('product_id request:', req.params.product_id);
+  req.app
+    .get('db')
+    .getAProduct(req.params.product_id)
+    .then(response => {
+      console.log(response)
+      res.status(200).json(response);
+    })
+    .catch(console.log);
+})
 
 //GET PRODUCT TYPE from database-products table: :)
 app.get('/api/products/:product_type', (req, res, next)=> {
@@ -189,13 +192,13 @@ app.post('/api/cart', (req, res)=>{
    return res.json(req.session.cart);
   })
  
-   //get info of products using session to display to cart component
-   app.get('/api/cart',(req, res)=>{
+//get info of products using session to display to cart component
+app.get('/api/cart',(req, res)=>{
        return res.json(req.session.cart);
    })
  
-   //update cart when REMOVE ITEMS FROM CART BACK-END :)
-   app.delete('/api/cart/:id',(req, res)=>{
+//update cart when REMOVE ITEMS FROM CART BACK-END :)
+app.delete('/api/cart/:id',(req, res)=>{
     // console.log('Cart: ', req.session.cart);
     req.session.cart = req.session.cart.filter((product)=> {
        if(product.id == req.params.id){
@@ -213,20 +216,6 @@ app.post('/api/cart', (req, res)=>{
 
 
 
-
-
- //post items to checkout page @@@
-//  app.post('/api/checkout', (req, res)=>{
-//   let item= req.body.item;
-//    if(!req.session.checkout ){
-//      req.session.checkout = [];
-//    }
-//    req.session.checkout.push(item); //add item to cart
-//    return res.json(req.session.checkout);
-//   })
- 
-
-
 //SEARCH PRODUCTS:@@@
 // app.get('/api/products', function(req, res) {
 //   const { term } = req.query;
@@ -236,48 +225,33 @@ app.post('/api/cart', (req, res)=>{
 
 
 
-
+//CHECKOUT WITH STRIPE
 app.post('/checkout', (req,res) => {
     stripe.charges.create(req.body, (stripeErr, stripeRes) => {
       if (stripeErr) {
         console.log(stripeErr)
         res.status(500).send({ error: stripeErr });
       } else {
-        res.json("success!");
+        res.json("success");
       }
   })
 })
 
 
- //GET ONLY ONE ITEM FOR DETAIL PAGE:
-app.get('/api/product/:product_id', (req, res, next)=>{
-  console.log('product_id request:', req.params.product_id);
-  req.app
-    .get('db')
-    .getAProduct(req.params.product_id)
-    .then(response => {
-      console.log(response)
-      res.status(200).json(response);
-    })
-    .catch(console.log);
-})
 
 
 
 
-//SUBMIT ORDERS CALL BELOW: get & update orders :NEED TO WORK ON THIS@@@
+//SUBMIT ORDERS CALL BELOW: get DATA & SUBMIT orders :NEED TO WORK ON THIS@@@
 app.get('/api/orders',(req, res)=>{
   const {order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address } = req.body;
   req.app.get('db').submitOrders(req.submitOrders);
   return res.json(req.body);
 })
 
-//CartEndpoint Here:
-// app.get('/cart/total/:id', controller.getCartTotal);
 
 
-
-
+//POST ORDERS TO SUBMITORDERS
 // //*NEED TO WORK ON THIS@@@
 // app.post('/api/orders', (req, res)=>{
 //   // console.log('orders request:', order_id, consumer_id, product_id, name, email, phone_number, shipping_address, billing_address );
@@ -287,23 +261,6 @@ app.get('/api/orders',(req, res)=>{
 //   })
 //   .catch(console.log);
 // })
-
-
-// CHECKOUT %:)
-// app.post("/api/charge", (req, res) => {
-//   stripe.charges.create(req.body, (stripeErr, stripeRes) => {
-//     if (stripeErr) {
-//       res.status(500).send({ error: stripeErr });
-//     } else {
-//       req.session.paid = true;
-//       req.session.purchases = req.session.cart.products;
-//       delete req.session.cart;
-//       res.redirect(200, "/");
-//     }
-//   });
-// });
-
-
 
 
 

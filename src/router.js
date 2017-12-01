@@ -8,6 +8,8 @@ import Cart from './components/Navbar/Cart/Cart';
 import CheckoutWStripe from './components/Navbar/CheckoutWStripe';
 import About from './components/Navbar/About/About';
 import Contact from './components/Navbar/Contact/Contact';
+import PaymentSuccess from './components/Navbar/PaymentSuccess';
+
 
 import Products from './components/Navbar/Products/Products';
 import BridalCollection from './components/Navbar/Products/BridalCollection/BridalCollection';
@@ -34,6 +36,7 @@ import ProductLandingPage from './components/Navbar/Products/ProductLandingPage/
         <Route path="/CheckoutWStripe" component={CheckoutWStripe} />
         <Route path="/About" component={About} />
         <Route path="/Contact" component={Contact} />
+        <Route path="/PaymentSuccess" component={PaymentSuccess} />
         <Route path="/Products" render={()=> (
             <Products>
             <Switch>

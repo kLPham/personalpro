@@ -150,8 +150,9 @@ app.get("/api/login", (req, res, next) => {
 });
 
 app.get("/api/logout", (req, res, next) => {
+  req.logout()
   req.session.destroy();
-  res.redirect(200, "/");
+  res.redirect("http://localhost:3000/");
 });
  //END%
 

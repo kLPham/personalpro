@@ -7,7 +7,7 @@ export default class Contact extends Component{
         const s = <hr/>;
         return(
             <div>
-                <div><h1 className="Contact-title">Contact Us</h1></div>
+                <div><h1 className="title">Contact Us</h1></div>
                 {/* <div><p2>Embro-Bridal Couture</p2></div> */}
                 <div className="container">
                     <h4 className="body">

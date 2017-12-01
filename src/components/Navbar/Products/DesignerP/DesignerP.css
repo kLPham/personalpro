@@ -1,19 +1,32 @@
-.designer_preowned_collection{
-    height: 1050px;
-}
-/* .product_list{
-    padding: 90px;
-    height: 600px;
-    width: 400px;
-    /* text-decoration: none; */
-    /* text-transform: uppercase; */
-    /* font-weight: bold; */
-    /* justify-content: center;
-    display: inline-block;
-    text-align: center;
+.productList{
+    display: flex;
+    position: relative;
+    /* justify-content: center; */
+    height: 50%;
+    width: 100%;
+    /* flex-direction:column; */
   }
-
-  button:hover{
-    color: white;
-    background-color: pink;
-} */ 
+  #productImage{
+    height:85%;
+    width: 55%;
+  }
+  #preown{
+    padding-top: 5%;
+    padding-left: .3%;
+    height:50%;
+    width: 26%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align:center;
+  }
+  .shopTitle{
+    text-align: center;
+    color:palevioletred;
+    text-transform: uppercase;
+    font-size: 30px;
+  }

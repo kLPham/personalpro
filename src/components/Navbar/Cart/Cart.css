@@ -1,6 +1,7 @@
 
 button{
     cursor: pointer;
+    
 }
 
 .my_cart {
@@ -139,9 +140,10 @@ button{
   }
 .stripeRight{
     position: relative;
-    margin-right: 50%; 
+    /* margin-left: 50%;  */
     height: 20%;
     width: 100%;
+    justify-content: center;
     text-align: center;
 }
 
@@ -184,13 +186,15 @@ button{
 
     height: 100px;
     position: relative;
-    display: flex;
-   
+    display: flex; 
     margin-top: 20px;
- 
-     /* margin-bottom: 70%;*/
-     margin-left: 250px;
-     
+    justify-content: center;
+    margin-left:20%;
+     /* margin-bottom: 70%;*/   
+}
+
+.total {
+  text-align: center;
 }
 
 /* @media (max-width: 1023px){

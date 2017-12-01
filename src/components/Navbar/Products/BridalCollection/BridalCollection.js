@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
 import './BridalCollection.css';
+
+// import './BridalCollection.css';
 // import Details from '../../Details/Details';
 
 import RaisedButton from 'material-ui/RaisedButton';
@@ -33,24 +34,24 @@ export default class BridalCollection extends Component{
         const allProducts = this.state.productsToDisplay.map(bridalcollection =>{
             console.log("Products redering",bridalcollection)
         return(
-        <div>
-            <div className="product_list_BC">
-                <div className="bridal_collection" key={bridalcollection.id}>
-                     <Link to={`/Products/Details/${bridalcollection.product_id}`}><span><img alt="image_url" src={ bridalcollection.image_url }></img></span></Link>
+      
+                <div id="bridal" key={bridalcollection.id}>
+                     <Link to={`/Products/Details/${bridalcollection.product_id}`}><img id="productImage" alt="image_url" src={ bridalcollection.image_url }></img></Link>
                     <p>{ bridalcollection.brand }</p>
                     <p>${ bridalcollection.price }</p> 
                     <br />
                 </div>
-            </div>
-        </div>
+           
+       
         )}
         );
 
         return(
-            <div>
-                    <div> { allProducts } </div>
-                   
-            </div>
+           <div>
+              <h3 className="shopTitle" >Welcome to our Bridal Collection</h3>
+                    <div className="productList"> { allProducts } </div>
+            </div>       
+           
         )
       
     }

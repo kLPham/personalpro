@@ -90,6 +90,7 @@ export default class Details extends Component{
 
         return(
         <div>
+        
            <div> { aProduct } </div>
 
         </div>

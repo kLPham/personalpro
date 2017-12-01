@@ -40,14 +40,12 @@ export default class Login extends Component {
 
   render() {
     return (
-        <div>
               <div>
                 <button onClick={this.state.userid ? this.handleLogout : this.handleLogin} className="button1">
                 {this.state.userid ? 'Logout': 'Login/Register'}
                 </button>
                 {/* <button onClick={this.handleLogout} className="button1">Logout</button> */}
-              </div>
-        </div>
+              </div>  
     );
   }
 }

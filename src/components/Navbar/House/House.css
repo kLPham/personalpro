@@ -18,7 +18,6 @@
       color: white;
       font-size: 45px;
       font-family: cursive;
-      /* padding-top: 90px; */
       height: 1390px;
       text-align: center;
       background-image: url("https://apis.xogrp.com/media-api/images/180eca4e-eaf7-41d4-8f17-6d0f781a9a82~rs_768.h");
@@ -33,4 +32,11 @@
     background-repeat: no-repeat;
     background-size: 1890px;
     background-position: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .Home-title{
+        height: 100%;
+    }
   }

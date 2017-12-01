@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-
+import './FormalGowns.css';
 
 
 export default class FormalGown extends Component{
@@ -40,9 +40,9 @@ export default class FormalGown extends Component{
             console.log("Products redering",formalgown)
         return(
 
-                <div className="formal_gowns" key={formalgown.id}>
+                <div id="formal" key={formalgown.id}>
                     <Link to={`/Products/Details/${formalgown.product_id}`}>
-                        <img alt="image_url" src={ formalgown.image_url }></img></Link>
+                        <img id="productImage"alt="image_url" src={ formalgown.image_url }></img></Link>
                     <p>BRAND: { formalgown.brand }</p>
                     <p>PRICE: { formalgown.price }</p>
                     <hr/>
@@ -52,7 +52,10 @@ export default class FormalGown extends Component{
         );
 
         return(
-           <div> { allProducts } </div>
+            <div>
+                    <h3 className="shopTitle" >Welcome to our Formal Gowns Collection</h3>
+                    <div className="productList"> { allProducts } </div>
+            </div>
         )
     }
 }

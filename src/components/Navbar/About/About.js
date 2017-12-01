@@ -8,7 +8,7 @@ export default class About extends Component{
         const about_us =""
         return(
             <div className="About">
-                <h1 className="About-title">About Us</h1>
+                <h1 className="title">About Us</h1>
                 
                 <br/>
                 <div className="container">

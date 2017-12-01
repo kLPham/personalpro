@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 
+import './Prom.css';
+
 export default class Prom extends Component{
     constructor(props){
         super(props)
@@ -37,21 +39,21 @@ export default class Prom extends Component{
         const allProducts = this.state.productsToDisplay.map(prom =>{
             console.log("Products redering",prom)
         return(
-            <div>
-            <div className="prom_list">
-                <div className="prom" key={prom.id}>
-                     <Link to={`/Products/Details/${prom.product_id}`}><span><img alt="image_url" src={ prom.image_url }></img></span></Link>
+                <div id="prom" key={prom.id}>
+                     <Link to={`/Products/Details/${prom.product_id}`}><span><img id="productImage" alt="image_url" src={ prom.image_url }></img></span></Link>
                     <p>{ prom.brand }</p>
                     <p>${ prom.price }</p> 
                     <br />
                 </div>
-            </div>
-        </div> 
         )}
         );
 
         return(
-           <div> { allProducts } </div>
+            <div>
+                    <h3 className="shopTitle" >Welcome to our Prom Collection</h3>
+                    <div className="productList"> { allProducts } </div>
+            </div>
+           
         )
     }
 }

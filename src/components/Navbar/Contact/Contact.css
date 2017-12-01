@@ -1,15 +1,12 @@
-.Contact-title {
+.title {
   color: black;
   font-size: 55px;
-  font-family: Brush Script MT;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: darkgrey;
   position: relative;
   height: 100%;
   width: 100%;
   border: solid white 10px;
   text-align: center;
   }
-
-/* span .body{
-    padding-top: 50px;
-    align-items: center;
-} */

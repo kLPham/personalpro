@@ -19,7 +19,7 @@ export default class Navbar extends Component{
 
     render(){
         return(
-    <div>
+    <div className="frontpage">
         <div className="front">  
            <Login />
            <Search />
@@ -32,7 +32,7 @@ export default class Navbar extends Component{
                     <Link to="/"><Home className="home" id="Nav__Home"/></Link>
                     <Link to="/About">About Us</Link>
                     <Link to="/Contact">Contact Us</Link>
-                    <Link to="/Products">Our Products</Link> 
+                    <Link className="myproducts" to="/Products">Our Products</Link> 
                 </div>
             </div>
         </nav>

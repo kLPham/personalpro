@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import '../Navbar.css';
+
+
+
 
 export default class Search extends Component {
   constructor(props) {
@@ -36,11 +40,11 @@ export default class Search extends Component {
   // }
 
   handleButtonchange(event){
-    window.location.href = "http://localhost:3000/Products";
+    window.location.href = "http://localhost:3000/Products/BridalCollection";
   }
   render(){
     return (
-      <div className="inputSearch">
+      <div className="search">
         <input 
           // value={this.state.searchInput}
           // onChange={(e)=> {this.handleInputChange(e.target.value); }}
@@ -55,3 +59,4 @@ export default class Search extends Component {
 }
 
 //need to fix the search input/button
+

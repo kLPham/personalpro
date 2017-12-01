@@ -105,7 +105,7 @@ render(){
                     
                       {/* <button className="checkoutbtn" onClick={ () => this.handleAddToCheckout( )}>PROCEED TO CHECKOUT</button> */}
                   </div>
-              <div >
+              
                 <div className="my_cart">
                       <p key={Math.random()}></p>
                       <div className="whole_cart">
@@ -114,31 +114,30 @@ render(){
                      {displayInCart} <br />
                       </div>
                       <div className="checkoutContainer">
-                          <div className="logo2"><img alt="crown" src={Logo2}></img></div>
-                          <div className="royal" ><h3>Checkout</h3></div>
+                              <div className="logo2"><img alt="crown" src={Logo2}></img></div>
+                              <div className="royal" ><h3>Checkout</h3></div>
                               <div className="totalcontainer">
-                                <p className="total">
-                                   <br />ORDER TOTAL: ${this.state.cart.length && this.state.cart.reduce((total,product)=>{
-                                      var priceTotal= product.price * product.quantity;
-                                      total += priceTotal
-                                      return total;
+                                  <p className="total">
+                                    <br />ORDER TOTAL: ${this.state.cart.length && this.state.cart.reduce((total,product)=>{
+                                        var priceTotal= product.price * product.quantity;
+                                        total += priceTotal
+                                        return total;
 
-                                  },0)}
-                                </p>
+                                    },0)}
+                                  </p>
                                
                               </div>
                               <hr />
                               <br />
-                          <div className="stripeRight"><CheckoutWStripe amount={this.state.cart.length && this.state.cart.reduce((total,product)=>{
-                                      var priceTotal= product.price * product.quantity;
-                                      total += priceTotal
-                                      return total;
+                              <div className="stripeRight"><CheckoutWStripe amount={this.state.cart.length && this.state.cart.reduce((total,product)=>{
+                                          var priceTotal= product.price * product.quantity;
+                                          total += priceTotal
+                                          return total;
 
-                                  },0)}/></div>
+                                      },0)}/>
+                              </div>
                       </div>
-                </div>
-                   
-            </div>
+              </div>
       </div>
     );
   }

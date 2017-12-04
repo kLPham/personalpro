@@ -22,7 +22,7 @@ span:hover{
     margin-bottom: 150px;
   }
 .ProductLandingPage{
-    height: 800px;
+    height: 1200px;
 }
 
 .Bridal_Collection {
@@ -66,3 +66,28 @@ span:hover{
         background-position: center;
         text-align: center;
 }
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .producttitle{
+        font-size: 20px;
+    }
+    .ProductLandingPage{
+        height: 400px;
+    }
+    .Bridal_Collection,.DesignerP,.Formal_Gown,.prom, img{
+        height: 300px;
+        width: 550px;
+        font-size: 9px; 
+        background-size:100%;
+        margin-bottom: 3%;
+         /* margin-top: -6%; */
+    }
+    .product-list{
+        padding-bottom: 10%; 
+        margin-bottom: 150px;
+        margin-top: -6%;
+      }
+   
+  }

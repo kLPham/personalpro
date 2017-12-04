@@ -3,7 +3,8 @@
 
 
 const initialState = {
-    cart: []
+    cart: [],
+    inputSearch: null
 }
 
 //actions: command given 
@@ -12,10 +13,14 @@ const REMOVE_FROM_MY_CART = "REMOVE_FROM_MY_CART";
 const UPDATE_CART_PRICE = "UPDATE_CART_PRICE";
 const CHECKOUT_NOW = "CHECKOUT_NOW";
 
+const SEARCH_PRODUCT = "SEARCH_PRODUCT"
+
 
 // Reducer: state & action
 export default function My_Cart( state = initialState, action) {
     switch( action.type ) {
+      case SEARCH_PRODUCT:
+          return Object.assign({}, state, {inputSearch: [...state.cart, action.payload ]} );
       case ADD_TO_MY_CART: 
           return Object.assign({}, state, {cart: [...state.cart, action.payload] });
       case UPDATE_CART_PRICE:
@@ -33,7 +38,13 @@ export default function My_Cart( state = initialState, action) {
  
 
 
-  //Action creators
+//   Action creators
+  export function handleSearchInput( ){
+      return {
+          type: SEARCH_PRODUCT,
+          payload: null
+      }
+  }
   export function handleCartAdd( id ){
     return {
       type: ADD_TO_MY_CART,

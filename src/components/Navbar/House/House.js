@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './House.css';
-// import wedding from './wedding.jpg';
-// import User from '../User_Link';
-// import b from './b.jpg';
+import { Link } from 'react-router-dom';
+
 import ProductLandingPage from '../Products/ProductLandingPage/ProductLandingPage';
+
 
 
 export default class House extends Component{
@@ -11,9 +11,27 @@ export default class House extends Component{
         return(
             <div className="Home">
                 <h2 className="Home-title">Congratulations on your engagement!</h2>
-                <h3 className="Home-body">New Style Fall 2017</h3>
+                <h3 className="Home-Image">Fall 2017 Style</h3>
+            <div className="group">
+                <div className="Bc">
+                    <Link to="/Products/BridalCollection"><span className="centered">Bridal Gowns</span></Link>
+                </div>
+                <div className="F">
+                    <Link to="/Products/FormalGowns"><span className="centered">Formal Gowns</span></Link>
+                </div>
+               
+            </div>
+            <div className="group2">
+                <div className="D">
+                    <Link to="/Products/DesignerP"><span className="centered">Designer Pre-Owned</span></Link>
+                </div>
+            
+                <div className="P">
+                    <Link to="/Products/Prom"><span className="centered">Prom</span></Link>
+                </div>
+            </div>
                 <ProductLandingPage />
-                <h3 className="Home-Image">Different Style for Every Bride</h3>
+                
             </div>
         );
     }

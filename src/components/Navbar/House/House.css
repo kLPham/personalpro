@@ -12,20 +12,11 @@
       background-repeat: no-repeat;
       text-align: center;
     }
-  
-    .Home-body {
-      position: relative;
-      color: white;
-      font-size: 45px;
-      font-family: cursive;
-      height: 1390px;
-      text-align: center;
-      background-image: url("https://apis.xogrp.com/media-api/images/180eca4e-eaf7-41d4-8f17-6d0f781a9a82~rs_768.h");
-      background-repeat: no-repeat;
-      background-size: 1890px;
-      background-position: center; 
+    .Home{
+      height: 100px;
+      width: 100%;
     }
-  .Home-Image {
+ .Home-Image {
     height: 1390px;
     text-align: center;
     background-image: url("https://www.metro.us/sites/default/files/main/articles/2017/03/30/wedding-trends-cover_1.jpg");
@@ -33,10 +24,141 @@
     background-size: 1890px;
     background-position: center;
   }
+ .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-decoration-color: white;
+  font-size: 40px;
+}
+.group{
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.group2{
+  display: flex;
+  position: relative;
+  justify-content: center;
 
+}
+  .Bc{
+    background-image:
+    url("https://cdn.galialahav.com/wp-content/uploads/Alma1.jpg");
+    background-repeat: no-repeat;
+    height: 750px;
+    width:800px;
+    background-size: 800px;
+    background-position: center; 
+    position: relative;
+    padding-top: 35px;
+    margin-right: 3%;
+    margin-top: .3%;
+   
+
+  
+   
+    /* https://www.bridalreflections.com/wp-content/uploads/2016/01/brides-3.jpg */
+  }
+  .D{
+    background-image:
+    url("http://strictlyweddings.com/wp-content/uploads/2016/05/RIhanna_web.jpg");
+    background-repeat: no-repeat;
+    height:  800px;
+    width: 800px;
+    background-size: 1000px;
+    background-position: center; 
+    margin-top: 20px;
+    margin-right: 1%;
+    margin-left: 2.2%;
+
+
+  
+  }
+  .F{
+    background-image:
+    url("https://www.dhresource.com/0x0s/f2-albu-g4-M00-3E-75-rBVaEFfXy2OAJ6ViAAMcP76S3Do690.jpg/tony-chaaya-2017-evening-dresses-with-detachable.jpg");
+    background-repeat: no-repeat;
+    height:  789px;
+    width: 800px;
+    background-size: 900px;
+    background-position: center; 
+    text-align: center;
+    margin-top: .2%;
+   
+  }
+  .P{
+    background-image:
+    url("https://ae01.alicdn.com/kf/HTB1S3ZzJpXXXXXnaXXXq6xXFXXXQ/2015-Ball-Gown-Wedding-Gowns-Appliques-Lace-Red-Wedding-Dress-2015-Long-Train-Lace-Up-Bride.jpg");
+    background-repeat: no-repeat;
+    height:  800px;
+    width: 900px;
+    background-position: center; 
+    text-align: center;
+    padding-top:40px;
+
+    /* http://proledi.com/images/2017/04/vypusknoe_plate_s_printom_2_29170110.jpg */
+  }
+
+
+
+
+  /*MEDIA QUERIES*/
+  
+  /* tablets*/
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .Home-title{
-        height: 100%;
+      color: white;
+      font-size: 18px;
+      height: 33%;
+      width: 100%;
+      background-size:100%;
+    }
+    .Home-Image {
+      height: 463px;
+      background-size: 100%;
+      color: white;
+    }
+    .Bc{  
+      height: 250px;
+      width:266px;
+      background-size: 266px;
+      padding-top: 35px;
+      margin-right: 1.5%;
+      /* margin-top: .3%; */
+     
+  }
+  .D{
+    height: 291.95px;
+    width: 80%;
+    background-size:100%; 
+    margin-top: -2%;
+    margin-right: 3%;
+    /* margin-left: 2.2%;  */
+    margin-left: 1%;
+  }
+  .F{
+    height:  285px;
+    width:330px;
+    background-size: 300px;
+    /* background-position: center; 
+    text-align: center;
+    margin-top: .2%; */
+   
+  }
+  .P{
+    height:  300px;
+    width: 90%;
+    background-size: 100%;
+    margin-top: -1.2%;
+   margin-right: 3%;
+
+    }
+    .centered {
+      font-size: 11px;
     }
   }
+ 

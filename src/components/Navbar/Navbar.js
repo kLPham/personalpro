@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+
 import House from './House/House';
 import About from './About/About';
 import Contact from './Contact/Contact';
@@ -15,7 +17,31 @@ import './Navbar.css';
 
 
 
+
+
+
+
 export default class Navbar extends Component{
+    constructor(){
+        super();
+
+        this.state={
+            
+           
+        }
+    }
+    // burgerToggle() {
+    //     let linksEl = document.querySelector('.narrowLinks');
+    //     if (linksEl.style.display === 'block') {
+    //         linksEl.style.display = 'none';
+    //     } else {
+    //         linksEl.style.display = 'block';
+    //     }
+    //   }
+ 
+    showSettings (event) {
+        event.preventDefault();
+      }   
 
     render(){
         return(
@@ -27,35 +53,21 @@ export default class Navbar extends Component{
         <div className="logo" ><img alt="crown" src={Logo2}></img></div>
         <Link to="/Cart"><ShoppingBag className="cart" id="Nav__shoppingBag" /></Link>
         <nav className="navbar navbar-default navbar-fixed-top">
+            
             <div className="nav_container">
                 <div className="links">
                     <Link to="/"><Home className="home" id="Nav__Home"/></Link>
                     <Link to="/About">About Us</Link>
                     <Link to="/Contact">Contact Us</Link>
                     <Link className="myproducts" to="/Products">Our Products</Link> 
-                </div>
-            </div>
+                 </div>
+              
+            </div>         
         </nav>
     </div>
         )
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -70,9 +82,7 @@ export default class Navbar extends Component{
 
 
        {/* <div>
-                <ul>
-                    <Link to="/Products">Our Products></Link> 
-                        <ul>
+                <ul><Link to="/Products">Our Products></Link> <ul>
                         <li><Link to="/Products/BridalC">Bridal Collection</Link></li>
                         <li><Link to="/Products/DesignerP">Designer PreOwned Collection</Link></li>
                         <li><Link to="/Products/Accessories">Accessories</Link></li>

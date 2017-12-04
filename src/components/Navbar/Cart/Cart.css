@@ -64,7 +64,7 @@ button{
     
         font-size: 10px;
         /* width: 300px; */
-        margin-left: 0px  auto; 
+        margin-left: 15%; 
          margin-right: 0px auto; 
          margin-bottom: 300px;   
          background: rgba(255,255,255,0.9);
@@ -83,7 +83,7 @@ button{
          position: relative;
          display: block;
          justify-content: center;
-        /* margin-bottom: 25%; */
+        margin-bottom: 25%;
 }
 .cartletter{
     font-size: 30px;
@@ -99,7 +99,7 @@ button{
       width: 300px;
       /* margin-right: 15%;  */
       margin-top: 30px;
-      margin-left: 190px;
+      margin-left: 35%;
       background: rgba(255,255,255,0.9);
       padding: 30px; 
       -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -149,7 +149,7 @@ button{
 
 
 .checkoutContainer{
-    width: 40%;
+    width: 20%;
      background: rgba(255,255,255,0.9);
      padding: 30px; 
      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -189,7 +189,7 @@ button{
     display: flex; 
     margin-top: 20px;
     justify-content: center;
-    margin-left:20%;
+    margin-left:25%;
      /* margin-bottom: 70%;*/   
 }
 

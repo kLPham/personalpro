@@ -1,12 +1,8 @@
 import React, { Component } from 'react'; 
 import './Footer.css';
 
-import { Link } from 'react-router-dom';
 
-import Facebook from 'react-icons/lib/fa/facebook';
-import PinterestSquare from 'react-icons/lib/fa/pinterest-square';
-import Twitter from 'react-icons/lib/fa/twitter';
-import Instagram from 'react-icons/lib/fa/instagram';
+import { SocialIcons } from 'react-social-icons';
 
 
 export default class Footer extends Component{
@@ -17,21 +13,55 @@ export default class Footer extends Component{
 
     render(){
         const G = "GET CONNECTED WITH US";
-        // const divStyle = {
-        //     border: '1px solid gray'
-        // };
-
-
+        const urls = [
+            'http://facebook.com',
+            'http://twitter.com',
+            'http://linkedin.com',
+            'http://www.pinterest.com',
+            'http://www.youtube.com'
+          ];
+       
         return(
                 <div className="nav" >
                     <nav className="navbar navbar-default navbar-fixed-bottom">
+                    
                       <h2 className="connect">{G}</h2>
                       {/* <p>code & design by Kelly Linh Pham </p> */}
-                      <div className="social">
-                            <Link to="https://www.facebook.com/"><Facebook className="icon" id="Footer__icon" /></Link>
-                            <Link to="https://www.pinterest.com/"><PinterestSquare className="icon" id="Footer__icon" /></Link>
-                            <Link to="https://twitter.com/"><Twitter className="icon" id="Footer__icon" /></Link>
-                            <Link to="https://www.instagram.com/"><Instagram className="icon" id="Footer__icon" /></Link>
+                      <div>
+                        <SocialIcons className="social" urls={urls} color="black" size={30} marginRight={0}/>
+                      </div>
+                      <div className="aboutList">
+                          <div className="smallpart">ONLINE ORDERS
+                          <br />
+                              <span>Order Status</span>
+                              <span>Shipping Information</span>
+                              <span>Returns and Exchanges</span>
+                              <span>International Orders</span>
+                          </div>
+                          <div className="smallpart">CUSTOMER SERVICE
+                              <span>Contact Us</span>
+                              <span>Help and FAQs</span>
+                              <span>Size Information</span>
+                              <span>Help? 1-682-521-9297</span>
+                          </div>
+                          <div className="smallpart">RESOURCES
+                              <span>Special Offers</span>
+                              <span>Wedding Solutions</span>
+                              <span>Inspiration & Guidance</span>
+                              <span>Catalogs</span>
+                          </div>
+                          <div className="smallpart">ROYAL COUTURE STORE
+                              <span>Browse Store List</span>
+                              <span>Schedule an Appointment</span>
+                              <span>Information and Services</span>
+                              <span>Events</span>
+                          </div>
+                          <div className="smallpart">ABOUT ROYAL COUTURE
+                              <span>Company Info</span>
+                              <span>Careers</span>
+                              <span>Press Room</span>
+                              <span>Investor Relations</span>
+                          </div>
                       </div>
                       <div className="copyright">
                             <h3>COPY RIGHT 2017 ROYAL COUTURE, LLC. ALL RIGHTS RESERVED IMAGES MAY NOT BE REPRODUCED WIHTOUT PERMISSION</h3>

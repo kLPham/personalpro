@@ -1,17 +1,17 @@
 .productList{
-    display: flex;
-    position: relative;
-    /* justify-content: center; */
-    height: 50%;
-    width: 100%;
-    /* flex-direction:column; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-bottom: 10%;
   }
   #productImage{
     height:85%;
     width: 55%;
   }
   #formal{
-    padding-top: 5%;
+    padding-top: 2%;
     padding-left: .3%;
     height:50%;
     width: 26%;
@@ -23,6 +23,7 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     position: relative;
     text-align:center;
+    margin-bottom: 5%;
   }
   .shopTitle{
     text-align: center;

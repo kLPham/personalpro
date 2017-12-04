@@ -1,0 +1,56 @@
+.header{
+    width:100%;
+    height:80px;
+    color:red;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+ul {list-style-type: none;
+    margin-left:100px;
+    text-align:right;
+   margin-right:40px;
+   display:flex;
+   justify-content:space-between;
+   flex-direction:row;
+}
+
+li a {
+padding:20px;
+font-family:Helvetica;
+text-align:right;
+text-decoration:none;
+color:orange;
+}
+
+
+/* 
+body{
+    background: url('https://d1yn1kh78jj1rr.cloudfront.net/image/preview/rDtN98Qoishumwih/beautiful-pure-white-textile-wedding-background_fJeTk0DO_SB_PM.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  } */
+  
+
+  
+ @media(min-width:48em){
+          .icon{display:none;}
+      }
+  @media (max-width: 48em) {
+    
+       .menu{
+        display: none;
+        color: red;
+       
+      }
+      .icon{
+          display:block;
+          height:30px;
+          margin-right:15px;
+
+      }
+
+    }

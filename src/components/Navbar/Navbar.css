@@ -17,6 +17,16 @@
     background-color: darkgrey;
   }
 
+
+
+
+
+
+
+
+
+
+
  .button1,.button2{
   height: 46px;
   width: 166px;
@@ -66,7 +76,17 @@
         letter-spacing: 1px;
         color: white;
         height:40px;
-}
+} 
+/* .nav_container{
+  list-style-type: none;
+    margin-left:100px;
+    text-align:right;
+   margin-right:40px;
+   display:flex;
+   justify-content:space-between;
+   flex-direction:row;
+} */
+
 .navbar-default {
     background-color: #fff;
     border-color: #e7e7e7;
@@ -94,27 +114,16 @@
   height: 30px;
 }
 
-/* @media(min-width: 500px){
- 
-} */
-
-
-
-
-
 .SuccessContainer{
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 30px;
-  display: block;
-  position: relative;
-  height: 450px;
-  width: 800px;
-  margin: 0 auto;
+  width: 1200px;
+  height: 1100px;
+  margin-top: 1%;
+  margin-left:35%;
   text-align: center;
-  color: gray;
+  color:white;
   margin-bottom: 300px; 
-  background: rgba(255,255,255,0.9);
+  /* background: rgba(255,255,255,0.9); */
+  background-color: white;
   padding: 50px; 
   -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.15);
@@ -125,33 +134,76 @@
   -o-border-radius: 5px;
   border-radius: 5px;
   text-align: center;
+ align-items: center;
+
 }
 
 .S{
   width: 100%;
-  /* height: 100%; */
-  height: 1390px;
   text-align: center;
-  /* background-image: url("https://devmtn.slack.com/files/U6KA5F11C/F86T7HL90/shea.gif");
-  background-repeat: no-repeat;
-  background-size: 1890px; */
-  background-position: center;
+}
+.prettyGirl{
+  width: 550px;
+  height: 950px;
+}
+.bubble{
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  width: 325px;
 }
 
+ /* For mobile phones: iphone 5 */
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .frontpage {
-      width: 100%;
-  }
-  .logo img, button, input{
-    max-width: 100%;
-    height: auto;
-  }
+ 
+ .nav_container{
+   display: none;
+ }
+/* img{
+  width: 10%;
+  height: 20%;
+} */
+ .search{
+  display: none;
 }
-  /* @media (min-width:800px){
-      .Home-Image{
-        max-width: 100%;
-        height: 300px;
-    }
-   */
+.cart{
+  margin: 4px 2px;
+  width: 24%;
+  height: 24%;
+  padding: 10px 16px;
+  font-size: 16px;
+  position: absolute;
+  top: 73%;
+  right: -11%;
+}
+.button1{
+  height: 24%;
+  width: 14%;
+  color: white;
+  padding: 10px 10px 20px;
+  font-size: 9px;
+  margin-top: 2%;
+  position: absolute;
+  top: 90%;
+  left: 2%;
+}
+.logo img{
+  width: 15%;
+  height: 15%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 2%;
+  margin-bottom: -4%;
+}
 
+
+}
+
+  
+
+
+   /* @media only screen and (max-width: 993px){
+    .nav_container div{
+      display: block
+    }
+  } */

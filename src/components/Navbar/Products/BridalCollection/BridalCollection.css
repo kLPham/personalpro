@@ -2,33 +2,52 @@
 
 .productList{
   display: flex;
-  position: relative;
-  /* justify-content: center; */
-  height: 50%;
-  width: 100%;
-  /* flex-direction:column; */
+  justify-content: space-between;
+  flex-wrap: wrap;
+ 
 }
-#productImage{
+
+/* #productImage{
   height:85%;
   width: 55%;
-}
+} */
 #bridal{
-  padding-top: 5%;
+  padding-top: 2%;
   padding-left: .3%;
   height:50%;
   width: 26%;
   margin: 20px;
+  
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   /* justify-content: center; */
   align-items: center;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   text-align:center;
+  margin-bottom: 5%;
+  
 }
 .shopTitle{
   text-align: center;
   color:palevioletred;
   text-transform: uppercase;
   font-size: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  #bridal{
+    /* padding-top: 5%;
+    padding-left: .3%; */
+    height:6.6%;
+    width: 100%;
+    /* margin: 6.7px; */
+  }
+  .shopTitle{
+    font-size: 6px;
+  }
+  .font{
+    font-size: 7px;
+  }
 }

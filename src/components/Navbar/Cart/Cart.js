@@ -84,8 +84,7 @@ render(){
                           <img className="cart_img"alt="image_url"src={product.image_url}></img>
                         <div key={product}>
                           <p>BRAND: {product.brand}</p>
-                          {/* <p>SIZE: { product.size }</p> */}
-                          {/* <p>COLOR: { product.color }</p> */}
+                      
                           <p>QTY: { product.quantity }</p>
                           <p>PRICE: ${ product.price }</p>
                           

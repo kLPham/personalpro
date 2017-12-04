@@ -77,7 +77,7 @@ passport.use(
       callbackURL: "/api/login"
     },
     function(accessToken, refreshToken, extraParams, profile, done) {
-      console.log(profile);
+      
       app
         .get("db")
         .getUserByAuthId(profile.consumer_id)  // .getUserByAuthId(profile.id)%%
@@ -87,7 +87,7 @@ passport.use(
         .get("db")
         .createUserByAuth([profile.consumer_id, profile.displayName]) //  .createUserByAuth([profile.id, profile.displayName])
         .then(created => {
-             console.log(created);
+            
              return done(null, created[0]);
               });
               } else {
@@ -233,7 +233,9 @@ app.post('/checkout', (req,res) => {
         console.log(stripeErr)
         res.status(500).send({ error: stripeErr });
       } else {
-        res.json("success");
+        delete req.session.cart;
+        console.log("session" + req.session)
+        res.json(req.session.cart);
       }
   })
 })

@@ -13,7 +13,7 @@
       text-align: center;
     }
     .Home{
-      height: 100px;
+      height: 100%;
       width: 100%;
     }
  .Home-Image {
@@ -111,16 +111,18 @@
   @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .Home-title{
-      color: white;
+      color: green;
       font-size: 18px;
       height: 33%;
       width: 100%;
       background-size:100%;
+      margin-left: 2.2%;
     }
     .Home-Image {
       height: 463px;
       background-size: 100%;
       color: white;
+      margin-left: 8%;
     }
     .Bc{  
       height: 250px;
@@ -129,6 +131,7 @@
       padding-top: 35px;
       margin-right: 1.5%;
       /* margin-top: .3%; */
+      margin-left: 8%;
      
   }
   .D{
@@ -138,7 +141,7 @@
     margin-top: -2%;
     margin-right: 3%;
     /* margin-left: 2.2%;  */
-    margin-left: 1%;
+    margin-left: 8%;
   }
   .F{
     height:  285px;
@@ -150,11 +153,11 @@
    
   }
   .P{
-    height:  300px;
-    width: 90%;
+    height:  auto;
+    width: 100%;
     background-size: 100%;
-    margin-top: -1.2%;
-   margin-right: 3%;
+    margin-top: -7%;
+   margin-right: .5%;
 
     }
     .centered {

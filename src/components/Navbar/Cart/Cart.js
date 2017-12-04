@@ -31,23 +31,25 @@ export default class Cart extends Component {
   }
 
   //Lifecyle methods
-  componentWillReceiveProps(nextprops){
-  this.setState({ cart:nextprops.cart });
-}
+//   componentWillReceiveProps(nextprops){
+//   this.setState({ cart:nextprops.cart });
+// }
 
   //create a GET endpoint in api/cart ;)
  componentDidMount(){
-      axios.get('/api/cart').then(response =>{
-        this.setState({cart: response.data });
-      })
-    }
+      
+ }
 
 
    //GET TOTAL PRICE FROM SERVER:
  componentWillMount(){
       axios.get(`/cart/total/${this.props.userid}`).then(response=> {
-        this.setState({ total: response.data[0].sum });
-      });
+        this.setState({ total: response.data[0].sum })});
+
+        axios.get('/api/cart').then(response =>{
+          this.setState({cart: response.data });
+        })
+      
     }
 
 

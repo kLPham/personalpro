@@ -25,6 +25,8 @@ class CheckoutWStripe extends Component {
    successPayment = data => {
     console.log(data)
     // alert('Thank You for shopping with us');
+   
+    
     this.props.history.push('/PaymentSuccess')
   };
   

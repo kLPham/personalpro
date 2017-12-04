@@ -64,7 +64,7 @@ button{
     
         font-size: 10px;
         /* width: 300px; */
-        margin-left: 15%; 
+        margin-left: 13%; 
          margin-right: 0px auto; 
          margin-bottom: 300px;   
          background: rgba(255,255,255,0.9);
@@ -184,7 +184,7 @@ button{
     display: flex; 
     margin-top: 20px;
     justify-content: center;
-    margin-left:25%;
+    margin-left:20%;
      /* margin-bottom: 70%;*/   
 }
 
@@ -194,27 +194,46 @@ button{
 
 @media only screen and (max-width: 768px) {
     .my_cart {
-        height: 266px;
+        height: 10%;
         /* padding-top: 40px;
         padding-left: 40px;   */
+        width: 100%;
     }
+    .cart_container{
+        font-size: 90%;
+        width: 56%;
+        margin-top: 10%;
+        margin-left: 8%;
+        padding: 15%; 
+        height: 100%;
+  }
+  .trash{
+    width: 10%;
+    height: 10%;
+    /* font-size: 16px; */
+    cursor: pointer;
+   position: absolute;
+   top:2%;
+   left:65%;
+}
     .continuebtn{
         height: 30px;
         width: 67px;
         font-size: 9px;
     }
     .cartletter{
-        font-size: 15px;   
+        font-size: 100%;   
     }
 
 .whole_cart{
         font-size: 10px;
-        margin-left: 2%; 
+       
          margin-bottom: 100px;   
          padding: 15px; 
          height: 100%;
          width: 50%;
         margin-bottom: 25%;
+        margin-left: -8%;
 }
 .message{
     display: flex;
@@ -222,20 +241,21 @@ button{
     font-size: 9px;
 }
 .checkoutContainer{
-    width: 50%;
+    width: 30%;
      padding: 15px; 
-     height: 50%;
-    margin-left: 5%;   
+     height: 20%;
+    margin-left: 2%;   
 }
 .totalcontainer{
     width: 67px;
     padding: 10px; 
     height: 13px;
     margin-top: 10%;
-    margin-left:20%;  
+    margin-left:15%;  
 }
 .total {
-    font-size: 5px;
+    font-size: 6px;
+    
   }
   .logo2 img{
     width: 20px;
@@ -246,7 +266,13 @@ button{
 }
 .stripeRight{
     margin-top: 25%;
+    font-size: 5px;
 
+}
+.cart_img{
+    width: 70px;
+    height: 120px;
+    margin-right: 35px;
 }
 
 }

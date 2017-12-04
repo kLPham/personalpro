@@ -74,15 +74,16 @@ span:hover{
         font-size: 20px;
     }
     .ProductLandingPage{
-        height: 400px;
+        height: 100%;
     }
     .Bridal_Collection,.DesignerP,.Formal_Gown,.prom, img{
         height: 300px;
-        width: 550px;
+        width: 100%;
         font-size: 9px; 
         background-size:100%;
         margin-bottom: 3%;
          /* margin-top: -6%; */
+         margin-left: 7%;
     }
     .product-list{
         padding-bottom: 10%; 

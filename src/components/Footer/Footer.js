@@ -28,7 +28,7 @@ export default class Footer extends Component{
                       <h2 className="connect">{G}</h2>
                       {/* <p>code & design by Kelly Linh Pham </p> */}
                       <div>
-                        <SocialIcons className="social" urls={urls} color="black" size={30} marginRight={0}/>
+                        <SocialIcons className="social" urls={urls} color="black" size={30} />
                       </div>
                       <div className="aboutList">
                           <div className="smallpart">ONLINE ORDERS

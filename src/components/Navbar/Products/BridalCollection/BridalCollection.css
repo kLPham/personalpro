@@ -13,7 +13,6 @@
 } */
 #bridal{
   padding-top: 2%;
-  padding-left: .3%;
   height:50%;
   width: 26%;
   margin: 20px;
@@ -36,18 +35,21 @@
   font-size: 30px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px){
   #bridal{
-    /* padding-top: 5%;
-    padding-left: .3%; */
-    height:6.6%;
+    padding-top: 2%;
+    height:100%;
     width: 100%;
-    /* margin: 6.7px; */
+    margin-top: 5%;
+    margin-bottom: 15%;
   }
   .shopTitle{
-    font-size: 6px;
+    color:palevioletred;
+    text-transform: uppercase;
+    font-size: 8px;
   }
-  .font{
-    font-size: 7px;
+  .productList{
+    margin-top: 5%;
+   height: 100%;
   }
 }

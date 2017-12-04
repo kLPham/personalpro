@@ -84,10 +84,8 @@ render(){
                           <img className="cart_img"alt="image_url"src={product.image_url}></img>
                         <div key={product}>
                           <p>BRAND: {product.brand}</p>
-                      
                           <p>QTY: { product.quantity }</p>
-                          <p>PRICE: ${ product.price }</p>
-                          
+                          <p>PRICE: ${ product.price }</p> 
                         </div>
                         <Trash className="trash" id="Cart_trash" onClick={ () => this.handleCartRemove(product)}/>
                     </div>

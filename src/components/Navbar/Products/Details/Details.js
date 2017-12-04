@@ -54,7 +54,7 @@ export default class Details extends Component{
         return(
             <div key={product_id.id}>
              <Link to="/Products">
-               <p> { '<'} Back To Bridal Shop </p>
+               <p className="back"> { '<'} Back To Bridal Shop </p>
              </Link>
                 
                 <div className="details">

@@ -23,7 +23,7 @@ export default class Footer extends Component{
        
         return(
                 <div className="nav" >
-                    <nav className="navbar navbar-default navbar-fixed-bottom">
+                    <footer className="navbar navbar-default navbar-fixed-bottom">
                     
                       <h2 className="connect">{G}</h2>
                       {/* <p>code & design by Kelly Linh Pham </p> */}
@@ -66,7 +66,7 @@ export default class Footer extends Component{
                       <div className="copyright">
                             <h3>COPY RIGHT 2017 ROYAL COUTURE, LLC. ALL RIGHTS RESERVED IMAGES MAY NOT BE REPRODUCED WIHTOUT PERMISSION</h3>
                       </div>
-                    </nav>
+                    </footer>
                 </div>
         )
     }

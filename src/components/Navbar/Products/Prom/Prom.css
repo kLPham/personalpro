@@ -25,3 +25,22 @@
         text-align:center;
         margin-bottom: 5%;
       }
+
+      @media only screen and (max-width: 768px){
+        #prom{
+          padding-top: 2%;
+          height:100%;
+          width: 100%;
+          margin-top: 5%;
+          margin-bottom: 15%;
+        }
+        .shopTitle{
+          margin-top: 5%;
+          font-size: 12px;
+        }
+        .productList{
+          margin-top: 5%;
+         height: 100%;
+         margin-bottom: 30px;
+        }
+      }

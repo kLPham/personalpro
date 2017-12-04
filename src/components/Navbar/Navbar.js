@@ -60,6 +60,8 @@ export default class Navbar extends Component{
                     <Link to="/About">About Us</Link>
                     <Link to="/Contact">Contact Us</Link>
                     <Link className="myproducts" to="/Products">Our Products</Link> 
+
+           
                  </div>
               
             </div>         
@@ -72,21 +74,5 @@ export default class Navbar extends Component{
 
 
 
-   {/* <button type="button" className="navbar-toggle" data-toggle="collapse" data-tartget="navbar-collapse">
-                    <span className="sr-only"></span> 
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                </button> */}
 
 
-       {/* <div>
-                <ul><Link to="/Products">Our Products></Link> <ul>
-                        <li><Link to="/Products/BridalC">Bridal Collection</Link></li>
-                        <li><Link to="/Products/DesignerP">Designer PreOwned Collection</Link></li>
-                        <li><Link to="/Products/Accessories">Accessories</Link></li>
-                        </ul>   
-                </ul>   
-            </div>        */}
-                   {/* <a className="navbar-brand" href="/Products">Our Products</a> */}  

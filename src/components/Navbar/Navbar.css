@@ -113,8 +113,8 @@ button:hover{
 .SuccessContainer{
   width: 1200px;
   height: 1100px;
-  margin-top: 1%;
-  margin-left:35%;
+  margin-top: .05%;
+  margin-left:20%;
   text-align: center;
   color:white;
   margin-bottom: 300px; 

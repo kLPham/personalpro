@@ -4,7 +4,7 @@
     justify-content: center;
     color:white;
     font-size: 15px;
-    padding-top: 15px;
+    /* padding-top: 1%; */
     background-color:black;
 }
 
@@ -13,18 +13,17 @@
     position: fixed;
     width: 100%;
     justify-content: center;
-    height:45px;
+    height:15%;
     background-color:lightgrey;
 }
-/* .social{
+.social{
     display: inline-block;
     justify-content: space-between;
     position: relative;
-    padding: 15px;
-    width: 20px;
-    height: 20px;
-    /* background-color: transparent; */
-
+    width: -32%;
+    height: -32%;
+     background-color: transparent;
+}
 
 /* .icon{
     display: inline-block;
@@ -60,7 +59,7 @@ footer{
        background-color: black;
        color: white;
        display: flex;
-       height: 20%;
+       height: 15%;
        justify-content: center;
       /* margin-top: 2%; */
    }
@@ -75,6 +74,7 @@ footer{
     position: relative;
     text-align:center;
     text-decoration: none;
+    font-size: 8px;
    }
 
 

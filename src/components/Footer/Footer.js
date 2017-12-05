@@ -27,7 +27,7 @@ export default class Footer extends Component{
                     
                       <h2 className="connect">{G}</h2>
                       {/* <p>code & design by Kelly Linh Pham </p> */}
-                      <div>
+                       <div>
                         <SocialIcons className="social" urls={urls} color="black" size={30} />
                       </div>
                       <div className="aboutList">
@@ -60,9 +60,9 @@ export default class Footer extends Component{
                               <span>Company Info</span>
                               <span>Careers</span>
                               <span>Press Room</span>
-                              <span>Investor Relations</span>
-                          </div>
-                      </div>
+                              <span>Investor Relations</span> 
+                           </div>
+                      </div> 
                       <div className="copyright">
                             <h3>COPY RIGHT 2017 ROYAL COUTURE, LLC. ALL RIGHTS RESERVED IMAGES MAY NOT BE REPRODUCED WIHTOUT PERMISSION</h3>
                       </div>

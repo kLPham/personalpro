@@ -1,30 +1,31 @@
-
-    .Home-title{
-      color:palevioletred;
-      font-size: 55px;
-      font-family: Brush Script MT;
-      position: relative;
-      height: 100%;
-      width: 100%;
-      border: solid white 10px;
-      background-size:100%;
-      background-image: url("https://www.walldevil.com/wallpapers/a83/tumblr-flower-wallpaper-wallpapers-largewall.jpg");
-      background-repeat: no-repeat;
-      text-align: center;
-    }
-    .Home{
-      height: 100%;
-      width: 100%;
-    }
- .Home-Image {
-    height: 1390px;
-    text-align: center;
-    background-image: url("https://www.metro.us/sites/default/files/main/articles/2017/03/30/wedding-trends-cover_1.jpg");
-    background-repeat: no-repeat;
-    background-size: 1890px;
-    background-position: center;
-  }
- .centered {
+.Home-title {
+  color: black;
+  font-size: 55px;
+  font-family: Brush Script MT;
+  position: relative;
+  height: 50%;
+  width: 100%;
+  border: solid white 10px;
+  background-size: 100%;
+  background-image: url('https://www.walldevil.com/wallpapers/a83/tumblr-flower-wallpaper-wallpapers-largewall.jpg');
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.Home {
+  height: 100%;
+  width: 100%;
+}
+.Home-Image {
+  height: 900px;
+  /* height: 100%; */
+  text-align: center;
+  background-image: url('https://www.metro.us/sites/default/files/main/articles/2017/03/30/wedding-trends-cover_1.jpg');
+  background-repeat: no-repeat;
+  /* background-size: 1890px; */
+  background-position: center;
+  width: 100%;
+}
+.centered {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,135 +34,116 @@
   text-decoration-color: white;
   font-size: 40px;
 }
-.group{
+.group {
   display: flex;
   position: relative;
   justify-content: center;
 }
-.group2{
+.group2 {
   display: flex;
   position: relative;
   justify-content: center;
-
 }
-  .Bc{
-    background-image:
-    url("https://cdn.galialahav.com/wp-content/uploads/Alma1.jpg");
-    background-repeat: no-repeat;
-    height: 750px;
-    width:800px;
-    background-size: 800px;
-    background-position: center; 
-    position: relative;
-    padding-top: 35px;
-    margin-right: 3%;
-    margin-top: .3%;
-   
+.Bc {
+  background-image: url('https://cdn.galialahav.com/wp-content/uploads/Alma1.jpg');
+  background-repeat: no-repeat;
+  height: 750px;
+  width: 800px;
+  background-size: 800px;
+  background-position: center;
+  position: relative;
+  padding-top: 35px;
+  margin-right: 3%;
+  /* margin-top: 0.3%; */
 
-  
-   
-    /* https://www.bridalreflections.com/wp-content/uploads/2016/01/brides-3.jpg */
-  }
-  .D{
-    background-image:
-    url("http://strictlyweddings.com/wp-content/uploads/2016/05/RIhanna_web.jpg");
-    background-repeat: no-repeat;
-    height:  800px;
-    width: 800px;
-    background-size: 1000px;
-    background-position: center; 
-    margin-top: 20px;
-    margin-right: 1%;
+  /* https://www.bridalreflections.com/wp-content/uploads/2016/01/brides-3.jpg */
+}
+.D {
+  background-image: url('http://strictlyweddings.com/wp-content/uploads/2016/05/RIhanna_web.jpg');
+  background-repeat: no-repeat;
+  height: 800px;
+  width: 800px;
+  background-size: 1000px;
+  background-position: center;
+  margin-top: 20px;
+  margin-right: 1%;
+  margin-left: 2.2%;
+}
+.F {
+  background-image: url('https://www.dhresource.com/0x0s/f2-albu-g4-M00-3E-75-rBVaEFfXy2OAJ6ViAAMcP76S3Do690.jpg/tony-chaaya-2017-evening-dresses-with-detachable.jpg');
+  background-repeat: no-repeat;
+  height: 789px;
+  width: 800px;
+  background-size: 900px;
+  background-position: center;
+  text-align: center;
+  /* margin-top: 0.2%; */
+}
+.P {
+  background-image: url('https://ae01.alicdn.com/kf/HTB1S3ZzJpXXXXXnaXXXq6xXFXXXQ/2015-Ball-Gown-Wedding-Gowns-Appliques-Lace-Red-Wedding-Dress-2015-Long-Train-Lace-Up-Bride.jpg');
+  background-repeat: no-repeat;
+  height: 800px;
+  width: 900px;
+  background-position: center;
+  text-align: center;
+  padding-top: 40px;
+
+  /* http://proledi.com/images/2017/04/vypusknoe_plate_s_printom_2_29170110.jpg */
+}
+
+/*MEDIA QUERIES*/
+
+/* tablets*/
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .Home-title {
+    color: green;
+    font-size: 18px;
+    height: 33%;
+    width: 100%;
+    background-size: 100%;
     margin-left: 2.2%;
-
-
-  
   }
-  .F{
-    background-image:
-    url("https://www.dhresource.com/0x0s/f2-albu-g4-M00-3E-75-rBVaEFfXy2OAJ6ViAAMcP76S3Do690.jpg/tony-chaaya-2017-evening-dresses-with-detachable.jpg");
-    background-repeat: no-repeat;
-    height:  789px;
-    width: 800px;
-    background-size: 900px;
-    background-position: center; 
-    text-align: center;
-    margin-top: .2%;
-   
+  .Home-Image {
+    height: 463px;
+    background-size: 100%;
+    color: white;
+    margin-left: 8%;
   }
-  .P{
-    background-image:
-    url("https://ae01.alicdn.com/kf/HTB1S3ZzJpXXXXXnaXXXq6xXFXXXQ/2015-Ball-Gown-Wedding-Gowns-Appliques-Lace-Red-Wedding-Dress-2015-Long-Train-Lace-Up-Bride.jpg");
-    background-repeat: no-repeat;
-    height:  800px;
-    width: 900px;
-    background-position: center; 
-    text-align: center;
-    padding-top:40px;
-
-    /* http://proledi.com/images/2017/04/vypusknoe_plate_s_printom_2_29170110.jpg */
+  .Bc {
+    height: 250px;
+    width: 266px;
+    background-size: 266px;
+    padding-top: 35px;
+    margin-right: 1.5%;
+    /* margin-top: .3%; */
+    margin-left: 8%;
   }
-
-
-
-
-  /*MEDIA QUERIES*/
-  
-  /* tablets*/
-  @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .Home-title{
-      color: green;
-      font-size: 18px;
-      height: 33%;
-      width: 100%;
-      background-size:100%;
-      margin-left: 2.2%;
-    }
-    .Home-Image {
-      height: 463px;
-      background-size: 100%;
-      color: white;
-      margin-left: 8%;
-    }
-    .Bc{  
-      height: 250px;
-      width:266px;
-      background-size: 266px;
-      padding-top: 35px;
-      margin-right: 1.5%;
-      /* margin-top: .3%; */
-      margin-left: 8%;
-     
-  }
-  .D{
+  .D {
     height: 291.95px;
     width: 80%;
-    background-size:100%; 
+    background-size: 100%;
     margin-top: -2%;
     margin-right: 3%;
     /* margin-left: 2.2%;  */
     margin-left: 8%;
   }
-  .F{
-    height:  285px;
-    width:330px;
+  .F {
+    height: 285px;
+    width: 330px;
     background-size: 300px;
     /* background-position: center; 
     text-align: center;
     margin-top: .2%; */
-   
   }
-  .P{
-    height:  auto;
+  .P {
+    height: auto;
     width: 100%;
     background-size: 100%;
     margin-top: -7%;
-   margin-right: .5%;
-
-    }
-    .centered {
-      font-size: 11px;
-    }
+    margin-right: 0.5%;
   }
- 
+  .centered {
+    font-size: 11px;
+  }
+}

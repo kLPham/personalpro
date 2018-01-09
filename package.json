@@ -31,7 +31,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-start": "node server/index.js",
+    "deploy": "now --public --dotenv=.env -d"
+  },
+  "now": {
+    "alias": "bridal-couture"
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
@@ -39,7 +44,8 @@
     "react-social-icons": "^2.7.0",
     "sass-loader": "^6.0.6"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description":
+    "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
   "main": "index.js",
   "repository": {
     "type": "git",

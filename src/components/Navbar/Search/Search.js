@@ -1,9 +1,6 @@
-import React, { Component } from "react";
-import axios from "axios";
+import React, { Component } from 'react';
+import axios from 'axios';
 import '../Navbar.css';
-
-
-
 
 export default class Search extends Component {
   constructor(props) {
@@ -18,19 +15,19 @@ export default class Search extends Component {
     this.handleButtonchange = this.handleButtonchange.bind(this);
   }
   // componentDidMount() {
-    // axios.get('/api/products?term=${this.state.term}')
+  // axios.get('/api/products?term=${this.state.term}')
   //   axios.get('/api/products').then(response => {
   //       this.setState({ productsToDisplay: response.data })
   //     console.log("YAY",response);
   //   });
   // }
-  handleAddToCart(item){
-        axios.post('/api/cart',{item: item})
-             .then((response) => this.setState({cart: response.data}))
-             .catch(console.log);
-             alert("Item added to cart")
-
-    }
+  handleAddToCart(item) {
+    axios
+      .post('/api/cart', { item: item })
+      .then(response => this.setState({ cart: response.data }))
+      .catch(console.log);
+    alert('Item added to cart');
+  }
   // handleInputChange(){
   //   axios.get('/api/products/').then(response => {
   //     this.setState({ searchInput: response.data})
@@ -39,19 +36,20 @@ export default class Search extends Component {
   //   })
   // }
 
-  handleButtonchange(event){
-    window.location.href = "http://localhost:3000/Products/BridalCollection";
+  handleButtonchange(event) {
+    window.location.href = 'http://localhost:3000/Products/BridalCollection';
   }
-  render(){
+  render() {
     return (
       <div className="search">
-        <input 
+        <input
           // value={this.state.searchInput}
           // onChange={(e)=> {this.handleInputChange(e.target.value); }}
-          onChange={ this.handleInputChange }
+          onChange={this.handleInputChange}
           placeholder="Search products"
           type="text"
-          ref="search product_id" ></input>
+          ref="search product_id"
+        />
         <button onClick={this.handleButtonchange}>Search</button>
       </div>
     );
@@ -59,4 +57,3 @@ export default class Search extends Component {
 }
 
 //need to fix the search input/button
-

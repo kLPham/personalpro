@@ -36,9 +36,9 @@ export default class Cart extends Component {
 // }
 
   //create a GET endpoint in api/cart ;)
- componentDidMount(){
+//  componentDidMount(){
       
- }
+//  }
 
 
    //GET TOTAL PRICE FROM SERVER:

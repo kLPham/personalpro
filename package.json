@@ -29,14 +29,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build":
+      "react-scripts build && mkdir build/kLPham && mkdir build/kLPham/personalpro && mv build/static build/kLPham/personalpro",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "now-start": "node server/index.js",
-    "deploy": "now --public --dotenv=.env -d"
+    "deploy": "now --public --dotenv=.env.prod -d"
   },
   "now": {
-    "alias": "bridal-couture"
+    "alias": "royal-bridal-couture"
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {

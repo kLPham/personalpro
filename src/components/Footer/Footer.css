@@ -10,7 +10,7 @@
 
 .footer {
   display: inline-flex;
-  position: fixed;
+  position: relative;
   width: 100%;
   justify-content: center;
   height: 15%;
@@ -21,8 +21,6 @@
   justify-content: space-between;
   position: relative;
   width: -32%;
-  */: -32%;
-  */: transparent;
 }
 
 /* .icon{

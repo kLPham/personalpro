@@ -9,7 +9,6 @@ export default class Footer extends Component {
   }
 
   render() {
-    // const G = 'GET CONNECTED WITH US';
     const urls = [
       'http://facebook.com',
       'http://twitter.com',
@@ -20,16 +19,10 @@ export default class Footer extends Component {
 
     return (
       <div className="nav">
-        <footer className="navbar navbar-default navbar-fixed-bottom">
-          {/* <h2 className="connect">{G}</h2> */}
+        <footer className="navbar navbar-default">
           {/* <p>code & design by Kelly Linh Pham </p> */}
           <div>
-            <SocialIcons
-              className="social"
-              urls={urls}
-              color="black"
-              //   size={5}
-            />
+            <SocialIcons className="social" urls={urls} color="black" />
           </div>
           <div className="aboutList">
             <div className="smallpart">

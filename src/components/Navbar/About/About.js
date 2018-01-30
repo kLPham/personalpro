@@ -1,24 +1,79 @@
-import React, { Component } from "react";
-import "./About.css";
+import React, { Component } from 'react';
+import './About.css';
+import { Link } from 'react-router-dom';
+
+// import SizeChart from './SizeChart';
+// import OrderNPaymentInfo from './OrderNPaymentInfo';
 
 export default class About extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
+
   render() {
     return (
-      <div className="About">
-        <h1 className="title">About Us</h1>
-
-        <br />
-        <div className="container">
-          <p2>
-            If life is measured in moments, then this is going to be one of the
-            most important moments of all. Our stunning designs have made it one
-            of the world’s leading wedding dress and evening gown brands. Our
-            designer Madeline Gardner’s incredible visionary taste brings you a
-            variety of dresses you will be gushing over. From the quality of our
-            high-end fabrics, to our intricate beading and delicate lacework, to
-            the form fitting silhouettes, each and every one of our dresses has
-            been made to bridal perfection.
-          </p2>
+      <div>
+        <div className="aboutTotal">
+          <h1 className="title">About Us</h1>
+          <p className="aboutC">
+            {' '}
+            Belle-Bridal-Couture first began in 2016 out of a 2,000 square foot
+            space. From this small office we designed our very first wedding
+            dress, took orders and delivered a superior garment to buyers across
+            the country. Driven by a passion for design and a commitment to
+            service, we faced many obstacles in those early days, yet continued
+            to expand.
+            <hr />
+            <p2>
+              If life is measured in moments, then this is going to be one of
+              the most important moments of all. Our stunning designs have made
+              it one of the world’s leading wedding dress and evening gown
+              brands. Our designer Madeline Gardner’s incredible visionary taste
+              brings you a variety of dresses you will be gushing over. From the
+              quality of our high-end fabrics, to our intricate beading and
+              delicate lacework, to the form fitting silhouettes, each and every
+              one of our dresses has been made to bridal perfection.
+            </p2>
+          </p>
+          <div className="aboutContainer">
+            <div className="aboutInfo">
+              <Link className="alink" to="/About/OrderNPaymentInfo">
+                <span>Order & Payment</span>
+              </Link>
+              <hr />
+              <br />
+              <Link className="alink" to="/About/ShippingRates">
+                <span>Shipping</span>
+              </Link>
+              <hr />
+              <br />
+              <Link className="alink" to="/About/ReturnPolicy">
+                <span>Return Policy</span>
+              </Link>
+              <hr />
+              <br />
+              <Link className="alink" to="/About/FAQ">
+                <span>Help & FAQ</span>
+              </Link>
+              <hr />
+              <br />
+              <Link className="alink" to="/About/CustomerService">
+                <span>Customer Service</span>
+              </Link>
+              <hr />
+              <br />
+              <Link className="alink" to="/About/SizeChart">
+                <span className="sizeChart">Size Chart</span>
+              </Link>
+              <hr />
+              <br />
+            </div>
+          </div>
+          <br />
+          {/* <div className="container">
+         
           <br />
           <hr />
           <br />
@@ -56,6 +111,8 @@ export default class About extends Component {
             in-house seamstress for bridal gown alterations for a one- stop shop
             to perfect your bridal look.
           </p2>
+        </div> */}
+          {this.props.children}
         </div>
       </div>
     );

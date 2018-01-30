@@ -11,7 +11,7 @@ import SizeChart from './components/Navbar/About/SizeChart';
 import FAQ from '././components/Navbar/About/FAQ';
 import OrderNPaymentInfo from './components/Navbar/About/OrderNPaymentInfo';
 import ReturnPolicy from './components/Navbar/About/ReturnPolicy';
-import ShippingRates from './components/Navbar/About/ShippingRates';
+import Shipping from './components/Navbar/About/Shipping';
 import CustomerService from './components/Navbar/About/CustomerService';
 
 import Contact from './components/Navbar/Contact/Contact';
@@ -47,7 +47,7 @@ export default (
               component={OrderNPaymentInfo}
             />
             <Route path="/About/ReturnPolicy" component={ReturnPolicy} />
-            <Route path="/About/ShippingRates" component={ShippingRates} />
+            <Route path="/About/Shipping" component={Shipping} />
             <Route path="/About/CustomerService" component={CustomerService} />
           </Switch>
         </About>

@@ -44,7 +44,7 @@ export default class About extends Component {
               </Link>
               <hr />
               <br />
-              <Link className="alink" to="/About/ShippingRates">
+              <Link className="alink" to="/About/Shipping">
                 <span>Shipping</span>
               </Link>
               <hr />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class ShippingRates extends Component {
+export default class Shipping extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,6 @@ export default class ShippingRates extends Component {
   render() {
     return (
       <div className="container">
-        Shipping Rates
         <h3>WILL YOU SHIP MY DRESS OUT OF STATE FOR ME?</h3>
         <p>
           We can ship a dress within the US and participating countries outside

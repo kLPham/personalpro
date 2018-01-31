@@ -38,7 +38,7 @@
     "deploy": "now --public --dotenv=.env.prod -d"
   },
   "now": {
-    "alias": "bridal-couture"
+    "alias": "belle-bridal-couture"
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
